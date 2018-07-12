@@ -1,0 +1,80 @@
+
+
+////////////////////////////////////// PANEL FLEX TILE //////////////////////////////////////
+.panel-flex-tile {
+	@include flexbox;
+	@include flex-wrap(wrap);
+	.flex-tile {
+		padding: 2rem;
+		@include flexbox;
+		@include flex-direction(column);
+
+		header {
+			// @include order(1);
+			margin-bottom: 1rem;
+			h1, h2 {
+				padding: 0.5rem 0 0 3rem;
+				&.logo {
+					background: url(#{$path__image}/global/common/logo--grey.svg) transparent 0.25rem 50% no-repeat;
+					background-size: 2rem;
+				}
+				&.person {
+					background: url(#{$path__image}/global/common/person--grey.svg) transparent 0.25rem 50% no-repeat;
+					background-size: 2rem;
+				}
+				&.briefcase {
+					background: url(#{$path__image}/global/common/briefcase--grey.svg) transparent 0.25rem 50% no-repeat;
+					background-size: 2rem;
+				}
+				&.preferences {
+					background: url(#{$path__image}/global/common/preferences--grey.svg) transparent 0.25rem 50% no-repeat;
+					background-size: 2rem;
+				}
+			}
+		}
+		.content {
+			// @include order(2);
+			margin-left: 3rem;
+			@include flex-grow(1);
+			p {
+				margin-bottom: 1em;
+			}
+		}
+		footer {
+			// @include order(3);
+			background-color: transparent;
+			color: $colour__black--70;
+			border: none;
+			margin: 1rem 0 0 3rem;
+			a {
+				@include text-style__inline-link;
+				// color: $colour__black--60/* was teal-dark */;
+			}
+		}
+	}
+}
+
+
+
+// SMALL ONLY (640 down)
+@media #{$small-only} {
+	.panel-flex-tile {
+		.flex-tile {
+			padding: 1.5rem;
+			header {
+				h1, h2 {
+					font-size: 1.2rem;
+					padding-left: 2rem;
+					background-size: 1.4rem!important; // Override individual background sizes for named elements
+					margin-bottom: 0;
+				}
+			}
+			.content {
+				display: none;
+			}
+			footer {
+				margin: 0 0 0 2rem;
+			}
+		}
+	}
+}

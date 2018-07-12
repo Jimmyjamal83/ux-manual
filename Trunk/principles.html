@@ -1,0 +1,324 @@
+<!DOCTYPE html><!--[if IEMobile 7 ]> <html dir="ltr" lang="en"class="no-js iem7"> <![endif]--><!--[if lt IE 8 ]> <html dir="ltr" lang="en" class="no-js oldie"> <![endif]--><!--[if IE 8 ]>    <html dir="ltr" lang="en" class="no-js ie8 oldie"> <![endif]--><!--[if IE 9 ]>    <html dir="ltr" lang="en" class="no-js ie9"> <![endif]--><!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en"><!--<![endif]--><!-- // HEAD ELEMENT START // -->
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ICAEW Dev</title>
+        <link rel="stylesheet" href="production/css/design-manual.css" />      <!-- // Change to application specific filename -->
+
+        <!--[if lte IE 9 ]>
+            <link rel="stylesheet" href="production/css/design-manual-ie.css" />
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>       
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+            <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+        <![endif]-->
+
+        <!-- <script src="production/js/design-manual/frameworks.js"></script> -->
+       <!--  <script type="text/javascript">
+            var cdnPath = '../';
+        </script> -->
+
+    </head>
+<!-- // HEAD ELEMENT END // --><body id="design-manual"><!-- <div class="stack"><div class="col-lg-12"> --><!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////<div class="placeholder"> elements and their decendents will be replaced by content blocks (toolkit blocks)///////////////////////////////////////////////////////////////////////////////////////////////////////// --><main class="design-manual stack" id="principles"><div class="col-lg-3 col-md-12 col-xs-12 nav-col"><div class="wrapper container-fluid"><div class="stack"><div class="col-lg-offset-5 col-lg-7 col-md-12 col-xs-12"><div id="logo" class="test"><a href="home.html"></a></div>
+
+<!-- <script>
+	$(document).ready(function () {
+		alert("hi im here");
+		if (Modernizr.mq('only screen and (max-width: 960px)') && $('#footer').length ) {
+			$(window).scroll(function (event) {
+				var scroll = $(window).scrollTop();
+				$('.side-menu').toggleClass('stop',
+					scroll >= $('#footer').offset().top - window.innerHeight
+				);
+			});
+			$(window).scroll();
+		}
+	});
+</script> -->	
+
+
+<section class="side-menu component">
+	<!-- <input id="test" name="refine" type="checkbox"> -->
+	<div class="modal-medium-down modal-large-disabled">
+		<h2 class="title"><a class="trigger fill" href="#openModal"></a></h2>
+
+		<!-- Modal container -->  
+		<div id="openModal" href="#" class="modal-surround">
+			<a href="#" title="surround-close"></a>
+			<article class="modal-content">
+			    <a href="#" title="close" class="close-icon"></a>
+			    
+					
+					<ul class="accordion group-lvl0">
+						<li>
+							<input id="sidemenu_principles" name="level0" type="radio">
+							<label for="sidemenu_principles">01. Principles</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="principles.html">UX Principles</a>
+									<a href="principles.html#design-principles">Design Principles</a>
+									<!-- <a href="principles.html#design-rules-of-play">Design Rules of Play</a> -->
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input id="sidemenu_design-system" name="level0" type="radio">
+							<label for="sidemenu_design-system">02. Design System</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<input id="sidemenu_layout&grid" name="level1" type="radio" disabled>
+									<label for="sidemenu_layout&grid">Layout &amp; Grid</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="tbc.html#columns">Columns</a>
+											<a href="tbc.html#baseline-grid">Baseline Grid</a>
+											<a href="tbc.html#gutters">Gutters</a>
+											<a href="tbc.html#spacing">Spacing</a>
+											<a href="tbc.html#scaling">Scaling</a>
+										</li>
+									</ul>	
+								</li>
+								<!-- <li>
+									<a href="tbc.html">Logo</a>	
+								</li> -->
+								<li class="reveal-content">
+									<input id="sidemenu_typography&links" name="level1" type="radio">
+									<label for="sidemenu_typography&links">Typography &amp; Links</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="typography.html">Fonts</a>
+											<a href="typography.html#sudo-styles">Sudo Styles</a>
+											<a href="typography.html#links">Links</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2d" name="level1" type="radio" disabled>
+									<label for="c-ac-2d">Iconography</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="tbc.html#icons">Icons</a>
+											<a href="tbc.html#roundel-icons">Roundel Icons</a>
+											<a href="tbc.html#icon-sizes">Icon Sizes</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2e" name="level1" type="radio">
+									<label for="c-ac-2e">Colours</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="colour.html">Accessibility</a>
+											<a href="colour.html#background-colours">Background Colours</a>
+											<a href="colour.html#brand-red">Brand Red</a>
+											<a href="colour.html#text-colour">Text Colour</a>
+											<a href="colour.html#feedback-colours">Feedback Colours</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2f" name="level1" type="radio" disabled>
+									<label for="c-ac-2f">Images</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="colour.html#sizes">Sizes</a>
+											<a href="tbc.html#file-types">File types</a>
+										</li>
+									</ul>	
+								</li>
+								<!-- <li>
+									<a href="tbc.html">Tables</a>	
+								</li> -->
+							</ul>
+						</li>
+
+						
+						<li>
+							<input id="c-ac-3" name="level0" type="radio" disabled>
+							<label for="c-ac-3">03. Content</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="c-ac-4" name="level0" type="radio" disabled>
+							<label for="c-ac-4">04. Assets</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="browser_support" name="level0" type="radio">
+							<label for="browser_support">05. Browser Support</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="https://www.icaew.com/icaew-policies/website-accessibility" target="blank">Website accessibility</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input id="c-ac-6" name="level0" type="radio" disabled>
+							<label for="c-ac-6">06. Strategy</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="c-ac-7" name="level0" type="radio" disabled>
+							<label for="c-ac-7">07. Resources</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="support" name="level0" type="radio">
+							<label for="support">08. Support</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="support.html">Contact</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+						
+					
+				
+			</article>
+		</div>
+	</div> 
+</section></div></div></div></div><div class="col-lg-9 col-md-12 col-xs-12 content-area"><div class="wrapper container-fluid"><div class="stack"><div class="col-lg-9 col-md-12 col-xs-12"><h1>Principles</h1><section class="component"><p class="stand-first">Our principles determine and are embodied in all that we do.</p></section><section id="ux-principles" class="component"><h2>UX Principles</h2><p>ICAEW’s 10 UX principles echo a culture of designing experiences for our users, not for the organisation. They offer a framework to evaluate our work and inform everyone how we deliver useful, elegant and simple-to-use interfaces.</p><h3>Users want</h3><p>Designing for users is at the centre of everything we do.</p><div class="callout component"> <h5>Why?</h5> <p>Understanding our users, their goals, behaviours and frustrations and shaping solutions using this insight improves engagement, satisfaction and retention.</p></div><h3>Discoverable content</h3><p>We deliver systems that find, sort and present information so the right content is found at the first time of asking.</p><div class="callout component"><h5>Why?</h5><p><strong>64%</strong> of users start their journey to ICAEW on a search engine</p><p><strong>92%</strong> of these search journeys use Google</p><p>Users don’t want to put effort into finding content through menus</p></div><h3>Personal experiences</h3><p>As humans we will speak to our users as individuals with an understanding of their context and their intentions.</p><div class="callout component"><h5>Why?</h5><p>Everyone is different</p><p>By using data we hold on an individual we can make experiences both enjoyable and rewarding</p></div><h3>In real-time</h3><p>Align data-points so that we deliver content and information immediately.</p><div class="callout component"><h5>Why?</h5><p>Humans have uncertainty and insecurities – they deserve feedback and assurance straight away</p><p>Technological advancement increasingly means expectations of such immediacy are set by our competitors and big brands</p><p>Members and students are being passed to call centre operators before the system loads queries, frustrating the caller and the agent and starting the call off on a poor footing</p></div><h3>On any device</h3><p>We design solutions to work on any device, at any time.</p><div class="callout component"><h5>Why?</h5><p>In 2017 <strong>33%</strong> of all sessions on icaew.com were accessed through a mobile or tablet. A <strong>79%</strong> increase on 2016 our members and students demonstrate comfort with all devices.</p><p>They read emails on the phone in the morning, work on the laptop in the office, check the news on the phone during the train journey home and reads a book on the tablet in the evening.</p></div><h3>Using any technology</h3><p>Although future-proofing isn’t possible, we’ll define open solutions that offer flexibility in the long term.</p><div class="callout component"><h5>Why?</h5><p>It provides the opportunity to explore and test emerging or alternative or technologies.</p><p>The freedom to experiment enables us to react to changing market conditions</p></div><h3>Across boundaries</h3><p>As far as it’s in our control a user in Singapore with the same needs as a user in London will be able to access the same content, seek the same information and complete the same tasks as a user in London.</p><div class="callout component"><h5>Why?</h5><p>We aspire to be a fully international organisation and don’t discriminate against individuals for being based outside the UK ICAEW’s <strong>149,000</strong> members are spread across <strong>154</strong> countries</p><p>In 2017 <strong>42%</strong> of sessions on icaew.com came from outside the UK</p></div><h3>Quickly</h3><p>The target average page download duration is three seconds.</p><div class="callout component"><h5>Why?</h5><p>The fast our digital services perform, the fewer users will abandon and go on to achieve their goal.</p><p>Various studies have found that 40% of users abandon a page if it takes <strong>>3s</strong> to load</p><p>Three seconds was recommended to ICAEW as part of a 2016 consultation with NCC after competitor benchmarking Google include site speed as a ranking factor</p></div><h3>On solutions that are tested</h3><p>We validate our solutions with users right throughout the design process, placing emphasis on what they do, not what they say.</p><div class="callout component"><h5>Why?</h5><p>So that we can iterate whilst we design</p><p>If it doesn’t work with users we ‘fail fast’ </p><p>We release solutions sooner, with a greater chance of success</p></div><h3>For humans</h3><p>Keep designs simple, straightforward and accessible. We follow conventions and avoid deviating from the norm unless it adds to the value of the experience.</p><div class="callout component"><h5>Why?</h5><p>Everyone is different (again)</p><p>Inconsistency leads to hesitation and uncertainty</p><p>Designing for the few often adds complexity </p></div></section><section id="design-principles" class="component"><h2>Design Principles</h2><p>Craft rewarding visual experiences to deliver engaging information that satisfy our member’s needs, throughout the lifecycle of their career.</p><div class="callout component"><h5>Our rules of play</h5><ol><li>Does the design embody our brand and ethos?</li><li>Is the design unified and consistent?</li><li>Is the design transparent and intuitive?</li><li>Is the design innovative and inspiring?</li><li>Does the design seek to engage and delight?</li><li>Is the design consumable and digestible?</li><li>Is the design organic and progressive?</li></ol></div></section><!-- <section id="design-rules-of-play" class="component"><h2>Design Vision</h2><p>ICAEW’s 10 UX principles echo a culture of designing experiences for our users, not for the organisation. They offer a framework to evaluate our work and inform everyone how we deliver useful, elegant and simple-to-use interfaces.</p><div class="callout component"><h5>How?</h5><ol><li>listed vision item lorem ipsum</li><li>listed vision item lorem ipsum</li><li>listed vision item lorem ipsum</li><li>listed vision item lorem ipsum</li></ol></div></section> --></div></div></div></div></main> <footer id="footer" class="site-footer stack" role="contentinfo">
+	<div class="col-xs-12 doorstop" id="doorstop">
+		<div class="wrapper container-fluid">
+
+			<a class="logo" href="http://icaew.com" title="Home"></a>
+
+
+			<div class="link-blocks">
+				<section>
+					<h1>About ICAEW</h1>
+					<ul>
+						<li><a href="#" title="">About us</a></li>
+						<li><a href="#" title="">Newsroom</a></li>
+						<li><a href="#" title="">Policy</a></li>
+						<li><a href="#" title="">Vacancies</a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Contact us</h1>
+					<ul>
+						<li><a href="#" title="">Contact us</a></li>
+						<li><a href="#" title="">Complaints</a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Events</h1>
+					<ul>
+						<li><a href="#" title="">All events</a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Library</h1>
+					<ul>
+						<li><a href="#" title="">Guide to services</a></li>
+						<li><a href="#" title="">Library search</a></li>
+						<li><a href="#" title="">Company research</a></li>
+						<li><a href="#" title="">Historical resources</a></li>
+						<li><a href="#" title="">Library collection</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Legal</h1>
+					<ul>
+						<li><a href="#" title="">Terms and conditions</a></li>
+						<li><a href="#" title="">Privacy policy</a></li>
+						<li><a href="#" title="">Cookies</a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="con-soc">
+
+				<div class="contacts">
+					<ul class="inline-list">
+						<li><a class="phone" href="tel:+441908248250">+44 (0)1908 248 250</a></li>
+						<li><a class="email" href="mailto:contactus@icaew.com">contactus@icaew.com</a></li>
+						<li><a class="skype" href="skype:icaew_uk?call">icaew_uk</a></li>
+						<li><a class="live-chat" href="#">Live chat</a></li>
+					</ul>				
+				</div>
+
+				<ul class="social">
+					<li><a href="http://twitter.com/icaew" title="Follow us on Twitter" class="twitter-banner"></a></li>
+					<li><a href="http://www.linkedin.com/groups?gid=51468" title="Join our LinkedIn group" class="linkedin-banner"></a></li>
+					<li><a href="http://www.facebook.com/icaew" title="Like us on Facebook" class="facebook-banner"></a></li>
+					<li><a href="http://apps.icaew.com/index.cfm/route/174647/icaew_ga/en/my_ICAEW/Preference_Centre" title="Set your mailing preferences" class="email-banner"></a></li>
+					<li><a href="/home/rss" title="Subscribe to our RSS feeds" class="rss-banner"></a></li>
+				</ul>
+
+				<div class="c-a-w-block">
+					<a class="c-a-w" href="http://www.charteredaccountantsworldwide.com/" title="Chartered Accountants Worldwide"></a>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div class="col-xs-12 baseline">
+		<div class="wrapper container-fluid">
+			<!-- <div class="columns"> -->
+				<a class="copyright" title="Copyright" href="http://www.icaew.com/en/icaew-terms-and-conditions">&copy; ICAEW 2018</a>
+				<a class="strapline" title="About us" href="http://www.icaew.com/en/about-icaew">Building a world of strong economies</a>
+			<!-- </div> -->
+		</div>	
+	</div>
+</footer>
+<!-- // JS BODY END START // -->
+
+    <!--[if lt IE 9]>
+    	<script src="js/library/rem.min.js"></script>
+	<![endif]-->
+	<script src="production/js/design-manual/application.js"></script> 
+	
+<!-- // JS BODY END END // --><!-- </div></div> --></body></html>

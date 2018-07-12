@@ -1,0 +1,107 @@
+//////////////////////////// Global structure ////////////////////////////
+
+//  FOR ALL
+// .content > .row { // was removed due to a conflict with the cta-link float-left
+//      margin-bottom: 2rem;
+// }
+body {
+	min-width: 20em;
+}
+
+.rt-placeholder a {
+	z-index: 1;
+	position: relative;
+}
+
+main.primary, #main {
+	margin: 0;
+	> :last-child {
+		padding-bottom: 5em;
+	}
+}
+
+
+aside {
+	&.secondary, &.tertiary {
+		margin: 2em 0 3em;
+		&.image-end {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.image-row {
+	margin: auto 0 1.8em 0;
+	background-size: 100%;
+	padding: 4em 0;
+}
+
+
+
+.row-divider {
+	display: none;
+	visibility: hidden;	
+	&.image-before, 
+	&.image-after, 
+	#dashboard + &, 
+	#landing-hub main + &  {
+		display: none;
+	}
+}
+
+main + .row-divider,
+#landing-hub main > .row-divider {
+
+	hr {
+		border: 0;
+		margin: 0;
+		height: 0;
+		display: none !important;
+		// these are necessary as foundation over-rides
+		visibility: hidden;
+		border-style: none;
+	}
+}
+
+
+.js .no-js-only {
+	display: none;
+}
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	.row-divider {
+		.image-end + & {
+		margin: -3.25em 0 1.5em;
+		}
+	}
+
+}

@@ -1,0 +1,1280 @@
+//  FOR ALL
+
+.default-menu {
+	height: $menu-size;
+	.top-bar-section {
+    	display: inline-block;
+    	border-left: 1px solid black;
+    	border-right: 1px solid $colour__black--90;
+    	> ul > li > a {
+	    	border-left: 1px solid $colour__black--90;
+	    	border-right: 1px solid $colour__black;
+			font-family: $font__sans-serif;
+    	}
+	}	
+	.title-area {
+		display: none;
+	}
+	.top-menu-section > ul {
+		margin: 0;
+		position: relative;
+		@include flexbox;
+		list-style: none;
+		.dropdown {
+			width: 24em;
+		}
+		> li {
+			position: relative;
+			display: inline-block; 
+			float: left;
+			> ul {
+				display: none;
+			}
+			> a {
+				height: $menu-size;
+				min-width: $menu-size;
+				display: table-cell;
+				vertical-align: middle;
+				padding: 0 1rem;
+				color: $colour__black--70;
+				line-height: 1.1em;
+				font-size: 0.8rem;
+				@include font__sans-serif--bold--uppercase;	
+				text-align: center;
+				background-color: transparent;
+			}
+			&:last-child {
+				ul {
+					left: initial;
+					right: -16%;
+				}
+			}
+			&:nth-last-child(2) {
+				ul {
+					left: initial;
+					right: -8%;
+				}
+			}
+			&:hover {
+				background: $colour__black--30;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+
+				@include effect__transition;
+				ul {
+					display: block;
+					position: absolute;
+					top: -4000em;
+					left: -0.95em;
+					padding-left: 0;
+					margin-left: 0.9375rem;
+					list-style: none;
+					z-index: 1;
+					top: $menu-size;
+					background-color: $colour__black--70;
+					z-index: 20;
+					li {
+						a {
+							height: auto;
+							background-color: $colour__black--70;
+							color: $colour__cool-grey;
+							padding: 0.465rem 0.9375rem;
+							display: block;
+							width: 24em;
+							&:hover {
+								background-color: $colour__black--80;
+								color: $colour__white;
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+			&.has-dropdown > a {			
+				span {
+					position: absolute;
+					right: 0.3em;
+					top: 1.25em;
+					width: 1em;
+					height: 35%;
+					background: url(#{$path__image}/global/arrows/down-white.svg) no-repeat 50% 50% transparent;
+					background-size: 80%;
+				}
+			}
+			&.menu-home {
+				width: 0;
+				overflow: hidden;
+				a {
+					background: url(#{$path__image}/global/navigation/home-white.svg) no-repeat 50% 50% transparent;
+					background-size: 1.25rem;
+					width: $menu-size;
+					min-width: $menu-size;
+					.no-svg & {
+						background-image: url(#{$path__image}/global/navigation/home-white.png);	
+					}
+					span {
+						text-indent: -1000em;
+						position: absolute;
+					}
+				}
+				&:hover {
+					background-color: initial;
+				}
+			}
+		}
+	}
+	.book-end {
+		display: none;
+	}
+}  
+
+   	
+#menu {
+	background-color: $colour__warm-grey--70;
+	color: $colour__white;
+	z-index: 1000;
+	> row {
+		border-left: 1px solid $colour__black--90;
+	}
+	.menu-search {
+		display: none;
+		> div {
+			background: url(#{$path__image}/global/navigation/search-white.svg)  no-repeat 50% 50% transparent;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/navigation/search-white.png);
+			}
+			background-size: 1.5em;
+			position: relative;
+			width: $menu-size;
+			height: $menu-size;
+			&:hover, &:active {
+				cursor: pointer;
+				div {
+					transition: all ease-in 0.25s;
+					height: 3.05em;
+					border-width: 1px;
+					form {
+						overflow: visible;
+						height: auto;
+					}
+				}
+			}
+			div {
+				transition: all ease-in 0.25s;
+				display: block;
+				width: 19.2em;
+				position: absolute;
+				top: $menu-size;
+				right: 0;
+				height: 0;
+				background: $colour__white;	
+				overflow: hidden;
+				form {
+					height: 0;
+					overflow: hidden;
+				}
+				input {
+					width: 100%;
+					padding: 0em 1em;
+					border-bottom-left-radius: $settings__border-radius;
+					height: 3em;
+				}
+				button {
+					background-color: $colour__cool-grey;
+					text-transform: uppercase;
+					color: $colour__black--70;
+					@include settings__border-radius;
+					position: absolute;
+					right: 0;
+					top: 0;
+					line-height: initial;
+					padding: 0.9em 1em;
+					min-height: 2.8em;
+					max-height: 2.8em;
+					margin-top: 0.08em;
+					margin-right: 0.15em;				
+				}
+			}
+			span {
+				display: none;
+			}
+		}
+	}
+	&.fixed {
+		.menu-home {
+			width: $menu-size;
+			left: -2.4rem;
+			a {
+				background-image: url(#{$path__image}/global/logo__icaew--economia-crop.svg);
+				background-repeat: no-repeat;
+				background-position: bottom left;
+				background-color: transparent;
+				background-size: initial;
+				opacity: 1;
+				width:  $menu-size;
+			}
+		}
+		.menu-search {
+			display: block;
+			float: right;
+		}
+	}
+	// .medium-menu {
+	// 	display: none;
+	// }
+}
+
+body.f-topbar-fixed {
+	padding-top: 0em;
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+    #mega-menu {
+		display: inherit;
+		z-index: 1000;
+		margin: 0;
+		position: relative;
+		@include flexbox;
+    	> li.has-dropdown{
+	        position: static;
+	        > .dropdown{
+	            @include grid-row();
+	            max-width: #{lower-bound($large-range)};
+				border-bottom-left-radius: $settings__border-radius;
+				border-bottom-right-radius: $settings__border-radius;
+	            > li.has-dropdown{
+	                @include grid-column(3);
+	                min-width: auto;
+	                .dropdown{
+	                    @include grid-row(collapse);
+	                    position: static;
+	                    visibility: inherit;
+	                    top: auto !important;
+	                    left: auto !important;
+	                    padding: 0;
+	                    min-width: auto;
+	                    li{
+	                        @include grid-column(12);
+	                         min-width: auto;
+	                    }
+	                }
+	            }
+	            .dropdown-inner {
+	            	transition: all ease-in 0.3s;
+	            	height: 0;
+	            	ul {
+	            		li {
+	            			&:hover {
+	            				background-color: $colour__black--80;
+	            				& > a {
+	            					display:inline-block;
+	            					float: left;
+	            					&:hover {
+	            						text-decoration: underline;
+	            					}
+	            				}
+	            			}
+	            			&.has-dropdown:hover {	            			
+	            				background: url(#{$path__image}/global/link__chevron--white.svg) $colour__black--80 no-repeat 98% 50%;
+	            				background-size: 0.5em;
+	            				text-decoration: none;
+	            			}
+	            		}
+	            		li.has-dropdown:active, 
+	            		li.has-dropdown.is-active {
+	            			background: url(#{$path__image}/global/arrows/chevron-right-blue.svg) $colour__black--80 no-repeat 98% 50%;
+	            			background-size: 0.5em;
+							.no-svg & {
+								background: url(#{$path__image}/global/arrows/chevron-right-blue.png) $colour__black--80 no-repeat 98% 50%;
+							}
+	            		}
+	            	}
+	            }
+	        }
+	    }
+
+		> li {
+			max-width: 13%;
+			> a {
+				height: $menu-size;
+				min-width: $menu-size;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				padding: 0 1rem;
+				color: $colour__black--70;
+				line-height: 1.1em;
+				font-size: 0.8rem;
+				@include font__sans-serif--bold--uppercase;	
+			}
+			&:hover, &.is-active {
+				background-color: $colour__black--30;
+				border-top-left-radius: $settings__border-radius;
+				border-top-right-radius: $settings__border-radius;
+				text-decoration: none;	
+				@include effect__transition;
+			}
+			&.menu-home:hover {
+				background-color: transparent;
+				.fixed & {
+					background-color: $colour__black--30;
+				}
+			}
+		}
+
+		.promo {
+			.hot-topics {
+				@include flexbox;
+				@include flex-wrap(wrap);
+				@include justify-content(flex-start);
+				.cta-link.gamma.over-ride {
+					@include cta-styles;
+					@include cta-colour__gamma;
+					.no-flexbox & {
+						display: inline-block;
+						float: left;
+					}
+				}
+			}
+		}
+		.menu-search form {
+			padding: 0;
+		}
+		.menu-primary-link,
+		.menu-secondary-link {
+			@include font__sans-serif--bold--uppercase;
+			font-size: 1rem;
+			display: block;
+			width: 100%;
+			margin-bottom: 0;
+			float: left;
+		}
+		.menu-secondary-link {
+			max-height: 2.25rem!important;  // Specificity hell
+			height: 2.25rem;
+			padding-top: 0.35rem!important;  // Specificity hell
+		}
+		&[id="mega-menu"] .menu-primary-link.menu-primary-link {  // Specificity hacks
+			width: 95%;
+			padding-top: 0.35rem;
+			padding-bottom: 0.35rem;
+		}
+		.fixed {
+			padding-right: 1.2rem;
+		}
+
+		> li {
+			max-width: initial;
+			> a {
+				padding: 0 1rem;
+			}
+		}
+		> .menu-primary.is-active {
+			> .dropdown {
+				left: 0;
+				right: 0;
+				max-width: none!important;
+			}
+			&:nth-of-type(-n+2) > .dropdown {
+				left: 0;
+			}
+			&:last-child > .dropdown {
+				left: initial;
+				right: 0;
+			}
+		}
+		> .menu-search {
+			display: block;
+			width: 0;
+			min-width: 0;
+			transition: all ease-in 0.25s;
+			> div {
+				width: 0;
+				background-size: 0;
+				transition: all ease-in 0.25s;
+			}
+		}
+		.fixed & {
+			padding-right: 1.2rem;
+			> .menu-search {
+				width: 3.5rem;
+				min-width: 3.5rem;
+				transition: all ease-in 0.5s;
+				border-right: none;
+				> div {
+					width: 3.5rem;
+					background-size: 1.5em; 
+					transition: all ease-in 0.5s;
+					z-index: 1001;
+				}
+			}
+		}
+
+    }
+	.no-js #menu {
+		display: block;
+		.title-area {
+			display: none;
+		}
+		.top-bar-section {
+			> ul > li {
+				> a {
+					display: table-cell;
+					vertical-align: middle;
+					max-width: 12em;
+					height: $menu-size;
+					max-height: $menu-size;
+					overflow: hidden;
+					line-height: inherit;
+					@include font__sans-serif--bold--uppercase;
+				}
+				
+			}
+			> ul > .has-dropdown > a {
+				&:after {
+					top: 2em;
+				}				
+			}
+			.has-dropdown a {
+				padding-right: 2.2em !important; // Foundation !important override
+			}	
+		}
+	}
+	#menu-spacer {
+		height: 0;
+		width: 100%;
+	}
+
+	.touch #mega-menu .menu-search {
+		// Temporarily hide sticky nav menu search from touch devices
+		display: none;
+	}
+}
+
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	%medium-menu-button {
+		position: absolute;
+		top: 0;
+		width: 3.35em;
+		height: 3.35em;
+		border-left: 1px solid $colour__warm-grey--50;	
+		&:hover {
+			background-color: $colour__black--80;
+		}
+		a {
+			width: 3.35em;
+			height: 3.35em;
+			display: block;					
+		}			
+	}
+
+	#menu-spacer {
+		height: inherit;
+	}
+	.top-bar {
+		.name {
+			height: 2.5em;
+		}
+		.toggle-topbar {
+			a {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	#mega-menu {
+		display: none;
+	}
+
+	#menu {
+		margin-bottom: 0;
+		border-bottom: none;
+		background-color: $colour__warm-grey--70;
+		.medium-menu {
+			display: block;
+		}
+		.default-menu {
+			height: $menu-size;
+			.title-area {
+				position: absolute;
+				width: 100%;
+				list-style: none;
+				margin-left: 0;	
+			}
+			.top-menu-section {
+				display: none;
+			}
+			.menu-icon {
+				position: absolute;
+			}
+			.search {				
+				@extend %medium-menu-button;
+				right: 3.35em;
+			}
+			li a {
+				border: none;
+			}
+		}
+		nav {
+			height: $menu-size;
+			.top-bar-section {
+				> * {
+					background-color: $colour__black--70;
+				}
+				ul {
+					background-color: $colour__black--70;
+					clear: both;
+					padding-left: 0;
+					li {
+						border-bottom: 1px solid $colour__black--90;
+						a {
+							padding: 1.1rem 1rem 0.9rem;
+						}
+						&.has-dropdown > a {
+							background-image: url(#{$path__image}/global/link__chevron--white.svg);
+							background-repeat: no-repeat;
+							background-position: 97% 50%;
+							text-decoration: none;
+							&:hover {
+								background-color: $colour__black--90;
+								text-decoration: underline;
+							}
+							background-size: 0.6em;
+							&:after {
+								border: none;
+							}						
+						}
+						&.has-dropdown {
+							ul {
+								li {
+									&:hover {
+										background-color: $colour__black--90;
+									}
+									&.title {
+										h5 {
+											margin-top: 0;
+											border: none;
+											padding-top: 0;
+											font-size: 0.8rem;
+											background: $colour__black--80;
+											a {
+												padding-left: 2.6em;
+												background: url(#{$path__image}/global/arrows/chevron-left-white.svg) no-repeat 2% 50%;
+												.no-svg & {
+													background-image: url(#{$path__image}/global/arrows/chevron-left-white.png);
+												}
+												background-size: 0.6em;
+											}
+										}
+									}
+								}
+								li.back {
+									border-bottom: 1px solid $colour__black--30;
+									a {
+										background-color: $colour__black--80;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.expanded { 
+				height: auto;
+			}
+			.title-area {			
+				display: block;
+				height: $menu-size;
+				overflow: hidden;
+				padding-left: 0;
+				.name {
+					a {
+						display: block;
+						width: 9em;
+						height: 3.25em;
+						// margin-left: 1em;
+						background: url(#{$path__image}/global/logo__icaew--medium.svg) no-repeat left bottom transparent;
+					}
+				}
+				span {
+					display: none;
+					.no-svg & {
+						display: inline-block;
+					}
+				}
+			}
+			.toggle-topbar {
+	    		a.on {
+					background-color: $colour__black--70;
+	    		}
+			}
+			.menu-icon {
+				@extend %medium-menu-button;
+				right: 0;
+				margin-top: 0;
+				a {						
+					background: url(#{$path__image}/global/navigation/burger-nav-white.svg) no-repeat 50% 50% transparent;
+					.no-svg & {
+						background-image: url(#{$path__image}/global/navigation/burger-nav-white.png);
+					}
+					background-size: 1.375em;
+				}
+			}
+			.search {
+				@extend %medium-menu-button;
+				right: 3.35em;
+				a {
+					background: url(#{$path__image}/global/navigation/search-white.svg) no-repeat 50% 50% transparent;
+					.no-svg & {
+						background-image: url(#{$path__image}/global/navigation/search-white.png);
+					}
+					background-size: 1.375em;						
+				}			
+				.nav-search > div {
+					background: none;
+					display: none;
+				}
+			}
+			.account {
+				@extend %medium-menu-button;
+				right: 6.7em;
+				a {
+					background: url(#{$path__image}/global/navigation/user.svg) no-repeat 50% 50% transparent;
+					.no-svg & {
+						background-image: url(#{$path__image}/global/navigation/user.png);
+					}
+					background-size: 1.375em;
+				}
+			}
+			.log-out {
+				@extend %medium-menu-button;
+				right: 6.7em;
+				background: url(#{$path__image}/global/navigation/user-log-out.svg) no-repeat 50% 50% transparent;
+				.no-svg & {
+					background-image: url(#{$path__image}/global/navigation/user-log-out.png);
+				}
+				background-size: 1.7em;
+			}
+			.nav-search {
+				form {
+					padding-top: 0;
+					padding-bottom: rem-calc(20);
+					input {
+						margin-bottom: 0;
+					}
+				}
+			}
+			.top-bar-section {
+				> ul > li {
+					a {
+						@include font__sans-serif;
+						font-size: 0.9rem;
+						color: $colour__white;
+						&.parent-link {
+							@include font__sans-serif--bold--uppercase;
+						}
+					}
+					> a {
+						@include font__sans-serif--bold--uppercase;
+					}
+				}
+				> ul > li.menu-home {
+	 	        	transition: all ease-in 0.4s;
+				}
+				.has-dropown > a:after {
+					background: url(#{$path__image}/arrow-right-desktop.png) $colour__cool-grey--30/* was teal-light */ no-repeat 90% 50%;
+					background-size: contain;
+					border: none;
+				}
+				.header-search {
+					padding: 1em;
+					div {
+						position: relative
+					}
+					input {
+						width: 95%;
+						height: 3em;
+						border-top-left-radius: $settings__border-radius;
+						border-bottom-left-radius: $settings__border-radius;
+						font-size: 1.3rem;
+					}
+					& button {
+						margin-top: 0.1em;
+						margin-right: 0.08em;
+					}
+				}
+				.header-buttons {
+					padding: 1em;
+					.button {
+						width: 100%;
+					}
+				}
+	    		&.hide  {
+		    		display: none;
+		    		visibility: hidden;
+		    	}
+		    	&.show {
+		    		display: block;
+		    		visibility: visible;
+		    	}
+		    	.nav-search {
+					> div {
+						background-color: $colour__black--70;
+						position: relative;
+						padding: 1rem 8.5rem 1rem 1rem;
+					}
+					input {
+						margin-bottom: 0;
+					}
+					button {
+						@include cta-styles(default, default, "alpha");
+						margin: 0;
+						position: absolute;
+						top: 1rem;
+						right: 1rem;
+						bottom: 0;
+						width: 6.5rem;
+						height: $menu-size;
+						padding: 0;
+						font-size: 1.15rem;
+					}
+				}
+				h1 {
+					@include font__sans-serif--bold--uppercase;
+					font-size: 0.8rem;
+					padding: 1.1rem 1rem 0.9rem;
+					margin: 0;
+					border-bottom: 1px solid $colour__black--30;
+					color: $colour__white;
+				}
+			}
+			.button {
+				font-size: 1rem;
+				padding-top: 1em;
+				padding-bottom: 1em;
+			}
+		}
+	}
+	.no-js {
+		#menu {
+			nav {
+				position: relative;
+				.title-area {
+					li a {
+						border: none;
+					}				
+					.menu-icon {
+						position: absolute;
+					}
+				}
+			}
+			.top-menu-section {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+.js #mega-menu > li .dropdown .dropdown-inner {
+	height: 0;
+	overflow: hidden;
+	transition: all ease-in 0.5s;
+}
+
+.js #mega-menu > li.is-active .dropdown .dropdown-inner {
+	height: 34em;
+	transition: all ease-in 0.5s;
+}
+
+#mega-menu {
+	a {
+		display: block;
+		padding: 1em;
+	}
+	> li {
+		.dropdown {
+			position:absolute;
+			left:-5000em;
+			z-index: 1000;
+			.menu-secondary > a {
+				padding-right: 1.6em;
+				display: block;
+				width: 100%;
+			}
+			.dropdown-inner {
+				transition: all ease-in 0.3s;
+				height: 0;
+				margin-left: 1.2em;
+				margin-right: 1.2em;
+				overflow: hidden;
+				position: relative;
+				padding: 1em;
+				background-color: $colour__black--70;
+				@include effect__box-shadow;
+				a {
+					color: $colour__cool-grey;
+					text-align: left;
+					padding: 0.25em 0.5em;
+					overflow: hidden;
+					&.is-active {
+						text-decoration: underline;						
+						color: $colour__cool-grey--50;
+					}
+					&.catch-all {
+						position: absolute;
+						bottom: 1em;
+						left: 1em;
+						width: 30.15%;
+						min-height: 2.55em;
+						padding: 0.5em 1em;
+						background-color: $colour__black--80;
+						@include settings__border-radius;
+						border: 1px solid $colour__black--80;
+						z-index: 1000;
+						&:hover {
+							background-color: $colour__black--80;
+						}
+					}
+				}
+				li {
+					border: 1px solid transparent;
+					.level-three {
+						width: 43em;
+						margin-left: 19.9em;
+						z-index: 1;
+						position: absolute;
+						display: none;
+						visibility: hidden;
+						box-sizing: border-box;
+						> ul {
+							width: 100%;
+							height: 32em;
+							overflow: hidden;
+							margin-top: 1em;
+							background-color: $colour__black--80;
+							@include settings__border-radius;
+							border: 1px solid $colour__black--80;
+							li {
+                                &.is-active {
+									background: none;
+								}
+								a {
+									padding: 0.45em 1em 0.2em 1em;
+								}
+							}
+						}
+						a.catch-all {
+							position: absolute;
+							bottom: 1em;
+							left: 0;
+							width: 50%;
+							min-height: 2.55em;
+							padding: 0.5em 1em;
+							background-color: $colour__black--80;
+							@include settings__border-radius;
+							z-index: 1000;
+							&:hover {
+								background-color: $colour__black--80;
+							}
+						}
+					}
+					&.has-dropdown {
+						background: url(#{$path__image}/global/arrows/chevron-right-teal-light-hover.svg) no-repeat 98% 50%;
+            			background-size: 0.5em;
+						&.is-active {
+							border-right-color: transparent;
+							border-top-right-radius: 0;
+							border-bottom-right-radius: 0;	
+							background: url(#{$path__image}/global/arrows/chevron-right-blue.svg) $colour__black--80 no-repeat 98% 50%;
+	            			background-size: 0.5em;
+							.no-svg & {
+								background: url(#{$path__image}/global/arrows/chevron-right-blue.png) $colour__black--80 no-repeat 98% 50%;
+							}
+						}
+					}
+					&.is-active {
+						@include settings__border-radius;
+						border: 1px solid $colour__black--80;
+						z-index: 10;
+						background-color: $colour__black--80;
+						&.section-link-holder {
+							border-color: transparent;
+							background-color: transparent;
+							.promo-inner {
+								@include flexbox;
+								padding: 1em;
+							}
+
+						}
+						.no-svg & {
+							background: $colour__black--80;
+						}
+						a {
+							color: $colour__white;
+						}
+						.level-three {
+							display: block;
+							visibility: visible;
+							ul li {
+								overflow: hidden;
+								display: block;
+								position: relative;
+								a {
+									padding: 0.25em 1em;
+									line-height: 1.5;
+									max-height: 2.13em;
+									color: $colour__cool-grey;
+									display: -webkit-box;
+									-webkit-line-clamp: 1;
+									-webkit-box-orient: vertical;
+									&:hover {
+										color: $colour__white;
+										text-decoration: underline;
+									}
+								}
+							}							
+						}					
+					}					
+				}
+			}
+		}
+	}
+	li.is-active .dropdown {
+		transition-delay: .25s;
+		left: 0;
+	}
+	li {
+		background-color: inherit;
+		float:left;
+		list-style: none;
+		padding: 0;
+
+		li {
+			float: left;
+			clear: left;
+			width: 20em;
+			div {
+				top: 0;
+				float: left;
+				ul {
+					float: left;
+					top: 0;
+					li {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	ul {
+		margin: 0;
+		padding-left: 0;
+	}
+	.level-three {
+		li {
+			width: 21.35em;
+		}
+	}
+
+
+	> li .dropdown .dropdown-inner li .level-three {
+		margin-left: 33.8%;
+		width: 63.6%;
+		ul, li {
+			width: 100%;
+		}
+	}
+	li li {
+		width: 35%;
+	}
+	.hot-topics-panel h2 {
+		color: white;
+		text-align: left;
+		padding-top: 0;
+		margin-top: 0;
+	}
+	.promo {
+		padding: 1em 0 0 0;
+		max-width: 100%;
+	}
+	.mega-promo {
+		@include flexbox;
+		@include flex-direction(column);
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		& .stretch-panel {
+			@include flex-grow(1);
+			h1 {
+				margin-top: 0;
+				color: $colour__white;
+				text-align: left;
+			}
+			p {
+				padding-left: 0;
+				padding-right: 0;
+				color: $colour__cool-grey--50;
+			}
+		}
+	}
+
+}
+
+// Start Mega menu varied depth temporary patch for IA project
+
+.js #mega-menu > li.is-active.show20 .dropdown .dropdown-inner {
+	height: 48em;
+}
+
+#mega-menu > li.show20 .dropdown .dropdown-inner li .level-three ul {
+	height: 46em;
+}
+#mega-menu .show20 .promo .promo-inner {
+	
+	height:46em;
+}
+
+.js #mega-menu > li.is-active.show19 .dropdown .dropdown-inner {
+	height: 46em;
+}
+
+#mega-menu > li.show19 .dropdown .dropdown-inner li .level-three ul {
+	height: 44em;
+}
+#mega-menu .show19 .promo .promo-inner {
+	
+	height:44em;
+}
+
+.js #mega-menu > li.is-active.show18 .dropdown .dropdown-inner {
+	height: 44em;
+}
+
+#mega-menu > li.show18 .dropdown .dropdown-inner li .level-three ul {
+	height: 42em;
+}
+#mega-menu .show18 .promo .promo-inner {
+	
+	height:42em;
+}
+.js #mega-menu > li.is-active.show17 .dropdown .dropdown-inner {
+	height: 42em;
+}
+
+#mega-menu > li.show17 .dropdown .dropdown-inner li .level-three ul {
+	height: 40em;
+}
+
+#mega-menu .show17 .promo .promo-inner {
+	
+	height:40em;
+}
+.js #mega-menu > li.is-active.show16 .dropdown .dropdown-inner {
+	height: 40em;
+}
+
+
+#mega-menu > li.show16 .dropdown .dropdown-inner li .level-three ul {
+	height: 38em;
+}
+#mega-menu .show16 .promo .promo-inner {
+	
+	height:38em;
+}
+
+.js #mega-menu > li.is-active.show15 .dropdown .dropdown-inner {
+	height: 38em;
+}
+
+#mega-menu > li.show15 .dropdown .dropdown-inner li .level-three ul {
+	height: 36em;
+}
+#mega-menu .show15 .promo .promo-inner {
+	
+	height:36em;
+}
+
+.js #mega-menu > li.is-active.show14 .dropdown .dropdown-inner {
+	height: 36em;
+}
+
+#mega-menu > li.show14 .dropdown .dropdown-inner li .level-three ul {
+	height: 34em;
+}
+#mega-menu .show14 .promo .promo-inner {
+	height:34em;
+}
+// End Mega menu varied depth temporary patch for IA project
+
+
+
+
+
+.top-bar .toggle-topbar.menu-icon {
+	padding-left: 0;
+}
+
+
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	%small-menu-button {
+		position:absolute;
+		top: 0;
+		width: 3.3em;
+		height: 3.3em;
+		border-left: 1px solid $colour__black--80;	
+		&:hover {
+			background-color: $colour__red;
+		}
+		a {
+			width: 3.3em;
+			height: 3.3em;
+			display: block;					
+		}			
+	}
+
+	#menu nav {
+		.top-bar-section ul {
+			li.has-dropdown {
+				ul.dropdown {
+					li.title {
+						background: none;
+						h5 {
+							a {
+								padding-left: 2.3em;
+								background: url(#{$path__image}/global/arrows/chevron-left-white.svg) no-repeat 3% 50%;
+								background-size: 0.6em;
+								&:hover {
+									background-color: $colour__black--80;
+								}
+							}
+						}
+					}
+					li.back {
+						border-bottom: 1px solid $colour__white;
+						a {
+							background-color: $colour__black--80;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.top-bar {
+		.name {
+			height: $menu-size;
+		}
+	}
+
+	#menu nav .top-bar-section .nav-search {
+		input, button {
+			margin-bottom: 0;
+		}
+		button {
+			bottom: auto;
+			top: 1rem;
+			height: 3rem;
+			width: 5.6rem;
+			font-size: 1rem;
+		}
+		> div {
+			padding-bottom: 1.5rem;
+			padding-right: 7.5rem;
+		}
+	}
+}
+
+// TWEAKPOINT FOR GUTTER ECONOMIA
+@media only screen and (min-width:96.0625em) {
+	#mega-menu,
+	#menu .default-menu .top-menu-section > ul { 
+		> .menu-home,
+		.menu-home {
+			position: absolute;
+			left: -11.25rem;
+			bottom: 0;
+			width: 12rem;
+			height: 8rem;
+			max-width: 12rem;
+			a {
+				background-image: url(#{$path__image}/global/logo__icaew--economia-crop.svg);
+				background-repeat: no-repeat;
+				background-position: 100% 100%;
+				background-color: transparent;
+				background-size: contain;
+				position: absolute;
+				bottom: 0;
+				width: 12rem;
+				height: 8rem;
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// TWEAKPOINT FOR 961 - 1536
+@media only screen and (min-width:60.0625em) and (max-width:96em) {
+
+	#mega-menu > .menu-home {
+		position: absolute;
+		left: 0;
+		width: 0;
+		transition: all ease-in 0.4s;
+		a {
+			width: 0;
+			opacity: 0;
+			transition: all ease-in 0.4s;
+			span {
+				display: none;
+			}
+		}
+	}
+}
+
+// TWEAKPOINT FOR 961 - 1344
+@media only screen and (min-width:60.0625em) and (max-width:84em) {
+	.fixed #mega-menu {
+		padding-left: 0;
+		padding-right: 0;
+		.menu-home {
+			left: 0;
+			position: initial;
+		}
+	}
+}
+
+// TWEAKPOINT FOR 961 - 1023
+@media only screen and (min-width:60.0625em) and (max-width:63.9375em) {
+	#mega-menu {
+		li li {
+			width: 19em;
+		}
+		> li .dropdown .dropdown-inner li .level-three {
+			width: 39.5em;
+			margin-left: 18.9em;
+		}
+		> li.has-dropdown > .dropdown {
+			width: 60em;
+		}
+		> li > a {
+			font-size: 0.85rem;
+		}
+	}
+}

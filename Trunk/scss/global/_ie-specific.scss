@@ -1,0 +1,938 @@
+//////////////////////////// IE SPECIFIC GLOBAL STYLES ////////////////////////////
+
+
+///////////////////////////////////////////// IE 9 and lower /////////////////////////////////////////////
+.oldie, .ie9 {
+	textarea, input {
+		&.placeholder {
+			color: $colour__cool-grey;
+		}
+	}
+
+	select::-ms-expand {
+		display:none;
+	}
+
+	select {
+		padding-right: 28px;
+	}
+}
+
+
+///////////////////////////////////////////// IE 8 and lower /////////////////////////////////////////////
+.oldie {
+	body {
+		min-width: 66em;
+	}
+
+	.large-12 {
+		width: 100%;
+		float: left;
+		// margin-left: 16.66%;
+	}
+
+	.large-8 {
+		width: 65%;
+		float: left;
+		// margin-left: 16.66%;
+	}
+
+	.large-6 {
+		width: 50%;
+		float: left;
+		// margin-left: 16.66%;
+	}
+
+	.large-4 {
+		width: 30%;
+		float: left;
+		// margin-left: 16.66%;
+	}
+
+	.large-2 {
+		width: 16.66%;
+		float: left;
+		min-height: 1em;
+	}
+
+	.primary .large-6 {
+		margin: 0 1.5em 0 0 !important;
+		width: 45.3%;
+		&.large-float-left {
+			float: left;
+			margin-left: 0 !important;
+		}
+		&.large-float-right {
+			float: right;
+			margin-right: 0 !important;
+		}
+	}
+
+	.primary + .row-divider > SPAN {
+		top: 0;
+	}
+
+	.secondary {
+		padding: 2.5em 0 1em 0;
+	}
+
+	.tertiary {
+		padding-top: 2.5em;		
+	}
+
+	.primary .large-8 .row {
+		clear: both;
+	}
+
+	h1 {
+		margin-top: 0.9em;
+	}
+
+	.top-menu-section UL LI {
+		&:last-child {
+			ul {
+				left: -22.75em !important;
+				right: 0;
+			}
+		}
+		&:nth-last-child(2) {
+			ul {
+				left: -16.68em  !important;
+				right: 0;
+			}
+		}
+		&.has-dropdown.slvzr-hover UL.dropdown {
+			top: 3.25em;
+			left: 0;
+			LI A {
+			 	height: 2em;
+			 	line-height: 2.1em;
+			}
+		}
+	}
+
+	#mega-menu {
+		> li {
+			&:hover {
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$colour__red}', endColorstr='#{$colour__red}',GradientType=0 ); /* IE6-9 */
+			}
+		}
+	}
+
+	#main-banner {
+		background: none $colour__cool-grey--50;
+		.advert {
+			display: inline-block !important;
+		}
+		.button {
+			height: 1.5em;
+			margin: 0 1em 1em 0;
+		}
+		header, #header {
+			.show-for-large-up.row {
+				display: inline-block !important;
+				.large-5 {
+					width: 40%;
+				}
+				.large-7 {
+					width: 60%;
+				}
+				.header-search {
+					INPUT {
+						height: 2em !important;
+					}
+					BUTTON {
+						right: -1px;
+						height: 3.1em;
+					}
+				}
+				
+			}
+		}
+		INPUT[type='text'] {
+			padding: 1.025em 2em 0 3.25em !important;
+			min-width: 16em;
+		}		
+	}
+
+	#circular-G{
+		background: url(../img/circular-g.gif) 50% 50% no-repeat transparent;
+	}
+
+	&.no-js {
+		.noscript-warning .browser-warning {
+			display: block;
+			visibility: visible;
+			clear:both;	
+			margin-top: 15px;
+		}
+		#menu, #circular-G  {
+			display: none;
+		}
+	}
+
+	#menu {
+		height: 3.5em;
+		.title-area {
+			display:none;
+		}
+		a {
+			font-size: 0.95em;
+		}
+		.row {
+			z-index: 3000;
+		}
+		nav section UL li + li + li + li + li + li UL {
+			left: -16.65em;
+		}
+		nav section UL li + li + li + li + li + li + li UL {
+			left: -22.8em;
+		}
+	}
+
+	.default-menu UL {
+		padding: 0;
+		margin-top: 0;
+		LI {
+			&.menu-home a {
+					width: 1.5em;
+			}
+			&.has-dropdown > a {
+				padding-right: 1.8em;
+				SPAN {
+					right: 0.5em;
+					top: 1.2em;
+				}
+			}
+			A {
+				display: inline-block;
+				height: 2.5em;
+				padding: 0.5em 1em;
+				line-height: 2.6em;
+
+			}
+		}
+	}
+
+	// ------------------------------------------------------ Breadcrumb Bar START ------------------------------------------------------ //
+
+	#breadcrumb-bar {
+		margin-bottom: 0;		
+		display: block;
+		border-bottom: 1px solid $colour__cool-grey--50;
+		padding: 0.5em 0;
+	}
+
+	.smart-responsive-breadcrumbs UL {
+		margin-top: 0.5em;
+	}
+
+	// ------------------------------------------------------ Breadcrumb Bar END ------------------------------------------------------ //
+
+	// ------------------------------------------------------ Progress Tracker START ------------------------------------------------------ //
+
+	#breadcrumb-bar {
+		.penfold.progress-tracker {
+			height: 3.5em;
+			// height: 2.5em;
+			// margin: 1em 0; 
+			ul {
+				height: 2.5em;
+				width: 100%;
+				margin: 0.5em 0 1em 0;
+				display: inline-block !important;
+				li {
+					height: 2.5em;
+					display: inline-block !important;
+					margin: 0 0.5em 0 0;
+					width: 7%;
+					&:hover {
+						width: auto;
+					}
+					a {
+						font-size: 0.8em;
+						padding: 0.75em;
+						overflow: hidden;
+						width: 40px;
+					}
+					&.current {
+						width: auto;
+						a {
+							overflow: visible;
+							width: auto;
+						}
+					}
+					&.last {
+						width: auto;
+					}
+					&.unavailable, &.previous {
+						&:hover {
+							width: auto;
+							a:hover {
+								width: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// ------------------------------------------------------ Progress Tracker END ------------------------------------------------------ //
+
+	footer, #footer {
+		margin-top: 4em;
+		.row {
+			padding: 1.5em 0 1em 0;
+			.topline {
+				> DIV {
+					height: 3em;
+					padding: 0.8em 0;
+					position: relative;
+				}
+				.links {
+					display: inline-block;
+					width: 100%;
+					height: 1em;
+					.logo {
+						height: 8.5em;
+						width: 3.5em;
+						float: left;
+						margin-right: 1.2em;
+					}
+					UL.inline-list {
+						width: 70%;
+						float: left;
+						LI {
+							border-left: 1px solid #333333;
+							margin: 0.4em 0;
+							padding: 0 0.65em;
+							a {
+								font-size: 0.825em;
+							}				
+						}
+					}
+					UL.social { 
+						float: right;
+						// float: left;
+						width: 20%;
+						LI {
+							float: right;
+							a {
+								width: 2.3em;
+								height: 2.3em;
+							}
+						}			
+					}
+				}
+				.contacts {
+					UL.inline-list {
+						float: left;
+						display: block;
+						border-top: 1px solid $colour__black--90;
+						margin-left: 4.5em;
+						width: 92.5%;
+						li {
+							margin: 0.4em 0;
+							padding: 0 0.65em 0 0;
+							a {
+								padding: 0 0 0 2.8em;
+								line-height: 2.5em;
+								font-size: 0.825em;
+							}
+						}
+					}
+					.c-a-w {
+						display: inline-block;
+						width: 6em;
+						height: 3.9em;
+						background-size: contain;
+						position: absolute;
+						right: 0;
+						top: 1.1em;
+						padding: 0;
+					}
+				}
+			}
+		}
+		.baseline {
+			.row {
+				padding: 0;
+				a {
+					font-size: 0.8em;
+				}
+			} 			
+		}
+	}
+
+	form, form fieldset {
+		margin-bottom: 1.6em;
+		label span {
+			font-size: 1.8em;
+			line-height: 1em;
+		}
+		.cta-link {
+			min-width: auto;
+		}
+		.large-6 {
+			margin: 0;
+		}
+	}
+
+	form, form fieldset {
+		.large-6 {
+			margin: 0 !important;
+		}
+	}
+
+	.button-row {
+		.cta-link {
+			max-width: none;
+			padding: 1em;
+		}
+		form {
+			width: inherit !important;
+			float: left;
+		}
+	}
+
+	span.postfix, label.postfix {
+		height: 2.2em;
+		padding-top: 0.65em;
+	}
+
+	input, textarea, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+	input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"],
+	input[type="time"], input[type="url"] {
+		min-width: 95%;
+		width: 95%;
+		border: 1px solid $colour__cool-grey--50;
+		background-color: $colour__white;
+		.search-library & {
+			width: 80%;
+			min-width: 80%;
+			max-width: 80%;
+		}		
+		&.input-search { 
+			min-width: 90%;
+			width: 90%;
+		}
+	}
+
+	select {
+		min-width: 100%;
+		width: 100%;
+		background: inherit;
+		border: 1px solid $colour__cool-grey--50;
+		&:hover, &:visited, &:active {
+			background-image: none;
+			background-color: inherit;
+		}
+		&:focus {
+			background-image: none;
+			background-color: inherit;
+		} 
+	}
+
+	input[type="search"] {
+		min-width: 90.5%;
+		width: 90.5%;
+		padding-left: 3.25em !important;
+	}
+	input[type="radio"], input[type="checkbox"] {
+		border: none;
+		min-width: 1.3em;
+		width: 1.3em;
+		margin-top: 0;
+		& + LABEL {
+			margin-left: 0;
+		}
+	}
+
+	input[type="submit"], .large-6 input[type="submit"], .large-4 input[type="submit"] {
+		width: auto;
+		min-width: auto;
+		border: none;
+	}
+
+	.large-6, .large-4 {
+		input, textarea, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+		input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"],
+		input[type="time"], input[type="url"] {
+			min-width: 87.5%;
+			width: 87.5%;
+			border: 1px solid $colour__cool-grey--50;
+		}
+		select {
+			min-width: 100%;
+			width: 100%;
+			border: 1px solid $colour__cool-grey--50;
+		}
+		input[type="search"] {
+			min-width: 100%;
+			width: 100%;
+			padding-left: 3.25em !important;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			border: none;
+			min-width: 1.3em;
+			width: 1.3em;
+		}
+	}
+
+	label {
+		margin-bottom: 0.8em;
+		margin-top: 0.8em;
+		// table & {
+		// 	margin-top: 0;
+		// }
+	}
+
+	table label {
+		margin-top: 0;
+	}
+
+	textarea {
+		min-width: 95%;
+		max-width: 95%;
+	}
+
+	.large-6 textarea, .large-4 textarea {
+		min-width: 89%;
+	}
+
+	.secondary .large-6 textarea {
+		min-width: 93%;
+	}
+
+	form .row .large-6 {
+		width: 100%;
+	}
+
+	aside.secondary form .large-4, aside.tertiary form .large-4, aside.secondary form .large-6, aside.tertiary form .large-6 {
+		width: 100%;
+		margin: 0;
+	}		
+
+	.row {
+		max-width: 1024px;
+	}
+
+	#breadcrumb-bar {
+		.large-11 {
+			width: 90%;
+		}
+		.large-1 {
+			width: 10%;
+		}
+	}		
+
+	.site-links A {
+		font-size: 0.8em;
+		margin-left: 1.5em;
+	}
+
+	section.top-menu-section UL li.has-dropdown:hover UL {
+		top: 3.3em;
+		LI {
+			height: 2.5em;
+			a {
+				line-height: 1.5em;
+				height: 2.5em;
+			}			
+		}
+	}
+
+	.small-9 {
+		width: 80%;
+	}
+
+	.small-3 {
+		width: 20%;
+	}
+
+	small {
+		font-size: 0.8em;
+	}
+
+	h3 {
+		margin-bottom: 1em;
+	}
+
+	a.cta-link.gamma, a.cta-link.gamma.over-ride {
+		font-size: 0.8em;
+	}
+
+	.cta-link {
+		max-width: none;
+	}
+
+}
+
+///////////////////////////////////////////// IE 8 Only /////////////////////////////////////////////
+.ie8 {
+
+	#menu nav section ul li + li + li + li + li + li ul {
+		left: -14.55em;
+	}
+
+	#menu nav section ul li + li + li + li + li + li + li ul {
+		left: -20.7em;
+	}
+
+	.top-menu-section ul li {
+		&:last-child {
+			ul {
+				left: -20.68em !important;
+				right: 0;
+			}
+		}
+		&:nth-last-child(2) {
+			ul {
+				left: -14.46em  !important;
+				right: 0;
+			}
+		}
+		&.has-dropdown.slvzr-hover ul.dropdown {
+			top: 3.25em;
+			li a {
+			 	height: 3em;
+			 	line-height: 2.1em;
+			}
+		}
+	}
+
+	.over-ride.gamma.cta-link {
+		height: 3.4em;
+	}	
+
+	.default-menu ul {
+		padding: 0;
+		left: 0.05em;
+		li {
+			&.menu-home a {
+				width: 3.5em;
+			}
+			a {
+				height: 3.5em;
+			}
+		}
+		li.has-dropdown > a {
+			font-size: 0.95em;
+			span {
+				width: 0.8em;
+				height: 0.8em;
+				right: 0.6em;
+				top: 1.4em;
+			}
+		}
+	}
+
+	.button-row {
+		.cta-link {
+			padding: 1em 2.5em;
+		}
+		form {
+			width: auto !important;
+			float: none;
+		}
+	}
+
+	#main-banner {
+		.advert {
+			display: inherit !important;
+		}
+		.button {
+			height: 2.85em;
+			padding: 0.65em 0;
+		}
+		header, #header {
+			.show-for-large-up.row {
+				display: block !important;
+				// nav ul {
+				// 	margin: 1em 0;	
+				// }
+				.header-search {
+					INPUT {
+						height: 2.8em !important;
+					}
+					BUTTON {
+						padding: 0.5em 0.8em;
+						height: 2.65em;
+						right: 0.05em;
+					}
+				}
+			}			
+			INPUT[type='text'] {
+				width: 16em;
+				padding: 0.7em 0 0 3.25em !important;
+				min-width: 16em;
+			}
+		}
+		.account-details {
+			.button {
+				padding: 0.65em 1em;
+			}
+			ul {
+				top: 2.85em;
+				right: 1em;
+			}
+			.slvzr-first-child:hover {
+				// @extend %gradient-black-vertical;
+				cursor: default;
+			}
+		}
+	}	
+
+	// ------------------------------------------------------ Breadcrumb Bar START ------------------------------------------------------ //
+
+	.smart-responsive-breadcrumbs UL {
+		margin-top: 0;
+	}
+
+	// ------------------------------------------------------ Breadcrumb Bar END ------------------------------------------------------ //
+
+	// ------------------------------------------------------ Progress Tracker START ------------------------------------------------------ //
+
+	#breadcrumb-bar {
+		.penfold.progress-tracker {
+			height: 3em;
+			ul {
+				margin: 0;
+				width: 100%;
+				min-width: 100%;
+				li {
+					margin: 0 1.5em 0 0 !important; // to over-ride corporate styles
+					height: auto;
+					width: 6.35%;
+					&:after {
+						border-width: 1.2em 0 1.2em 1.2em; 
+						right: -1.15em; 
+						display: inline-block;
+					}
+					&:before { 
+						border-width: 1.2em 0 1.2em 1.2em; 
+						left: -1.1em;
+					}
+					&.current {
+						margin-top: 0; 
+						&:after {
+							border-width: 1.2em 0 1.2em 1.2em;
+							display: inline-block; 
+						}
+						&:before { 
+							border-width: 1.2em 0 1.2em 1.2em; 
+						}
+						a {
+							width: auto;
+						}			
+					}
+					&.unavailable {
+						margin-top: 0; 
+					}
+					&.slvzr-first-of-type, &.slvzr-last-of-type {
+						margin-top: 0;
+						&:after, &:before {
+							display: inline-block;
+						}
+					}
+					a {
+						margin-right: 0;
+						width: auto;
+						line-height: 0;
+					}
+					// &.previous {
+					// 	&:after {
+					// 		// border-width: 1.2em 0 1.2em 1.2em;
+					// 		right: 1.2em;
+					// 	}	
+					// }
+				}			
+			}
+			.srb-icon {
+				display: none !important;
+			}
+			.srb-toggle-wrapper {
+				display: none
+			}
+		}
+	}	
+
+	// ------------------------------------------------------ Progress Tracker END ------------------------------------------------------ //	
+
+	footer, #footer {
+		.row {
+			.topline {
+				> DIV {
+					height: 4em;
+				}
+				.links {
+					height: 3em;
+				}
+			}
+		}
+		.social { 
+			float: right;
+		}
+		.row .contacts .c-a-w {
+			top: 3.6em;
+		}
+	}
+
+	span.postfix, label.postfix {
+		height: 3.35em;
+	}
+
+	input, select, textarea, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+	input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"],
+	input[type="time"], input[type="url"] {
+		min-width: 95%;
+		width: 95%;
+	}
+
+	input[type="search"] {
+		min-width: 90%;
+		width: 90%;
+		padding-left: 3.25em;
+	}
+
+	input[type="radio"], input[type="checkbox"] {
+		border: none;
+		min-width: auto;
+		height: 1.3em;
+	}
+
+	.large-6, .large-4 {
+		input, select, textarea, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+		input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"],
+		input[type="time"], input[type="url"] {
+			min-width: 87.5%;
+			width: 87.5%;
+		}
+		input[type="search"] {
+			min-width: 75%;
+			width: 75%;
+			padding-left: 3.25em;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			border: none;
+			min-width: auto;
+			width: 1em;
+		}
+	}
+
+	.secondary .large-6, .secondary .large-4 {
+		input, select, textarea, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+		input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"],
+		input[type="time"], input[type="url"] {
+			min-width: 90%;
+			width: 100%;
+		}
+		input[type="search"] {
+			min-width: 75%;
+			width: 100%;
+			padding-left: 3.25em;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			border: none;
+			min-width: auto;
+			width: 1em;
+		}
+	}		
+
+}
+
+///////////////////////////////////////////// IE 9 Only /////////////////////////////////////////////
+.ie9 {
+
+	section.top-menu-section UL li.has-dropdown:hover UL {
+		top: 3.57em;
+	}
+
+	.top-menu-section UL LI {
+		&:last-child {
+			ul {
+				left: -16.45em !important;
+				right: 0;
+			}
+		}
+		&:nth-last-child(2) {
+			ul {
+				left: -10.225em  !important;
+				right: 0;
+			}
+		}
+	}
+
+	select {
+		background: $colour__white !important;
+	}
+
+    #mega-menu {
+		> li {
+			&:hover {
+				background-color: $colour__red;
+				// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$colour__red}', endColorstr='#{$colour__red}',GradientType=0 ); /* IE6-9 */
+			}
+		}
+	}
+
+	#main-banner {
+		.account-details {
+			ul li:first-child {
+				// @extend %gradient-black-vertical;
+				cursor: default;
+			}
+		}
+	}
+
+	// ------------------------------------------------------ Progress Tracker START ------------------------------------------------------ //
+
+	#breadcrumb-bar .progress-tracker.penfold {
+		width: 100%;
+	}
+
+	// ------------------------------------------------------ Progress Tracker END ------------------------------------------------------ //
+
+	select {
+		background: none;
+		&:hover, &:visited, &:active {
+			background: none;
+		}
+		&:focus {
+			background: none;
+		} 
+	}
+
+	span.postfix, label.postfix {
+		height: 3.25em;
+		padding-top: 0.75em;
+	}	
+
+	input, select, textarea, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+	input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"],
+	input[type="time"], input[type="url"] {
+		border: 0;
+	}
+
+	input[type="submit"] {
+		border: 1px solid $colour__white;
+	}
+
+	table input {
+		border: none;
+	}
+
+	#mega-menu > li .dropdown .dropdown-inner li {
+		border-left: none;
+		&:hover {
+			border-left: none;
+		}
+	}
+
+	#mega-menu > li:hover {
+		background-color: $colour__red;
+	}
+
+}
+

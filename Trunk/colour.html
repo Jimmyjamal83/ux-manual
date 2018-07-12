@@ -1,0 +1,324 @@
+<!DOCTYPE html><!--[if IEMobile 7 ]> <html dir="ltr" lang="en"class="no-js iem7"> <![endif]--><!--[if lt IE 8 ]> <html dir="ltr" lang="en" class="no-js oldie"> <![endif]--><!--[if IE 8 ]>    <html dir="ltr" lang="en" class="no-js ie8 oldie"> <![endif]--><!--[if IE 9 ]>    <html dir="ltr" lang="en" class="no-js ie9"> <![endif]--><!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en"><!--<![endif]--><!-- // HEAD ELEMENT START // -->
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ICAEW Dev</title>
+        <link rel="stylesheet" href="production/css/design-manual.css" />      <!-- // Change to application specific filename -->
+
+        <!--[if lte IE 9 ]>
+            <link rel="stylesheet" href="production/css/design-manual-ie.css" />
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>       
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+            <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+        <![endif]-->
+
+        <!-- <script src="production/js/design-manual/frameworks.js"></script> -->
+       <!--  <script type="text/javascript">
+            var cdnPath = '../';
+        </script> -->
+
+    </head>
+<!-- // HEAD ELEMENT END // --><body id="design-manual"><!-- <div class="stack"><div class="col-lg-12"> --><!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////<div class="placeholder"> elements and their decendents will be replaced by content blocks (toolkit blocks)///////////////////////////////////////////////////////////////////////////////////////////////////////// --><main class="design-manual stack" id="colours"><div class="col-lg-3 col-md-12 col-xs-12 nav-col"><div class="wrapper container-fluid"><div class="stack"><div class="col-lg-offset-5 col-lg-7 col-md-12 col-xs-12"><div id="logo" class="test"><a href="home.html"></a></div>
+
+<!-- <script>
+	$(document).ready(function () {
+		alert("hi im here");
+		if (Modernizr.mq('only screen and (max-width: 960px)') && $('#footer').length ) {
+			$(window).scroll(function (event) {
+				var scroll = $(window).scrollTop();
+				$('.side-menu').toggleClass('stop',
+					scroll >= $('#footer').offset().top - window.innerHeight
+				);
+			});
+			$(window).scroll();
+		}
+	});
+</script> -->	
+
+
+<section class="side-menu component">
+	<!-- <input id="test" name="refine" type="checkbox"> -->
+	<div class="modal-medium-down modal-large-disabled">
+		<h2 class="title"><a class="trigger fill" href="#openModal"></a></h2>
+
+		<!-- Modal container -->  
+		<div id="openModal" href="#" class="modal-surround">
+			<a href="#" title="surround-close"></a>
+			<article class="modal-content">
+			    <a href="#" title="close" class="close-icon"></a>
+			    
+					
+					<ul class="accordion group-lvl0">
+						<li>
+							<input id="sidemenu_principles" name="level0" type="radio">
+							<label for="sidemenu_principles">01. Principles</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="principles.html">UX Principles</a>
+									<a href="principles.html#design-principles">Design Principles</a>
+									<!-- <a href="principles.html#design-rules-of-play">Design Rules of Play</a> -->
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input id="sidemenu_design-system" name="level0" type="radio">
+							<label for="sidemenu_design-system">02. Design System</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<input id="sidemenu_layout&grid" name="level1" type="radio" disabled>
+									<label for="sidemenu_layout&grid">Layout &amp; Grid</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="tbc.html#columns">Columns</a>
+											<a href="tbc.html#baseline-grid">Baseline Grid</a>
+											<a href="tbc.html#gutters">Gutters</a>
+											<a href="tbc.html#spacing">Spacing</a>
+											<a href="tbc.html#scaling">Scaling</a>
+										</li>
+									</ul>	
+								</li>
+								<!-- <li>
+									<a href="tbc.html">Logo</a>	
+								</li> -->
+								<li class="reveal-content">
+									<input id="sidemenu_typography&links" name="level1" type="radio">
+									<label for="sidemenu_typography&links">Typography &amp; Links</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="typography.html">Fonts</a>
+											<a href="typography.html#sudo-styles">Sudo Styles</a>
+											<a href="typography.html#links">Links</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2d" name="level1" type="radio" disabled>
+									<label for="c-ac-2d">Iconography</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="tbc.html#icons">Icons</a>
+											<a href="tbc.html#roundel-icons">Roundel Icons</a>
+											<a href="tbc.html#icon-sizes">Icon Sizes</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2e" name="level1" type="radio">
+									<label for="c-ac-2e">Colours</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="colour.html">Accessibility</a>
+											<a href="colour.html#background-colours">Background Colours</a>
+											<a href="colour.html#brand-red">Brand Red</a>
+											<a href="colour.html#text-colour">Text Colour</a>
+											<a href="colour.html#feedback-colours">Feedback Colours</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2f" name="level1" type="radio" disabled>
+									<label for="c-ac-2f">Images</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="colour.html#sizes">Sizes</a>
+											<a href="tbc.html#file-types">File types</a>
+										</li>
+									</ul>	
+								</li>
+								<!-- <li>
+									<a href="tbc.html">Tables</a>	
+								</li> -->
+							</ul>
+						</li>
+
+						
+						<li>
+							<input id="c-ac-3" name="level0" type="radio" disabled>
+							<label for="c-ac-3">03. Content</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="c-ac-4" name="level0" type="radio" disabled>
+							<label for="c-ac-4">04. Assets</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="browser_support" name="level0" type="radio">
+							<label for="browser_support">05. Browser Support</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="https://www.icaew.com/icaew-policies/website-accessibility" target="blank">Website accessibility</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input id="c-ac-6" name="level0" type="radio" disabled>
+							<label for="c-ac-6">06. Strategy</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="c-ac-7" name="level0" type="radio" disabled>
+							<label for="c-ac-7">07. Resources</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="support" name="level0" type="radio">
+							<label for="support">08. Support</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="support.html">Contact</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+						
+					
+				
+			</article>
+		</div>
+	</div> 
+</section></div></div></div></div><div class="col-lg-9 col-md-12 col-xs-12 content-area"><div class="wrapper container-fluid"><div class="stack"><div class="content-col col-lg-9 col-md-12 col-xs-12"><h1>Colours</h1><section class="component"><p class="stand-first">Our palette of colours has been carefully considered to be distinctive to ICAEW. They are muted in tone to ensure our red dividers always stand out clearly when overlayed. Refer to our corporate style guide for further documentation of their correct usage.</p></section><section id="accessibility" class="component"><h2>Accessibility</h2><p>Think about how your colour choices can affect legibility and accessibility — read WCAG 2.0 specifications on using colour. To be legible, text and background colours must have a minimum contrast between them.</p></section><section id="background-colours" class="component"><h2>Background Colours</h2><p>Our palette of background colours has been carefully considered to be distinctive to ICAEW. They are muted in tone to ensure our red dividers always stand out clearly when used over them. These colours are used as backgrounds for primary imagery, illustrative typography and graphic illustration. Charts and graphs use these colours. Large illustrative feature typography may appear in these colours if appropriate. They can be used at <strong>50%</strong> and <strong>25%</strong> tint.</p><div class="stack component"><!-- brand green --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__green"><span></span></div><div class="tint background-colour__green--50"></div><div class="tint background-colour__green--110"></div><div class="tint info"><p class="variable">$green</p><p class="rgb">rgb (197, 203, 164)</p><p class="hex">#C5CBA4</p></div></article></div><!-- brand blue --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__blue"><span></span></div><div class="tint background-colour__blue--50"></div><div class="tint background-colour__blue--110"></div><div class="tint info"><p class="variable">$blue</p><p class="rgb">rgb (177, 206, 222)</p><p class="hex">#B1CEDE</p></div></article></div><!-- brand teal --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__teal"><span></span></div><div class="tint background-colour__teal--50"></div><div class="tint background-colour__teal--110"></div><div class="tint info"><p class="variable">$teal</p><p class="rgb">rgb (166, 200, 196)</p><p class="hex">#A6C8C4</p></div></article></div><!-- brand purple --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__purple"><span></span></div><div class="tint background-colour__purple--50"></div><div class="tint background-colour__purple--110"></div><div class="tint info"><p class="variable">$purple</p><p class="rgb">rgb (220, 199, 211)</p><p class="hex">#DCC7D3</p></div></article></div><!-- </div> --><!-- <div class="stack component"> --><!-- brand orange --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__orange"><span></span></div><div class="tint background-colour__orange--50"></div><div class="tint background-colour__orange--110"></div><div class="tint info"><p class="variable">$orange</p><p class="rgb">rgb (240, 192, 157)</p><p class="hex">#F0C09D</p></div></article></div><!-- brand yellow --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__yellow"><span></span></div><div class="tint background-colour__yellow--50"></div><div class="tint background-colour__yellow--110"></div><div class="tint info"><p class="variable">$yellow</p><p class="rgb">rgb (255, 231, 182)</p><p class="hex">#FFE7B6</p></div></article></div><!-- brand warm grey --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__warm-grey"><span></span></div><div class="tint background-colour__warm-grey--70"></div><div class="tint background-colour__warm-grey--50"></div><div class="tint info"><p class="variable">$warm grey</p><p class="rgb">rgb (207, 199, 195)</p><p class="hex">#CFC7C3</p></div></article></div><!-- brand white --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__white"><span></span></div><div class="tint background-colour__white"></div><div class="tint background-colour__white"></div><div class="tint info"><p class="variable">$white</p><p class="rgb">rgb (255, 255, 255)</p><p class="hex">#FFFFFF</p></div></article></div></div></section><section id="brand-red" class="component"><h2>Brand Red</h2><p>Red is the colour of our primary Call To Action. Red can also be used very sparingly for small details within designs. Red tints are not allowed.</p><div class="stack component"><!-- brand red --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__red"><span></span></div><div class="tint background-colour__red--80"></div><div class="tint background-colour__red--50"></div><div class="tint info"><p class="variable">$red</p><p class="rgb">rgb (197, 203, 164)</p><p class="hex">#C5CBA4</p></div></article></div></div></section><section id="text-colour" class="component"><h2>Text Colour</h2><p>Black and white are used for type, text, graphic illustration and functional elements such as keylines. A 70% of black can be used.</p><div class="stack component"><!-- black --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__black"><span></span></div><div class="tint background-colour__black--80"></div><div class="tint background-colour__black--70"></div><div class="tint info"><p class="variable">$black</p><p class="rgb">rgb (0, 0, 0)</p><p class="hex">#000000</p></div></article></div><!-- brand white --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__white"><span></span></div><div class="tint background-colour__white"></div><div class="tint background-colour__white"></div><div class="tint info"><p class="variable">$white</p><p class="rgb">rgb (255, 255, 255)</p><p class="hex">#FFFFFF</p></div></article></div></div></section><section id="link-colour" class="component"><h2>Link Colour</h2><p>Black and white are used for type, text, graphic illustration and functional elements such as keylines. A 70% of black can be used.</p><div class="stack component"><!-- utility blue --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__utility-blue"><span></span></div><div class="tint background-colour__utility-blue--90"></div><div class="tint background-colour__utility-blue--80"></div><div class="tint info"><p class="variable">$utility blue</p><p class="rgb">rgb (33, 90, 142)</p><p class="hex">#215A8E</p></div></article></div><!-- nav blue --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__utility-blue--70"><span></span></div><div class="tint background-colour__utility-blue--50"></div><div class="tint background-colour__utility-blue--40"></div><div class="tint info"><p class="variable">$nav blue</p><p class="rgb">rgb (240, 192, 157)</p><p class="hex">#F0C09D</p></div></article></div></div></section><section id="button-colours" class="component"><h2>Button Colours</h2><p>Black and white are used for type, text, graphic illustration and functional elements such as keylines. A 70% of black can be used.</p><div class="stack component"><!-- primary --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__red"><span></span></div><div class="tint background-colour__red"></div><div class="tint background-colour__red"></div><div class="tint info"><p class="variable">$primary</p><p class="rgb">rgb (197, 203, 164)</p><p class="hex">#C5CBA4</p></div></article></div><!-- primary --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__blue--50"><span></span></div><div class="tint background-colour__blue--50"></div><div class="tint background-colour__blue--50"></div><div class="tint info"><p class="variable">$secondary</p><p class="rgb">rgb (216, 231, 239)</p><p class="hex">#D8E7EF</p></div></article></div><!-- tertiary --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__cool-grey--30"><span></span></div><div class="tint background-colour__cool-grey--30"></div><div class="tint background-colour__cool-grey--30"></div><div class="tint info"><p class="variable">$tertiary</p><p class="rgb">rgb (240, 240, 240)</p><p class="hex">#F0F0F0</p></div></article></div></section><section id="feedback-colours" class="component"><h2>Feedback Colours</h2><p>Additional feedback colours are used to draw attention to the user and differentiate the call to action away from the general brand palette. The feedback colours can be used at either <strong>100%</strong> or <strong>25%</strong> opacity.</p><div class="stack component"><!-- yay --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__yay"><span></span></div><div class="tint background-colour__yay"></div><div class="tint background-colour__yay"></div><div class="tint info"><p class="variable">$yay</p><p class="rgb">rgb (44, 145, 61)</p><p class="hex">#2C913D</p></div></article></div><!-- boo --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__boo"><span></span></div><div class="tint background-colour__boo"></div><div class="tint background-colour__boo"></div><div class="tint info"><p class="variable">$boo</p><p class="rgb">rgb (227, 0, 15)</p><p class="hex">#E3000F</p></div></article></div><!-- wait --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__wait"><span></span></div><div class="tint background-colour__wait"></div><div class="tint background-colour__wait"></div><div class="tint info"><p class="variable">$wait</p><p class="rgb">rgb (242, 219, 19)</p><p class="hex">#F2DB13</p></div></article></div><!-- okay --><div class="col-lg-3 col-md-3 col-xs-6"><article class="swatch"><div class="tint background-colour__okay"><span></span></div><div class="tint background-colour__okay"></div><div class="tint background-colour__okay"></div><div class="tint info"><p class="variable">$okay</p><p class="rgb">rgb (30, 107, 184)</p><p class="hex">#1E6BB8</p></div></article></div></section></section></div></div></div></div></main> <footer id="footer" class="site-footer stack" role="contentinfo">
+	<div class="col-xs-12 doorstop" id="doorstop">
+		<div class="wrapper container-fluid">
+
+			<a class="logo" href="http://icaew.com" title="Home"></a>
+
+
+			<div class="link-blocks">
+				<section>
+					<h1>About ICAEW</h1>
+					<ul>
+						<li><a href="#" title="">About us</a></li>
+						<li><a href="#" title="">Newsroom</a></li>
+						<li><a href="#" title="">Policy</a></li>
+						<li><a href="#" title="">Vacancies</a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Contact us</h1>
+					<ul>
+						<li><a href="#" title="">Contact us</a></li>
+						<li><a href="#" title="">Complaints</a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Events</h1>
+					<ul>
+						<li><a href="#" title="">All events</a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Library</h1>
+					<ul>
+						<li><a href="#" title="">Guide to services</a></li>
+						<li><a href="#" title="">Library search</a></li>
+						<li><a href="#" title="">Company research</a></li>
+						<li><a href="#" title="">Historical resources</a></li>
+						<li><a href="#" title="">Library collection</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Legal</h1>
+					<ul>
+						<li><a href="#" title="">Terms and conditions</a></li>
+						<li><a href="#" title="">Privacy policy</a></li>
+						<li><a href="#" title="">Cookies</a></li>
+						<li><a href="#" title=""></a></li>
+						<li><a href="#" title=""></a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="con-soc">
+
+				<div class="contacts">
+					<ul class="inline-list">
+						<li><a class="phone" href="tel:+441908248250">+44 (0)1908 248 250</a></li>
+						<li><a class="email" href="mailto:contactus@icaew.com">contactus@icaew.com</a></li>
+						<li><a class="skype" href="skype:icaew_uk?call">icaew_uk</a></li>
+						<li><a class="live-chat" href="#">Live chat</a></li>
+					</ul>				
+				</div>
+
+				<ul class="social">
+					<li><a href="http://twitter.com/icaew" title="Follow us on Twitter" class="twitter-banner"></a></li>
+					<li><a href="http://www.linkedin.com/groups?gid=51468" title="Join our LinkedIn group" class="linkedin-banner"></a></li>
+					<li><a href="http://www.facebook.com/icaew" title="Like us on Facebook" class="facebook-banner"></a></li>
+					<li><a href="http://apps.icaew.com/index.cfm/route/174647/icaew_ga/en/my_ICAEW/Preference_Centre" title="Set your mailing preferences" class="email-banner"></a></li>
+					<li><a href="/home/rss" title="Subscribe to our RSS feeds" class="rss-banner"></a></li>
+				</ul>
+
+				<div class="c-a-w-block">
+					<a class="c-a-w" href="http://www.charteredaccountantsworldwide.com/" title="Chartered Accountants Worldwide"></a>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div class="col-xs-12 baseline">
+		<div class="wrapper container-fluid">
+			<!-- <div class="columns"> -->
+				<a class="copyright" title="Copyright" href="http://www.icaew.com/en/icaew-terms-and-conditions">&copy; ICAEW 2018</a>
+				<a class="strapline" title="About us" href="http://www.icaew.com/en/about-icaew">Building a world of strong economies</a>
+			<!-- </div> -->
+		</div>	
+	</div>
+</footer>
+<!-- // JS BODY END START // -->
+
+    <!--[if lt IE 9]>
+    	<script src="js/library/rem.min.js"></script>
+	<![endif]-->
+	<script src="production/js/design-manual/application.js"></script> 
+	
+<!-- // JS BODY END END // --><!-- </div></div> --></body></html>

@@ -1,0 +1,16 @@
+
+.callout {
+  margin: 1rem 0;
+  padding: 1.5rem 1rem;
+  border-left: 0.5rem solid $colour__blue--50;
+  // @include settings__border-radius;
+  position: relative;
+  background: $colour__white;
+  // Respect the padding, fool.
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

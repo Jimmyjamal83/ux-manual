@@ -1,0 +1,582 @@
+/////// PATHS ///////
+
+$path__image : "../img";
+$path__font: '../../production/fonts';
+
+
+
+/////// FONTS ///////
+
+$font__sans-serif: "AvenirNextLTW02-Regular", sans-serif;
+// $font__sans-serif--italic: "AvenirNextLTW02-Italic", sans-serif;
+$font__sans-serif--demi: "AvenirNextLTW02-Demi", sans-serif;
+$font__sans-serif--demi--italic: "AvenirNextLTW02-DemiIta", sans-serif;
+$font__sans-serif--bold: "AvenirNextLTW02-Bold", sans-serif; 
+// $font__sans-serif--bold--italic: "AvenirNextLTW02-BoldIta", sans-serif;
+
+$font__serif--italic: "Benton Modern Display It", serif;
+$font__serif: "Benton Modern Display", serif;
+
+
+// Font mixins for the varied weights applied to Benton
+@mixin font__serif--italic {
+	font-family: $font__serif--italic;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 1.1;
+	// text-transform: none;
+}
+
+@mixin font__serif {
+	font-family: $font__serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.1;
+	// text-transform: none;
+}
+
+// Font mixins for the varied weights applied to Avenir
+@mixin font__sans-serif {
+	font-family: $font__sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.4;
+	// text-transform: none;
+}
+
+// @mixin font__sans-serif--italic {
+// 	@include font__sans-serif;
+// 	font-style: normal;
+// 	text-transform: none;
+// }
+
+@mixin font__sans-serif--demi {
+	font-family: $font__sans-serif--demi;
+	font-style: normal;
+	font-weight: normal;
+	// text-transform: none;
+}
+
+@mixin font__sans-serif--demi--italic {
+	// @include font__sans-serif--demi;
+	font-family: $font__sans-serif--demi--italic;
+	font-style: normal;
+	text-transform: none;
+	// -webkit-font-smoothing: antialiased;
+	// text-shadow: 0px 0px 0px;
+}
+
+@mixin font__sans-serif--bold {
+	font-family: $font__sans-serif--bold;
+	font-style: normal;  
+	font-weight: normal;
+	// text-transform: none;
+	// -webkit-font-smoothing: antialiased;
+	// text-shadow: 0px 0px 0px;
+}
+
+@mixin font__sans-serif--bold--uppercase {
+	@include font__sans-serif--bold;
+	text-transform: uppercase;
+	letter-spacing: 0.04rem;
+}
+@mixin font__sans-serif--demi--uppercase {
+	@include font__sans-serif--demi;
+	text-transform: uppercase;
+	letter-spacing: 0.04rem;
+}
+
+@mixin font__sans-serif--bold--italic {
+	@include font__sans-serif--bold;
+	font-style: italic;
+}
+
+
+
+// Font imports
+
+
+@font-face {
+	font-family: "Benton Modern Display";
+	font-weight: 900;
+	font-style: normal;
+	src: url("#{$path__font}/benton/Benton_Modern-Display_Black.eot");
+	src: local('BentonModDisp-Black'), 
+	url("#{$path__font}/benton/Benton_Modern-Display_Black.eot/?#iefix") format("embedded-opentype"),
+	url("#{$path__font}/benton/Benton_Modern-Display_Black.woff2") format("woff2"),
+	url("#{$path__font}/benton/Benton_Modern-Display_Black.woff") format("woff"),
+	url("#{$path__font}/benton/Benton_Modern-Display_Black.ttf") format('truetype');
+}
+	
+@font-face {
+	font-family: "Benton Modern Display It";
+	font-weight: 900;
+	font-style: normal;
+	src: url("#{$path__font}/benton/Benton_Modern-Display_Black_Italic.eot");
+	src: local('BentonModDisp-BlackItalic'), 
+	url("#{$path__font}/benton/Benton_Modern-Display_Black_Italic.eot/?#iefix") format("embedded-opentype"),
+	url("#{$path__font}/benton/Benton_Modern-Display_Black_Italic.woff2") format("woff2"),
+	url("#{$path__font}/benton/Benton_Modern-Display_Black_Italic.woff") format("woff"),
+	url("#{$path__font}/benton/Benton_Modern-Display_Black_Italic.ttf") format('truetype');
+}
+
+// MONOTYPE FONTS - AVENIR NEXT
+@font-face{
+    font-family:"AvenirNextLTW02-Regular";
+    src:url("#{$path__font}/Avenir-Next/7a1b7ae7-5c29-481f-83ac-652e932c5509.eot?#iefix");
+    src:local("AvenirNext-Regular"),
+    	url("#{$path__font}/Avenir-Next/7a1b7ae7-5c29-481f-83ac-652e932c5509.eot?#iefix") format("eot"),
+    	url("#{$path__font}/Avenir-Next/bb590848-4012-46d6-a8d5-48c9893a176b.woff2") format("woff2"),
+    	url("#{$path__font}/Avenir-Next/3a42a252-67ff-4186-88cf-762f56719ca1.woff") format("woff"),
+    	url("#{$path__font}/Avenir-Next/dbc39ae3-2636-4653-a23e-8938bce2cf51.ttf") format("truetype"),
+    	url("#{$path__font}/Avenir-Next/8e46b6cb-85f2-4400-a9d8-7cbd8ed30dd8.svg#8e46b6cb-85f2-4400-a9d8-7cbd8ed30dd8") format("svg");
+}
+// @font-face{
+//     font-family:"AvenirNextLTW02-Italic";
+//     src:url("#{$path__font}/Avenir-Next/23504b23-e297-4c91-ba98-deceeb0af199.eot?#iefix");
+//     src:local("AvenirNext-Italic"),
+//     	url("#{$path__font}/Avenir-Next/23504b23-e297-4c91-ba98-deceeb0af199.eot?#iefix") format("eot"),
+//     	url("#{$path__font}/Avenir-Next/4849e0c5-f7d0-45b0-8d87-80102f27934d.woff2") format("woff2"),
+//     	url("#{$path__font}/Avenir-Next/5191e4ce-5fdb-4b0b-b00f-b04e333dbf3e.woff") format("woff"),
+//     	url("#{$path__font}/Avenir-Next/7a4d3756-ab14-401a-b693-5980ada400da.ttf") format("truetype"),
+//     	url("#{$path__font}/Avenir-Next/533c52aa-9e8d-4596-a1bc-562d2acb72df.svg#533c52aa-9e8d-4596-a1bc-562d2acb72df") format("svg");
+// }
+
+// SAFARI HACK TO PRIORITISE SVG TO OVERCOME RENDERING ISSUE OF DEMI ON LEGACY iOS
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+	  font-family: "AvenirNextLTW02-Demi";
+	  src: url("#{$path__font}/Avenir-Next/e2f89b55-2e17-4aa3-af72-75a82c51008b.svg#e2f89b55-2e17-4aa3-af72-75a82c51008b") format("svg");
+  }
+}
+@font-face{
+    font-family:"AvenirNextLTW02-Demi";
+    src:url("#{$path__font}/Avenir-Next/ec8454e9-1900-4157-902d-1667f20b503e.eot?#iefix");
+    src:local("AvenirNext-DemiBold"),
+    	url("#{$path__font}/Avenir-Next/ec8454e9-1900-4157-902d-1667f20b503e.eot?#iefix") format("eot"),
+    	url("#{$path__font}/Avenir-Next/b86524f7-009e-4c08-a266-c43f1fb68e5e.woff2") format("woff2"),
+    	url("#{$path__font}/Avenir-Next/e40e6ac5-f2bd-4d65-baf7-b1e397d7fdcc.woff") format("woff"),
+    	url("#{$path__font}/Avenir-Next/34772968-ece3-42e3-9f0d-f5724cafa60e.ttf") format("truetype"),
+    	url("#{$path__font}/Avenir-Next/e2f89b55-2e17-4aa3-af72-75a82c51008b.svg#e2f89b55-2e17-4aa3-af72-75a82c51008b") format("svg");
+}
+@font-face{
+    font-family:"AvenirNextLTW02-DemiIta";
+    src:url("#{$path__font}/Avenir-Next/3b17673c-8a91-4f47-8d33-07a3839c19f9.eot?#iefix");
+    src:local("AvenirNext-DemiBoldItalic"),
+    	url("#{$path__font}/Avenir-Next/3b17673c-8a91-4f47-8d33-07a3839c19f9.eot?#iefix") format("eot"),
+    	url("#{$path__font}/Avenir-Next/28309896-e153-4ab8-9f8e-fdcf25d5725c.woff2") format("woff2"),
+    	url("#{$path__font}/Avenir-Next/556718be-97d3-4321-a0f3-37d1e3be0788.woff") format("woff"),
+    	url("#{$path__font}/Avenir-Next/93c3227c-0aad-4ebb-8462-854fed96e9dc.ttf") format("truetype"),
+    	url("#{$path__font}/Avenir-Next/432d6c36-ab6a-4864-b76c-57748b886257.svg#432d6c36-ab6a-4864-b76c-57748b886257") format("svg");
+}
+@font-face{
+    font-family:"AvenirNextLTW02-Bold";
+    src:url("#{$path__font}/Avenir-Next/51d861aa-f9b4-4afb-a019-d7d155c21072.eot?#iefix");
+    src:local("AvenirNext-Bold"),
+    	url("#{$path__font}/Avenir-Next/51d861aa-f9b4-4afb-a019-d7d155c21072.eot?#iefix") format("eot"),
+    	url("#{$path__font}/Avenir-Next/b729a5ee-0221-40db-9a76-7b9e9b747f65.woff2") format("woff2"),
+    	url("#{$path__font}/Avenir-Next/51a56502-44d2-4d70-808f-fc822da45209.woff") format("woff"),
+    	url("#{$path__font}/Avenir-Next/11eb4d83-a3b4-4ab8-a47c-ef9173d239fc.ttf") format("truetype"),
+    	url("#{$path__font}/Avenir-Next/7258c0e3-4850-4db8-b45f-a8f81d1bf6ba.svg#7258c0e3-4850-4db8-b45f-a8f81d1bf6ba") format("svg");
+}
+// @font-face{
+//     font-family:"AvenirNextLTW02-BoldIta";
+//     src:url("#{$path__font}/Avenir-Next/f6cec96c-86fd-4167-81ad-d5a5f6edbb6a.eot?#iefix");
+//     src:local("AvenirNext-BoldItalic"),
+//     	url("#{$path__font}/Avenir-Next/f6cec96c-86fd-4167-81ad-d5a5f6edbb6a.eot?#iefix") format("eot"),
+//     	url("#{$path__font}/Avenir-Next/6c8e4d74-4e32-4d54-9db3-5b7eca4ced59.woff2") format("woff2"),
+//     	url("#{$path__font}/Avenir-Next/55d48d50-2734-456d-998e-43d7bfe90ec2.woff") format("woff"),
+//     	url("#{$path__font}/Avenir-Next/7802d091-e32e-4283-bddd-a0aed8759768.ttf") format("truetype"),
+//     	url("#{$path__font}/Avenir-Next/452c8795-c102-4ba2-9559-ef226b81c315.svg#452c8795-c102-4ba2-9559-ef226b81c315") format("svg");
+// }
+
+
+// TEXT STYLES
+@mixin text-style__h1 {
+	@include font__serif;
+	font-size: $settings__font-size--h1;    
+	color: $colour__black;
+}
+@mixin text-style__h1--sub {
+	@include text-style__h1;
+	font-size: $settings__font-size--h1--sub;    
+}
+@mixin text-style__h2 {
+	@include font__serif--italic;
+	font-size: $settings__font-size--h2;
+	color: $colour__black;
+}
+@mixin text-style__h3 {
+	@include font__sans-serif--bold; //--uppercase;
+	font-size: $settings__font-size--h3;
+	color: $colour__black--80;
+}
+@mixin text-style__h4 {
+	@include font__sans-serif--bold; //--uppercase;
+	font-size: $settings__font-size--h4;
+	color: $colour__black--80;
+}
+@mixin text-style__h5 {
+	@include font__sans-serif--bold; //--uppercase;
+	font-size: $settings__font-size--h5;
+	color: $colour__black--80;
+}
+@mixin text-style__h6 {
+	@include font__sans-serif--bold--uppercase;
+	font-size: $settings__font-size--h6;
+	color: $colour__black--80;
+}
+@mixin text-style__stand-first {
+	@include font__sans-serif--demi;
+	font-size: $settings__font-size--stand-first;
+	color: $colour__black;
+}
+@mixin text-style__inline-link {
+	@include font__sans-serif--demi;
+	color: $link-colour__inline;
+	border-bottom: 1px dotted currentColor;
+	&:hover {
+		color: $link-colour__inline--hover;
+		border-bottom: 1px solid currentColor;
+		text-decoration: none;
+	}
+}
+@mixin text-style__title-link {
+	@include text-style__inline-link;
+	border-bottom-color: transparent;
+}
+@mixin text-style__annotation {
+	@include font__sans-serif;
+	font-size: $settings__font-size--annotation;    
+	color: $colour__black;
+	// over-ride the native demi style of none
+	text-transform: uppercase !important;
+	letter-spacing: 0.03rem;
+}
+@mixin text-style__annotation--header {
+	@include text-style__annotation;
+	@include font__sans-serif--demi;
+}
+
+/////// ============================== NEW BRAND COLOURS - START ============================== ///////
+
+
+/////// PASTEL BACKGROUND COLOURS ///////
+$colour__green--120: rgb(156, 166, 99); // #9CA663
+	.background-colour__green--120 {background-color: $colour__green--120 !important;}
+$colour__green--115: rgb(166, 175, 115); // #A6AF73
+	.background-colour__green--115 {background-color: $colour__green--115 !important;}
+$colour__green--110: rgb(176, 184, 132); // #B0B884
+	.background-colour__green--110 {background-color: $colour__green--110 !important;}
+$colour__green: rgb(197, 203, 164); // #C5CBA4
+	.background-colour__green {background-color: $colour__green !important;}
+$colour__green--50: rgb(226, 229, 210); // #E2E5D2
+	.background-colour__green--50 {background-color: $colour__green--50 !important;}
+
+
+
+$colour__teal--120: rgb(103, 161, 154); // #67A19A
+	.background-colour__teal--120 {background-color: $colour__teal--120 !important;}
+$colour__teal--115: rgb(119, 171, 165); // #77ABA5
+	.background-colour__teal--115 {background-color: $colour__teal--115 !important;}
+$colour__teal--110: rgb(134, 181, 175); // #86B5AF
+	.background-colour__teal--110 {background-color: $colour__teal--110 !important;}
+$colour__teal: rgb(166, 200, 196); // #A6C8C4
+	.background-colour__teal {background-color: $colour__teal !important;}
+$colour__teal--50: rgb(211, 228, 226); // #D3E4E2
+	.background-colour__teal--50 {background-color: $colour__teal--50 !important;}
+
+
+
+$colour__blue--120: rgb(105, 161, 192); // #69A1C0
+	.background-colour__blue--120 {background-color: $colour__blue--120 !important;}
+$colour__blue--115: rgb(123, 172, 199); // #7BACC7
+	.background-colour__blue--115 {background-color: $colour__blue--115 !important;}
+$colour__blue--110: rgb(141, 183, 207); // #8DB7CF
+	.background-colour__blue--110 {background-color: $colour__blue--110 !important;}
+$colour__blue: rgb(177, 206, 222); // #B1CEDE
+	.background-colour__blue {background-color: $colour__blue !important;}
+$colour__blue--50: rgb(216, 231, 239); // #D8E7EF
+	.background-colour__blue--50 {background-color: $colour__blue--50 !important;}
+
+
+
+$colour__purple--120: rgb(181, 136, 162); // #B588A2
+	.background-colour__purple--120 {background-color: $colour__purple--120 !important;}
+$colour__purple--115: rgb(191, 152, 174); // #BF98AE
+	.background-colour__purple--115 {background-color: $colour__purple--115 !important;}
+$colour__purple--110: rgb(200, 168, 186); // #C8A8BA
+	.background-colour__purple--110 {background-color: $colour__purple--110 !important;}
+$colour__purple: rgb(220, 199, 211); // #DCC7D3
+	.background-colour__purple {background-color: $colour__purple !important;}
+$colour__purple--50: rgb(238, 227, 233); // #EEE3E9
+	.background-colour__purple--50 {background-color: $colour__purple--50 !important;}
+
+
+
+$colour__orange--120: rgb(226, 135, 69); // #E28745
+	.background-colour__orange--120 {background-color: $colour__orange--120 !important;}
+$colour__orange--115: rgb(230, 149, 91); // #E6955B
+	.background-colour__orange--115 {background-color: $colour__orange--115 !important;}
+$colour__orange--110: rgb(233, 164, 113); // #E9A471
+	.background-colour__orange--110 {background-color: $colour__orange--110 !important;}
+$colour__orange: rgb(240, 192, 157); // #F0C09D
+	.background-colour__orange {background-color: $colour__orange !important;}
+$colour__orange--50: rgb(248, 223, 206); // #F8DFCE
+	.background-colour__orange--50 {background-color: $colour__orange--50 !important;}
+
+
+
+$colour__yellow--120: rgb(255, 197, 80); // #FFC550
+	.background-colour__yellow--120 {background-color: $colour__yellow--120 !important;}
+$colour__yellow--115: rgb(255, 206, 106); // #FFCE6A
+	.background-colour__yellow--115 {background-color: $colour__yellow--115 !important;}
+$colour__yellow--110: rgb(255, 214, 131); // #FFD683
+	.background-colour__yellow--110 {background-color: $colour__yellow--110 !important;}
+$colour__yellow: rgb(255, 231, 182); // #FFE7B6
+	.background-colour__yellow {background-color: $colour__yellow !important;}
+$colour__yellow--50: rgb(255, 242, 218); // #FFF2DA
+	.background-colour__yellow--50 {background-color: $colour__yellow--50 !important;}
+
+//// PASTEL SUPER LIGHT TINTS /////
+$colour__orange--20: rgb(252, 242, 235); // #FCF2EB
+$colour__orange--15: rgb(253, 245, 240); // #FDF5F0
+$colour__orange--12: rgb(253, 247, 243); // #FDF7F3
+$colour__orange--10: rgb(254, 249, 245); // #FEF9F5
+$colour__orange--5: rgb(254, 252, 250); // #FEFCFA
+$colour__yellow--20: rgb(255, 250, 240); // #FFFBF4
+$colour__yellow--15: rgb(255, 251, 244); // #FFFBF4
+$colour__yellow--10: rgb(255, 252, 248); // #FFFCF8
+$colour__yellow--5: rgb(255, 254, 251); // #FFFEFB
+
+
+//// UTILITY CUSTOMS ////
+$colour__utility-purple: rgb(176, 158, 168); // #B09EA8;
+
+$colour__utility-blue: rgb(33, 90, 142); //#215A8E;
+	.background-colour__utility-blue {background-color: $colour__utility-blue !important;}
+$colour__utility-blue--90: rgb(55, 107, 153); //#376B99; 
+	.background-colour__utility-blue--90 {background-color: $colour__utility-blue--90 !important;} 
+$colour__utility-blue--80: rgb(77, 123, 165); //#4D7BA5;
+	.background-colour__utility-blue--80 {background-color: $colour__utility-blue--80 !important;}
+$colour__utility-blue--70: rgb(100, 140, 176); //#648CB0;
+	.background-colour__utility-blue--70 {background-color: $colour__utility-blue--70 !important;}
+$colour__utility-blue--50: rgb(144, 173, 199); //#90ADC7;
+	.background-colour__utility-blue--50 {background-color: $colour__utility-blue--50 !important;}
+$colour__utility-blue--40: rgb(175, 196, 214); //#AFC4D6;
+	.background-colour__utility-blue--40 {background-color: $colour__utility-blue--40 !important;}
+
+
+
+//// GREY TINTS /////
+$colour__warm-grey: rgb(207, 199, 195); // #CFC7C3
+	.background-colour__warm-grey {background-color: $colour__warm-grey !important;}	
+$colour__warm-grey--70: rgb(214, 208, 205); // #D6D0CD
+	.background-colour__warm-grey--70 {background-color: $colour__warm-grey--70 !important;}	
+$colour__warm-grey--50: rgb(226, 222, 220); // #E2DEDC
+	.background-colour__warm-grey--50 {background-color: $colour__warm-grey--50 !important;}	
+$colour__warm-grey--30: rgb(238, 235, 234); // #EEEBEA
+$colour__warm-grey--20: rgb(243, 242, 241); // #F3F2F1
+	.background-colour__warm-grey--20 {background-color: $colour__warm-grey--20 !important;}	
+$colour__warm-grey--15: rgb(246, 245, 244); // #F6F5F4
+$colour__warm-grey--10: rgb(249, 248, 248); // #F9F8F8
+$colour__warm-grey--5: rgb(252, 252, 251); // #FCFCFB
+
+$colour__cool-grey: rgb(204, 204, 204); // #CCCCCC
+$colour__cool-grey--70: rgb(219, 219, 219); // #DBDBDB
+$colour__cool-grey--50: rgb(230, 230, 230); // #E6E6E6
+$colour__cool-grey--30: rgb(240, 240, 240); // #F0F0F0
+	.background-colour__cool-grey--30 {background-color: $colour__cool-grey--30 !important;}	
+$colour__cool-grey--20: rgb(245, 245, 245); // #F5F5F5
+$colour__cool-grey--10: rgb(250, 250, 250); // #FAFAFA
+
+/////// FUNCTIONAL COLOURS ///////
+$colour__red: rgb(227, 5, 19); // #e30513
+	.background-colour__red {background-color: $colour__red !important;}
+$colour__red--80: lighten($colour__red, 20%); // #FB535D
+	.background-colour__red--80 {background-color: $colour__red--80 !important;}
+$colour__red--50: lighten($colour__red, 50%); // #FFE8EA
+	.background-colour__red--50 {background-color: $colour__red--50 !important;}
+
+
+$colour__white: rgb(255, 255, 255); // #FFFFFF
+	.background-colour__white {background-color: $colour__white !important;}
+$colour__black: rgb(0, 0, 0); // #000000
+	.background-colour__black {background-color: $colour__black !important;}
+$colour__black--90: rgb(26, 26, 26); // #1A1A1A  ***note to brand
+$colour__black--80: rgb(51, 51, 51); // #333333  ***note to brand
+	.background-colour__black--80 {background-color: $colour__black--80 !important;}
+$colour__black--70: rgb(77, 77, 77); // #4D4D4D
+	.background-colour__black--70 {background-color: $colour__black--70 !important;}
+$colour__black--60: rgb(102, 102, 102); // #666666
+$colour__black--50: rgb(128, 128, 128); // #808080
+$colour__black--40: rgb(153, 153, 153); // #999999
+$colour__black--30: rgb(179, 179, 179); // #B3B3B3
+$colour__black--alpha-10: rgba(0, 0, 0, 0.1);
+
+
+/////// FEEDBACK COLOURS ///////
+$colour__yay: rgb(44, 145, 61); // #2C913D
+	.background-colour__yay {background-color: $colour__yay !important;}
+$colour__boo: rgb(227, 0, 15); // #E3000F
+	.background-colour__boo {background-color: $colour__boo !important;}
+$colour__wait: rgb(242, 219, 19); // #F2DB13
+	.background-colour__wait {background-color: $colour__wait !important;}
+$colour__okay: rgb(30, 107, 184); // #1E6BB8
+	.background-colour__okay {background-color: $colour__okay !important;}
+
+
+//  APPLIED COLOUR VARIABLES
+$link-colour__inline: $colour__utility-blue;
+$link-colour__inline--hover: $colour__utility-blue--80;
+$link-colour__block: $colour__utility-blue;
+$link-colour__block--hover: $colour__utility-blue--80;
+$link-colour__heading: $colour__utility-blue--80;
+$link-colour__heading--hover: $colour__utility-blue--70;
+
+
+$cta-colour__alpha: $colour__red;
+$cta-colour__alpha--hover: lighten($colour__red, 3%);
+$cta-colour__alpha--alternate: $colour__black--70;
+$cta-colour__alpha--alternate--hover: $colour__black--60;
+$cta-colour__beta: $colour__blue--50;
+$cta-colour__beta--hover: lighten($colour__blue--50, 3%);
+$cta-colour__gamma: $colour__cool-grey--30;
+$cta-colour__gamma--hover: lighten($colour__cool-grey--30, 3%);
+ 
+
+// Colour themes
+$menu-active-color : $colour__red;
+
+// Social Colors
+$colour__email: #cc0000;
+$colour__facebook: #3b589c;
+$colour__linked-in: #1985bc;
+$colour__live-chat: #de4f3a;
+$colour__phone: #86bb00;
+$colour__rss: #fe9900;
+$colour__skype: #009cef;
+$colour__twitter: #5ea9dd;
+$colour__vimeo: #7ac7d2;
+$colour__youtube: #de4f3a;
+
+/////// SETTINGS VARIABLES ///////
+$settings__border-radius: 5px;
+$settings__border-radius--circle: 50%;
+
+// Font sizes
+// These variables are to be used to maintain the visual hierarchy of page titles over the semantic hierarchy of included components
+$settings__font-size--h1: 3.4rem;  // Primary page title only - Single use only per page
+$settings__font-size--h1--sub: 2.6rem;  // Primary title for sections - Multiple use per page allowed
+$settings__font-size--h2: 1.8rem;
+$settings__font-size--h3: 1.15rem;
+$settings__font-size--h4: 1.125rem;
+$settings__font-size--h5: 1rem;
+$settings__font-size--h6: 0.875rem;
+$settings__font-size--stand-first: 1.25rem;
+$settings__font-size--metadata: 0.8rem;
+$settings__font-size--annotation: 0.7rem;
+
+/////// UTILITY CLASSES ///////
+
+/* Utility classes are added to perform a specific function, so it's okay for them to break normal specificity rules with !important */
+
+.hidden {
+	display: none;
+}
+
+// .background-colour__blue {
+// 	background-color: $colour__blue !important;
+// }
+
+// .background-colour__blue--50 {
+// 	background-color: $colour__blue--50 !important;
+// }
+
+// .background-colour__cool-grey {
+// 	background-color: $colour__cool-grey !important;
+// }
+
+// .background-colour__cool-grey--50 {
+// 	background-color: $colour__cool-grey--50 !important;
+// }
+
+
+
+// .background-colour__orange {
+// 	background-color: $colour__orange !important;
+// }
+
+// .background-colour__orange--50 {
+// 	background-color: $colour__orange--50 !important;
+// }
+
+// .background-colour__purple {
+// 	background-color: $colour__purple !important;
+// }
+
+// .background-colour__purple--50 {
+// 	background-color: $colour__purple--50 !important;
+// }
+
+// .background-colour__teal {
+// 	background-color: $colour__teal !important;
+// }
+
+// .background-colour__teal--50 {
+// 	background-color: $colour__teal--50 !important;
+// }
+
+// .background-colour__warm-grey {
+// 	background-color: $colour__warm-grey !important;
+// }
+
+// .background-colour__warm-grey--50 {
+// 	background-color: $colour__warm-grey--50 !important;
+// }
+
+// .background-colour__white {	
+// 	background-color: $colour__white !important;
+// }
+// .background-colour__yellow {
+// 	background-color: $colour__yellow !important;
+// }
+
+// .background-colour__yellow--50 {
+// 	background-color: $colour__yellow--50 !important;
+// }
+
+// .background-colour__transparent {
+// 	background-color: transparent !important;
+// }
+
+
+/////// CORE EXTENDS ///////
+%placeholder-color {
+	&::-webkit-input-placeholder {
+	   color: $colour__black--80;
+	}	
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $colour__black--80;  
+	}	
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $colour__black--80;  
+	}	
+	&:-ms-input-placeholder {  
+	   color: $colour__black--80;  
+	}
+}
+%search-input {
+	display: inline-block;
+	width: 16em;
+	padding: 1.25em 1.3em 1.25em 2.5em;
+	background: url(#{$path__image}/global/navigation/search-black.svg) $colour__white 0.9em 50% no-repeat;
+	background-size: 1.75em;
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/search-black.png);
+	}
+}
+
+/////// GLOBAL VARIABLES ///////
+
+$menu-size: 3.4rem;

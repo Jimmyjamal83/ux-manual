@@ -1,0 +1,635 @@
+//////////////////////////// 36-37 Link Panels ////////////////////////////
+
+//  FOR ALL
+
+
+// Grouped styling
+.panel-links, .panel-link {
+	@include flexbox;
+	@include flex-wrap(wrap);
+
+	a {
+		@include settings__border-radius;
+		@include effect__box-shadow;
+		@include link-panel--initial;
+		overflow: hidden;
+		height: auto;
+		position: relative;
+		text-decoration: none;		
+		transition: ease 0.3s;
+		margin: 0 0 1em 0;
+		p {
+			margin-top: 1.5em;
+			text-decoration: none;
+			font-size: 0.85rem;	
+			line-height: 1.4rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
+		.dark-wallpaper & {
+			@include link-panel--inverted;
+
+		}
+	}
+}	
+
+// specific to component
+.panel-links {
+	a {
+		@include link-panel--chevron;
+		@include settings__border-radius--only-left;
+		text-align: left;
+	}
+
+	&.tiles {
+		@include settings__border-radius--only-left;
+		a.tile {
+			border-radius: 0;
+			margin: 0;
+			border-radius: 0;
+			display: inline-block;
+			margin: 0;
+			@include link-panel--tile--initial;
+
+			span {
+				display: block;
+				padding: 0;
+				background: none;
+				box-shadow: 0;
+
+				p {
+					margin-top: 1.5em;
+				
+				}
+			}
+			&.inverted {
+				@include link-panel--tile--inverted;
+			}
+		}
+
+
+		a.tile-image {
+			overflow: hidden;
+			padding: 0;
+			position: relative;
+			padding: 0;
+			margin: 0;
+			transition: none;
+			background: none;
+			background: $colour__cool-grey;
+			img {
+				transition: ease 0.4s;
+				width: 100%;
+				height: auto;
+				max-width: initial !important; // over-ride the foundation style
+				object-fit: cover;
+				opacity: 1;
+				object-position: 50% 50%;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			span {
+				@include link-panel--tile--initial;
+				// @extend %link-panel-initial;
+				width: 50%;
+				padding: 1.6em 1.2em 8em;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				box-shadow: 0;
+				transition: ease 0.4s;
+			}
+
+			&:hover, &:active, &:focus, &:visited {	
+				
+				img {
+					transform: scale(1.05);
+				}
+			}
+
+			&.inverted {
+				overflow: hidden;
+				span {
+					@include link-panel--tile--inverted;
+				}	
+
+				&:hover, &:active {	
+					background-size: 100%;
+				}
+
+			}
+
+		}
+
+	}	
+
+}
+
+
+// specific to component
+.panel-link {
+	a {
+		width: auto;
+	}
+	span {
+		display: block;
+		text-align: center;
+		&.title {
+			@include text-style__h3;
+		}
+		&.sub-title {
+			margin-top: 0.6rem;
+		}
+		&.image {
+			width: 100%;
+			background-size: cover;
+			margin-bottom: 0.8em;
+			@include settings__border-radius;
+		}
+	}
+	.no-flexbox & {
+		width: 95%;
+		min-height: 9em;
+		float: left;
+	}
+	&.fifty-fifty {
+		a {
+			@include flex(1, 48%);
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+	.panel-link {
+		a {
+			@include flex(1, 22.75%);
+			margin-right: 3%;
+			margin-bottom: 3%;
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			span {
+				&.sub-title {
+					font-size: 0.9rem;
+				}
+				&.image {
+					height: 7em;
+				}
+			}
+
+			.large-4 &, .narrow & {
+				@include flex(1, 47%);
+				margin-right: 6%;
+				margin-bottom: 6%;
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+			}
+
+			.large-6 &, .large-8 & , .fifty-fifty & {
+				@include flex(1, 31%);
+				margin-right: 3.5%;
+				margin-bottom: 3.5%;
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+			}
+		}		
+		
+	}	
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	.panel-links, .panel-link {
+		
+		a {
+			display: inline-block;
+			span {
+				width: 100%;
+			}
+			p {
+				font-size: 0.9rem;
+				line-height: 1.6rem;
+			}
+		}
+	}	
+
+	.panel-links {
+		@include justify-content(space-between);
+		a {
+			display: inline-block;
+			@include flex(1, 47.5%);
+			max-width: 49%;
+			text-align: left;
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+			// settings within columns
+			.large-4 &, .large-6 & {
+				@include flex(1, 100%);
+				max-width: 100%;
+				width: 100%;
+				margin-right: 0;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+			
+		&.tiles {
+			@include flex-direction(column);
+			@include flex-wrap(wrap);
+			@include align-items(flex-end);
+			height: 32rem;
+
+			a.tile {
+				flex: 1 50%;
+				max-width: 50%;
+				margin: 0;
+				padding: 1.75em 1.2em;
+				width: 100%;
+				
+
+				span {
+					display: block;
+					padding: 0;
+					background: none;
+					box-shadow: 0;
+
+					p {
+						margin-top: 1.5em;
+
+					}
+				}
+
+			}
+
+
+			a.tile-image {
+				flex: 2 100%;
+				width: 100%;
+				max-width: 50%;
+				@include align-self(flex-start);
+				overflow: hidden;
+				padding: 0;
+				position: relative;
+				
+				img {
+					
+					min-height: 33rem;
+					min-width: 39rem;
+				}
+				
+				span {
+					width: 50%;
+					min-height: 18rem;
+					padding: 1.6em 1.2em 8em;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+
+			}
+
+		}
+
+	}
+	.panel-link {
+		@include justify-content(flex-start);
+		a {
+			@include flex(1, 22.75%);
+			margin-right: 3%;
+			margin-bottom: 3%;
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			span {
+				&.sub-title {
+					font-size: 0.9rem;
+				}
+				&.image {
+					height: 7em;
+				}
+			}
+
+			.large-4 &, .narrow & {
+				@include flex(1, 47%);
+				margin-right: 6%;
+				margin-bottom: 6%;
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+			}
+
+			.large-6 &, .large-8 & {
+				@include flex(1, 31%);
+				margin-right: 3.5%;
+				margin-bottom: 3.5%;
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+			}
+		}		
+		
+	}		
+
+	.panel-link {
+		@include justify-content(flex-start);
+		a {
+			@include flex(1, 31%);
+			margin-right: 3.5%;
+			margin-bottom: 3.5%;
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}
+		&.narrow {
+			a {
+				@include flex(1, 47%);
+				margin-right: 6%;
+				margin-bottom: 6%;
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+			}		
+		}
+	}
+
+}
+
+
+// ONLY FOR DESKTOP (961)
+@media #{$large-only} {
+
+	
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+
+	.panel-links, .panel-link {
+		@include flexbox;
+		@include flex-wrap(wrap);
+		a {
+			display: inline-block;
+			span {
+				width: 100%;
+			}
+			p {
+				font-size: 0.9rem;
+				line-height: 1.6rem;
+			}
+		}
+	}	
+
+	.panel-links {
+		@include flexbox;
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+
+
+		a {
+			display: inline-block;
+			@include flex(1, 47.5%);
+			max-width: 49%;
+			text-align: left;
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+		}
+
+		&.tiles {
+			@include flex-direction(row);
+			@include flex-wrap(wrap);
+			@include align-items(flex-end);
+			@include effect__box-shadow;
+			
+
+			a.tile {
+				height: 15rem;
+				flex: 1 100%;
+				max-width: 100%;
+				margin: 0;
+				padding: 1.75em 1.2em 6em 1.2em;
+				@include effect__box-shadow;
+				
+
+				span {
+					display: block;
+					padding: 0;
+					background: none;
+					box-shadow: 0;
+
+					p {
+						margin-top: 1.5em;
+					}
+				}
+
+			}
+
+
+			a.tile-image {
+				height: 30rem;
+				flex: 2 100%;
+				width: 100%;
+				max-width: 100%;
+				@include align-self(flex-start);
+				overflow: hidden;
+				padding: 0;
+				position: relative;
+				margin: 0 0 1em;
+				
+				img {
+					
+					min-height: 31rem;
+				}
+				
+				span {
+					width: 60%;
+					padding: 1.6em 1.2em 8em;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+
+			}
+
+		}	
+
+	}
+
+	.panel-link {
+		@include justify-content(flex-start);
+		a {
+			@include flex(1, 31%);
+			margin-right: 3.5%;
+			margin-bottom: 3.5%;
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			span {
+				&.sub-title {
+					font-size: 0.9rem;
+				}
+				&.image {
+					height: 7em;
+				}
+			}
+
+			.medium-4 &,
+			.medium-6 & {
+				@include flex(1, 100%);
+				margin-right: 0;
+
+			}
+
+			.medium-8 &,
+			.medium-10 & {
+				@include flex(1, 47%);
+				margin-right: 6%;
+				margin-bottom: 6%;
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+			}
+		}		
+		
+	}
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+}
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	.panel-links, .panel-link {
+		a {
+			display: block;
+			@include flex(1, 100%);
+			max-width: 100%;
+			width: 100%;
+			margin-right: 0;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.panel-link {
+		.large-4 &, .large-6 &, .large-8 &, .narrow & {
+			a {
+				display: block;
+				@include flex(1, 100%);
+				max-width: 100%;
+				width: 100%;
+				margin-right: 0;
+				span {
+					&.sub-title {
+						font-size: 0.9rem;
+					}
+					&.image {
+						height: 7em;
+					}
+				}
+			}
+		}		
+		
+	}
+}
+
+
+
+//////////////
+// IE FIXES //
+//////////////
+
+@media #{$ie10plus} {
+
+	.component {
+		.panel-links, .panel-link {
+			@include flexbox;
+			@include flex-wrap(wrap);
+			@include justify-content(space-between);
+
+
+			&.tiles {
+				@include flex-direction(column);
+				@include flex-wrap(wrap);
+				@include align-items(flex-end);
+				@include effect__box-shadow;
+				height: 32em;
+
+				a.tile {
+					flex: 1 50%;
+					max-width: 25%;
+					margin: 0;
+					padding: 1.75em 1.2em;
+					span {
+						display: block;
+						padding: 0;
+						background: none;
+						box-shadow: 0;
+
+						p {
+							margin-top: 1.5em;
+						}
+					}
+				}
+				a.tile-image {
+					flex: 2 100%;
+					width: 100%;
+					max-width: 50%;
+					@include align-self(flex-start);
+					overflow: hidden;
+					padding: 0;
+					position: relative;
+					
+					
+					
+					span {
+						width: 50%;
+						padding: 1.6em 1.2em 8em;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+					}
+
+
+				}
+
+			}	
+
+		}
+	}
+
+
+}

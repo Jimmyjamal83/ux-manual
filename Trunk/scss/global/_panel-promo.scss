@@ -1,0 +1,144 @@
+/* ---------------------------------------------------------------------------
+ * Panel Link
+ * -------------------------------------------------------------------------*/
+
+
+//  FOR ALL
+
+.panel-promo {
+	overflow: hidden;
+	@include settings__border-radius;
+	@include effect__box-shadow;
+	// @include link-panel--initial;
+	margin-bottom: 4rem;
+	background-color: $colour__white;
+	> [class*='panel-promo'] {
+		padding: 1rem;
+		margin: 0;
+	}
+	.panel-promo-header {
+		h1 {
+			@include text-style__h3;
+			margin-top: 0;
+		}
+	}
+	.panel-promo-benefits {
+		background-color: $colour__teal;
+		.benefit {
+			@include text-style__h4;
+			list-style: none;
+			color: $colour__white;
+			padding-left: 2rem;
+			background-image: url(#{$path__image}/global/library__themify--white/thumb-up.svg);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: 1.4rem;
+			margin-bottom: 1rem;
+		}
+	}
+	.panel-promo-features {
+		@include flexbox;
+		.feature {
+			@include flexbox;
+			@include flex(1);
+			@include justify-content(flex-start);
+			margin-top: 0.4rem;
+			margin-bottom: 0.6rem;
+			.icon {
+				@include align-self(flex-start);
+				width: 3rem;
+				min-width: 3rem;
+				height: 3rem;
+				border-radius: 50%;
+				margin-right: 0.6rem;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				@media #{$small-only} {
+					width: 2rem;
+					height: 2rem;
+					min-width: 2rem;
+				}
+
+				&.receipt {
+					background-color: $colour__orange;
+					background-image: url(#{$path__image}/global/library__themify--white/receipt.svg);
+					background-size: 50%;
+				}
+				&.timer {
+					background-color: $colour__blue;
+					background-image: url(#{$path__image}/global/library__themify--white/timer.svg);
+					background-size: 50%;
+				}
+				&.location-pin {
+					background-color: $colour__cool-grey;
+					background-image: url(#{$path__image}/global/library__themify--white/location-pin.svg);
+					background-size: 50%;
+				}
+			}
+			.feature-title {
+				@include text-style__h4;
+				margin: 0;
+				padding: 0;
+			}
+			.feature-info {
+				@include flexbox;
+				@include flex-direction(column);
+				@include justify-content(flex-start);
+			}
+		}
+	}
+	.panel-content {
+		padding: 2rem;
+
+		&.unpadded {
+			padding: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+// ONLY FOR LARGE DESKTOP (1281)
+@media #{$xlarge-only} {
+
+}
+
+// ONLY FOR DESKTOP (961)
+@media #{$large-only} {
+
+}
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+}

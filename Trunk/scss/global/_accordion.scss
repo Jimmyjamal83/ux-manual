@@ -1,0 +1,41 @@
+//  FOR ALL
+
+.accordion-toggle {
+	.accordion-icon {
+		display: none;
+		width: 1.8rem;
+		height: 1.8rem;
+		background-image: url(#{$path__image}/global/library__themify--black/angle-right.svg);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: contain;
+		margin-right: 0.5rem;
+		transition: all 0.3s;
+		&.active {
+			transform: rotate(90deg);
+			transition: all 0.3s;
+		}
+	}	
+}
+
+@media #{$medium-down} {
+	.has-accordion-medium-down {
+		.accordion-toggle {
+			cursor: pointer;
+		}
+		.accordion-icon {
+			display: block;
+		}
+	}
+}
+
+@media #{$small-only} {
+	.has-accordion-small-only {
+		.accordion-toggle {
+			cursor: pointer;
+		}
+		.accordion-icon {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,445 @@
+//
+//	SVG graphics for CSS with base-64 encoding from http://datauri.net
+//
+//	Amend exported base-64 code from image/image/svg to img/svg, set property from background to background image and append with ,none.
+//	IE8 fallback background property to be applied ahead of the background-image property
+//	
+//	See http://css-tricks.com/using-svg/ for more information
+//
+//	BASE 64 ENCODED SVGs MUST ONLY BE USED THROUGH EXTENDS FOR IMAGES OUTSIDE MEDIA QUERIES
+//
+
+$global-inline-image-path: "../../production/img";
+
+
+
+// Grey sprite icons
+
+%svg-share { 
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-share.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-share.png);
+	}
+	background-size: contain;
+}
+
+%svg-skype {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-skype.svg"); 
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-skype.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-skype-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-skype-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-twitter {	
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-twitter.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-twitter.png);
+	}
+	background-size: contain;
+	&:hover {	
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-twitter-hover.svg");
+		.no-svg &, .ie8 & {
+			background-image: url(#{$path__image}/global/contact/social-twitter-hover.png);
+		}	
+		background-size: contain;
+	}
+}
+
+%svg-linkedin {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-linkedin.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-linkedin.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-linkedin-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-linkedin-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-facebook {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-facebook.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-facebook.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-facebook-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-facebook-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-email {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-email.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-email.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-email-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-email-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-comment {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-comment.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-comment.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-comment-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-comment-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-rss {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-rss.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-rss.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-rss-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-rss-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-bookmark {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-bookmark.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-bookmark.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-bookmark-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-bookmark-hover.png);
+		}	
+		background-size: contain;
+	}
+}
+
+
+
+
+
+
+// White versions
+
+%svg-bookmark-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-bookmark.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-bookmark.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-bookmark-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-bookmark-hover.png);
+		}
+		background-size: contain;
+	}
+}
+	
+%svg-email-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-email.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-email.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-email-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-email-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-facebook-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-facebook.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-facebook.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-facebook-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-facebook-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-linkedin-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-linkedin.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-linkedin.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-linkedin-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-linkedin-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-rss-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-rss.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-rss.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-rss-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-rss-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-skype-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-skype.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-skype.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-skype-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-skype-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-twitter-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-twitter.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-twitter.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-twitter-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-twitter-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-youtube-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/social-youtube.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/social-youtube.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/social-youtube-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/social-youtube-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-live-chat-white {
+	background: none no-repeat 0% 50% transparent!important;	// Override inline injected Vivocha CSS
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-live-chat.svg")!important; 	// Override inline injected Vivocha CSS
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-live-chat.png);
+	}
+	background-size: contain!important;	// Override inline injected Vivocha CSS
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-live-chat-hover.svg")!important;	// Override inline injected Vivocha CSS
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-live-chat-hover.png);
+		}
+		background-size: contain!important;	// Override inline injected Vivocha CSS
+	}
+}
+
+%svg-phone-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-phone.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/contact/footer-phone.png);
+	}
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-phone-hover.svg");
+		.no-svg & {
+			background-image: url(#{$path__image}/global/contact/footer-phone-hover.png);
+		}
+		background-size: contain;
+	}
+}
+
+%svg-icaew-logo-chartered-accountants {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/logos/chartered-accountants.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/logos/chartered-accountants.png);
+	}
+	background-size: contain;
+}
+
+%svg-icaew-logo-vertical {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/logos/icaew-vertical.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/logos/icaew-vertical.png);
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='icaew-vertical.png', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='icaew-vertical.png', sizingMethod='scale')";
+	}
+	background-size: contain;
+}
+
+%svg-icon-burger-nav-blue {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation/burger-nav-blue.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/burger-nav-blue.png);
+	}
+	background-size: contain;
+}
+
+%svg-icon-burger-nav-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation/burger-nav-white.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/burger-nav-white.png);
+	}
+	background-size: contain;
+}
+
+%svg-icon-home-grey {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation/home-grey.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/home-grey.png);
+	}
+	background-size: contain;
+}
+
+%svg-icon-home-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation/home-white.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/home-white.png);
+	}
+	background-size: contain;
+}
+
+%svg-icon-search-black {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation/search-black.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/search-black.png);
+	}
+	background-size: contain;
+}
+
+%svg-icon-search-white {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation/search-white.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/search-white.png);
+	}
+	background-size: contain;
+}
+
+%svg-icon-user {
+	background: none no-repeat 0% 50% transparent;
+	background: url(#{$path__image}/global/navigation__scroll-right--black-opaque.svg);
+	// background-image: inline-image("#{$global-inline-image-path}/global/navigation/user.svg");
+	.no-svg & {
+		background-image: url(#{$path__image}/global/navigation/user.png);
+	}
+	background-size: contain;
+}
+
+%svg-carousel-icon-left {
+	background: none no-repeat 0% 50% transparent;
+	background: url(#{$path__image}/global/navigation__scroll-left--black-opaque.svg);
+	// background-image: inline-image("#{$global-inline-image-path}/global/navigation__scroll-left--black-opaque.svg");
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/navigation__scroll-left--black-opaque--hover.svg");
+		background-size: contain;
+	}
+}
+
+%svg-carousel-icon-right {
+	background: none no-repeat 0% 50% transparent;
+	background-image: inline-image("#{$global-inline-image-path}/global/navigation__scroll-right--black-opaque.svg");
+	background-size: contain;
+	&:hover {
+		background: none no-repeat 0% 50% transparent;
+		background-image: inline-image("#{$global-inline-image-path}/global/navigation__scroll-right--black-opaque--hover.svg");
+		background-size: contain;
+	}
+}

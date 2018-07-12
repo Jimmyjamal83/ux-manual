@@ -1,0 +1,46 @@
+
+////////////////////////////////////////// SEARCH PANEL //////////////////////////////////////////
+
+
+.search-panel {
+	position: relative;
+	margin-bottom: 4rem;
+	input.search {
+		font-size: 1.5rem;
+		border: 1px solid $colour__black;
+		background: none $colour__white;
+		padding: 2rem 6rem 2rem 2rem;
+		margin: 0;
+		box-shadow: none;
+	}
+	button {
+		position: absolute;
+		right: 0.3rem;
+		top: 50%;
+		transform: translateY(-50%);
+		margin: 0;
+		height: 5rem;
+		width: 6rem;
+		border-radius: $settings__border-radius;
+		background: url(#{$path__image}/global/navigation/search-white.svg) $colour__black--40 50% 50% no-repeat;
+		background-size: 2.5rem;
+		text-indent: -1000rem;
+		&:hover {
+			background-color: $colour__black--50;
+		}
+	}
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {	
+	.search-panel {
+		input.search {
+			padding: 1.2rem 6rem 1.2rem 1.2rem;
+		}
+		button {
+			right: 0.12rem;
+			height: 4rem;
+			width: 5rem;
+		}
+	}
+}

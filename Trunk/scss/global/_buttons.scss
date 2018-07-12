@@ -1,0 +1,197 @@
+//  FOR ALL
+
+.button, button {
+	font-family: $font__sans-serif;
+	border-radius: $global-radius;
+	padding: 1em 2em;
+	line-height: 1.9em;
+	&.primary-cta {
+		@include cta-colour__alpha;
+	}
+	&.secondary-cta {
+		@include cta-colour__alpha--alternate;
+	}
+}
+
+.cta-link {	
+	@include cta-styles;
+	@include cta-padding;
+	border: none;	
+	max-width: 100%;
+	text-align: center;
+	position: inherit;	
+
+	span.basket, span.remove {
+		padding: 0 0 0 1.7em;			
+
+	}
+	&.icon {
+		padding-left: 4em;
+		background: none 1.2rem 50% no-repeat;
+		&.refine {
+			background-image: url(#{$path__image}/global/labels/refine-white.svg);
+			background-size: 1.8rem;
+		}
+	}
+	&.rss,
+	&.link {
+		span {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			margin-left: 0.4rem;
+			margin-bottom: -0.1rem;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}			
+	}
+	&.rss span {
+		background-image: url(#{$path__image}/global/library__themify--black/rss-alt.svg);
+		background-size: contain;
+	}
+	&.link span {
+		background-image: url(#{$path__image}/global/library__themify--black/angle-right.svg);
+		background-size: contain;
+	}
+
+	.primary &, &.alpha.over-ride {		
+		span.basket {
+			background: url(#{$path__image}/global/cta/shopping-trolley-white.svg) no-repeat;
+			background-size: 1.3em;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/cta/shopping-trolley-white.png);
+			}
+		}
+	}	
+	.secondary &, &.beta.over-ride {
+		&.alternate {
+			color: $colour__white;
+		}
+		span.basket {
+			background: url(#{$path__image}/global/cta/shopping-trolley-blue.svg) no-repeat;
+			background-size: 1.3em;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/cta/shopping-trolley-blue.png);
+			}
+		}
+	}
+	.tertiary &, &.gamma.over-ride {
+		max-width: 100%;
+		line-height: 1.2;
+		margin-right: 1.4em;
+		span.basket {
+			max-width: 50%;
+			height: 3.35em;
+			background: url(#{$path__image}/global/cta/shopping-trolley-grey.svg) no-repeat;
+			background-size: 1.3em;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/cta/shopping-trolley-grey.png);
+			}
+		}
+		&.alternate {
+			color: $colour__white;
+		}
+	}
+	&:first-of-type {
+		clear: left;
+	}
+	&.remove {
+		@include cta-styles(0.8rem, inline-block);
+		@include cta-padding(0.8rem);
+		float: none;
+		width: auto;
+		span {
+			display: inline-block;
+			height: 1.625em;
+			width: 1.625em;
+			margin: -0.8em -0.5em -0.55em 0.5em;
+		}
+		.primary &, &.alpha.over-ride {
+			span {
+				background: url(#{$path__image}/corporate/label/preferences-cross-icon-red.svg) no-repeat;
+				background-size: 1.5em;
+				.no-svg & {
+					background-image: url(#{$path__image}/corporate/label/preferences-cross-red.png);
+				}				
+			}
+		}
+		.secondary &, &.beta.over-ride {
+			span {
+				background: url(#{$path__image}/corporate/label/preferences-cross-icon-blue.svg) no-repeat;
+				background-size: 1.5em;
+				.no-svg & {
+					background-image: url(#{$path__image}/corporate/label/preferences-cross-blue.png);
+				}				
+			}
+		}
+		.tertiary &, &.gamma.over-ride {
+			span {
+				background: url(#{$path__image}/corporate/label/preferences-cross-icon-grey.svg) no-repeat;
+				background-size: 1.5em;
+				.no-svg & {
+					background-image: url(#{$path__image}/corporate/label/preferences-cross-grey.png);
+				}				
+			}
+		}
+	}
+}
+
+.button, .cta-link, .component.panel-link a, a, .alpha, .beta, .gamma {
+	&.disabled, & .disabled, &.over-ride.disabled {
+		// opacity: 0.5;
+		box-shadow: none;
+		cursor: default;
+		border: 1px solid $colour__cool-grey;
+		// background: saturate;
+		color: $colour__cool-grey--70 !important; // to over-ride the underline style so no visual triggeres are available
+		background: $colour__white !important; // to over-ride the underline style so no visual triggeres are available
+		&:hover, &:focus {
+			color: $colour__cool-grey--70 !important; // to over-ride the underline style so no visual triggeres are available
+			text-decoration: none !important; // to over-ride the underline style so no visual triggeres are available
+			background: $colour__white !important; // to over-ride the underline style so no visual triggeres are available
+		}
+	}
+}
+
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	.cta-link{
+		width: auto;
+	}
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	.cta-link{
+		width: auto;
+	}
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	.cta-link{
+		width: 100%;
+		@include cta-styles(0.8rem, 0.8rem, 0.8rem);
+	}
+}

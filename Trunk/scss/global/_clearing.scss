@@ -1,0 +1,150 @@
+//////////////////////////// 10d Clearing ////////////////////////////
+
+//  FOR ALL
+
+.clearing-blackout {
+	z-index: 20000;
+	// opacity: 0.95;
+	background: $colour__black;
+	.clearing-container {
+		.visible-img {
+			background: none;
+			.clearing-caption {
+				background: none;
+			}
+		}
+		.carousel {
+			background: none;
+			ul.clearing-thumbs {
+				padding-left: 0;
+				li {
+					margin-right: 0.5em;
+					clear: none;
+					&:nth-child(4n) {
+						margin-right: 0.5em;
+					}
+					&:first-of-type {
+						margin-left: 0.5em;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.image-lightbox {
+	.clearing-blackout {
+		.carousel {
+			display: none;
+		}
+		.clearing-main-prev, .clearing-main-next {
+			display: none;
+		}
+	}
+}
+
+.clearing.component {
+	li:nth-of-type(6n+1) {
+	    clear: none !important; // Override default Foundation value to wrap after 6th thumbnail
+	}
+}
+
+ul.clearing-thumbs {
+	width: 100%;
+	margin: 0 !important;
+	padding-left: 0;
+	li {
+		margin: 0 2.6667% 2.6667% 0;
+		padding: 0;
+		border: 1px solid $colour__white;
+		@include effect__box-shadow;
+		@include effect__transition;
+		&:hover, &:focus {
+			@include effect__box-shadow;
+		}
+		& a.clearing-thumbs-image {
+			border: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		img {
+			width: 100%;
+			&:hover {
+				opacity: 0.7;			
+			}
+		}
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+}
+
+.clearing-blackout .clearing-container .carousel > ul {
+	width: 100%;
+	li {
+		margin-right: 2em;
+	}
+}
+
+ 
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+	
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	.clearing.component {
+		.large-block-grid-6 > li, .large-block-grid-4 > li {
+			width: 23%;
+			&:nth-of-type(4n+1) {
+				clear:both;
+			}
+		}
+		&.image-lightbox {
+			.large-block-grid-6 > li, .large-block-grid-4 > li {
+				width: 100%;
+			}
+		}
+	}
+
+}
+
+// TABLET AND UP (641 up)
+@media #{$medium-up} {
+	
+
+}
+
+// MEDIUM ONLY (641 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	.small-block-grid-2 > li {		
+		width: 23%;
+		&:nth-of-type(2n+1) {
+			clear: none;
+		}
+	}
+
+}
+
+// SMARTPHONE ONLY (Up to 640)
+@media #{$small-only} {
+
+	.small-block-grid-2 > li {		
+		width: 23%;
+		&:nth-of-type(2n+1) {
+			clear: none;
+		}
+	}
+
+}
+

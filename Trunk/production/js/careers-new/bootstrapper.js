@@ -1,0 +1,2 @@
+/*! ICAEW careers-new 2016-07-15 */
+define("global/foundation",["jquery","core"],function(a){"use strict";a(document).foundation(),a(document).foundation("interchange",{named_queries:{medium:"only screen and (max-width: 960px)",large:"only screen and (min-width: 961px)"}},"reflow"),a(document).on("replace","#menu",function(){a(document).foundation()})});

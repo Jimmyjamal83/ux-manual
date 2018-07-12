@@ -1,0 +1,77 @@
+//////////////////////////// Grid ////////////////////////////
+
+//  FOR ALL
+
+.row .row {
+	// margin-bottom: 1rem;
+}
+
+.wrapper {
+	/* margin-bottom: 1rem; */
+}
+
+.primary, .secondary, .tertiary {
+	p, td {
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.component {
+	margin-bottom: 1.6em;
+}
+		
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	.large-centered {
+		&:before, &:after {
+			content: " ";
+			display: table;
+		}
+	}
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+	
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+	// Plugging the missing medium-centered gap in main Foundation grid
+	.medium-centered {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		float: none !important;
+		&:before, &:after {
+			content: " ";
+			display: table;
+		}
+	}
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+
+}
+
+

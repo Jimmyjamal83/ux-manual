@@ -1,0 +1,249 @@
+//  FOR ALL
+
+.flex-grid {
+	@include flexbox;
+	// display: flex !important;  // If this class is being used, flex needs to trump any other display type
+	@include flex-wrap(wrap);
+	@include justify-content(flex-start);
+	> article,
+	> div,
+	> span,
+	> li,
+	> a {
+		@include flex(1, 100%);
+	}
+}
+
+$flexbreaks: (
+  (small, 20em),
+  (medium, 40.0275em),
+  (large, 60.0275em),
+  (xlarge, 80.0275em)
+);
+
+$flexcols: (
+	(2, 6, 48.5%),
+	(3, 4, 31.3%),
+	(4, 3, 22.75%)
+);
+@each $outer in $flexbreaks {
+
+	@media only screen and (min-width: #{nth($outer, 2)}) {
+		@each $inner in $flexcols {
+			.flex-#{nth($outer,1)}-#{nth($inner,2)} {
+				> article,
+				> div,
+				> span,
+				> li,
+				> a {
+					@include flex(1, #{nth($inner,3)});
+					// flex-grow: 1;
+					// flex-basis: #{nth($inner,3)};
+					&:nth-of-type(n) {
+						margin-right: 3%;
+					}
+					&:nth-of-type(#{nth($inner,1)}n) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// .flex-small-6 {
+// 	> article,
+// 	> div,
+// 	> span,
+// 	> li {
+// 		@include flex(1, 48.5%);
+// 		margin-right: 3%;
+// 		&:nth-of-type(n) {
+// 			margin-right: 3%;
+// 		}
+// 		&:nth-of-type(2n) {
+// 			margin-right: 0;
+// 		}
+// 	}
+// }
+// .flex-small-4 {
+// 	> article,
+// 	> div,
+// 	> span,
+// 	> li {
+// 		@include flex(1, 31.3%);
+// 		margin-right: 3%;
+// 		&:nth-of-type(n) {
+// 			margin-right: 3%;
+// 		}
+// 		&:nth-of-type(3n) {
+// 			margin-right: 0;
+// 		}
+// 	}
+// }
+// .flex-small-3 {
+// 	> article,
+// 	> div,
+// 	> span,
+// 	> li {
+// 		@include flex(1, 22.75%);
+// 		margin-right: 3%;
+// 		&:nth-of-type(n) {
+// 			margin-right: 3%;
+// 		}
+// 		&:nth-of-type(4n) {
+// 			margin-right: 0;
+// 		}
+// 	}
+// }
+
+
+
+// // TABLET AND UP (461 up)
+// @media #{$medium-up} {
+// 	.flex-medium-6 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 48.5%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(2n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	.flex-medium-4 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 31.3%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(3n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	.flex-medium-3 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 22.75%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(4n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }
+
+// // FOR DESKTOP UP (961 up)
+// @media #{$large-up} {
+// 	.flex-large-6 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 48.5%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(2n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	.flex-large-4 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 31.3%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(3n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	.flex-large-3 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 22.75%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(4n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }
+
+// // ONLY FOR LARGE DESKTOP (1281 up)
+// @media #{$xlarge-up} {
+// 	.flex-xlarge-6 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 48.5%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(2n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	.flex-xlarge-4 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 31.3%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(3n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	.flex-xlarge-3 {
+// 		> article,
+// 		> div,
+// 		> span,
+// 		> li {
+// 			@include flex(1, 22.75%);
+// 			margin-right: 3%;
+// 			&:nth-of-type(n) {
+// 				margin-right: 3%;
+// 			}
+// 			&:nth-of-type(4n) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }
+

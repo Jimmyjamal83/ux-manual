@@ -1,0 +1,256 @@
+
+/////// EFFECTS MIXINS ///////
+@mixin effect__box-shadow {
+	-webkit-box-shadow: 0px 2px 0 0 $colour__black--alpha-10;
+	-moz-box-shadow: 0px 2px 0 0 $colour__black--alpha-10;
+	box-shadow: 0px 2px 0 0 $colour__black--alpha-10;
+}
+
+@mixin effect__box-shadow--inset {
+	-moz-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+@mixin effect__box-shadow--overlay {
+	-moz-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+}
+
+/////// BORDER RADIUS ///////
+
+
+@mixin settings__border-radius {
+	border-radius: $settings__border-radius;
+}
+
+@mixin settings__border-radius--only-left {
+	border-radius: $settings__border-radius 0 0 $settings__border-radius;
+}
+@mixin settings-border-radius--circle {
+	border-radius: $settings__border-radius--circle;
+	-webkit-border-radius: $settings__border-radius--circle;
+	-moz-border-radius: $settings__border-radius--circle;
+}
+
+
+/////// TRANSITIONS ///////
+
+$settings__transition--slow--opacity: opacity, 700ms, ease-out;
+
+@mixin effect__transition($target: all, $value: 200ms, $method: ease-out) {
+	-webkit-transition: $target $value $method;
+	-moz-transition: $target $value $method;
+	transition: $target $value $method;
+}
+
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity) !important;// Needs to override inline style delivered by CMS
+}
+
+@mixin opacity($value) {
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+
+/////// CTA STYLING ///////
+@mixin cta-colour__alpha {
+	background-color: $cta-colour__alpha;
+	color: $colour__white;
+	&:hover, &:active {
+		background-color: $cta-colour__alpha--hover;
+		// text-decoration: underline;		
+	}
+}
+@mixin cta-colour__alpha--alternate {
+	background-color: $cta-colour__alpha--alternate;
+	color: $colour__white;
+	&:hover, &:active {
+		background-color: $cta-colour__alpha--alternate--hover;
+		// text-decoration: underline;		
+	}
+}
+@mixin cta-colour__beta {
+	background-color: $cta-colour__beta;
+	color: $colour__black--70;
+	&:hover, &:active {
+		background-color: $cta-colour__beta--hover;
+		color: $colour__black--80;
+		// text-decoration: underline;		
+	}
+}
+@mixin cta-colour__gamma {
+	background-color: $cta-colour__gamma;
+	color: $colour__black--70;
+	&:hover, &:active {
+		background-color: $cta-colour__gamma--hover;
+		color: $colour__black--80;
+		// text-decoration: underline;		
+	}
+}
+
+
+@mixin cta-styles($size: 1rem, $display: block, $level: "" ) {
+// @mixin cta-styles($level:"") {
+	@include effect__box-shadow;
+	@include settings__border-radius;
+	@include effect__transition;
+	display: inline-block;
+	margin: 0 1.4em 1.4em 0;
+	font-size: 1rem;
+	line-height: 1.2;
+	&:hover, &:active {
+		text-decoration: underline;
+	}
+	.primary &, 
+	&.alpha.over-ride {		
+		@include cta-colour__alpha;
+	}
+	.secondary &, 
+	&.beta.over-ride {
+		@include cta-colour__beta;
+	}
+	.tertiary &, 
+	&.gamma.over-ride,
+	.content .component.panel-link & {
+		@include cta-colour__gamma;
+	}
+	&.alternate {
+		background-color: $colour__black--70 !important; /* to over-ride style to primary */
+		color: $colour__white;
+		&:hover {
+			background-color: lighten($colour__black--70, 7%) !important;	/* to over-ride style to primary */
+			text-decoration: underline;
+		}
+	}
+
+	@if $level == "alpha" {
+		@include cta-colour__alpha;
+	} @else if $level == "beta" {
+		@include cta-colour__beta;
+	} @else if $level == "gamma" {
+		@include cta-colour__gamma;
+	}
+
+	// .primary & {
+	// 	font-size: $primary-size;
+	// }
+	// .secondary &, .tertiary & {
+	// 	font-size: $secondary-size;
+	// }
+}
+
+@mixin padding-standard($padding-default: 1rem) {
+	padding: $padding-default;
+}
+
+@mixin cta-padding($cta-padding-default: 1em 2.5em) {
+	padding: $cta-padding-default;
+}
+
+
+/////// PURE CSS DIVIDER STYLING ///////
+
+@mixin divider-lead-on($colour: $colour__white) {
+	&::after {
+	    display: block;
+	    width: 3rem;
+	    height: 3rem;
+	    background-color: inherit;
+	    content: " ";
+	    position: absolute;
+	    transform: rotate(45deg);
+	    bottom: -1.5em;
+	    z-index: 9;
+	    left: 50%;
+	    margin-left: -1.5em;
+	}
+}
+
+
+/////// PANEL STYLING ///////
+
+@mixin fieldset-panel {
+	background: $colour__cool-grey--10;
+	border: 1px solid $colour__cool-grey--50;
+	@include settings__border-radius;
+	padding: 1em;
+}
+
+
+
+/////// NAVIGATION STYLING ///////
+
+@mixin link-panel--base {
+	@include text-style__h4;
+	color: $link-colour__block;
+	padding: 1.75em 1.2em;
+	&:hover {
+		span {
+			color: $link-colour__block--hover;
+			text-decoration: underline;
+			cursor: pointer;
+			p {
+				text-decoration: none;
+			}
+		}
+		p {
+			text-decoration: none;
+		}
+		
+	}
+}
+
+@mixin link-panel--chevron {
+	background-image: url(#{$path__image}/global/link__chevron--utility-blue--70.svg);
+	background-repeat: no-repeat;
+	background-position: calc(100% - 1rem) 50%;
+	background-size: 1.25rem;
+	padding-right: 3.8rem !important;  // to over-ride the base padding for bg image
+}	
+
+@mixin link-panel--tile--base {
+	@include link-panel--base;
+	background-position: calc(100% - 1rem) calc(100% - 1rem); 
+
+}
+
+@mixin link-panel--initial {
+	@include link-panel--base;
+	background-color: $colour__cool-grey--30;
+	&:hover {
+		background-color: $colour__cool-grey--50;
+	}
+
+}
+
+@mixin link-panel--inverted {
+	@include link-panel--base;
+	background-color: $colour__white;
+	&:hover {
+		background-color: $colour__cool-grey--50;
+	}
+}
+
+@mixin link-panel--tile--initial {
+	@include link-panel--tile--base;
+	background-color: $colour__cool-grey--30;
+	&:hover {
+		background-color: $colour__cool-grey--50;
+	}
+
+}
+
+@mixin link-panel--tile--inverted {
+	@include link-panel--tile--base;
+	background-color: $colour__white;
+	&:hover {
+		background-color: $colour__cool-grey--50;
+	}
+}

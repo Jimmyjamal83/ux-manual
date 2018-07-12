@@ -1,0 +1,128 @@
+//////////////////////////// 31 Share this ////////////////////////////
+
+.share-this {
+	margin-bottom: 0;
+	.no-js & {
+		display: none;
+	}
+}
+
+
+
+.social-sharing{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	h1 {
+		@include text-style__h3;
+	}
+	a {
+		position: relative;
+		background-position: 0 0;
+		background-size: 2rem;
+		background-repeat: no-repeat;
+		padding-top: 2.4rem;
+		padding-bottom: 0.5rem;
+		padding-left: 0.35rem;
+		font-size: $settings__font-size--annotation;
+		&.twitter {
+			border-bottom: 4px solid $colour__twitter;
+			background-image: inline-image("#{$global-inline-image-path}/global/contact/social-twitter.svg");
+			&:hover {
+				background-image: inline-image("#{$global-inline-image-path}/global/contact/social-twitter-hover.svg");
+				color: $colour__twitter;
+			}
+		}
+		&.linkedin {
+			border-bottom: 4px solid $colour__linked-in;
+			background-image: inline-image("#{$global-inline-image-path}/global/contact/social-linkedin.svg");
+			&:hover {
+				background-image: inline-image("#{$global-inline-image-path}/global/contact/social-linkedin-hover.svg");
+				color: $colour__linked-in;
+
+			}
+		}
+		&.facebook {
+			border-bottom: 4px solid $colour__facebook;
+			background-image: inline-image("#{$global-inline-image-path}/global/contact/social-facebook.svg");
+			&:hover {
+				background-image: inline-image("#{$global-inline-image-path}/global/contact/social-facebook-hover.svg");
+				color: $colour__facebook;
+			}
+		}
+		&.email {
+			border-bottom: 4px solid $colour__email;
+			background-image: inline-image("#{$global-inline-image-path}/global/contact/social-email.svg");
+			&:hover {
+				background-image: inline-image("#{$global-inline-image-path}/global/contact/social-email-hover.svg");
+				color: $colour__email;
+			}
+		}
+
+		// display: inline-block;
+		// margin-left: 0;
+		// background-size: contain;
+		// height: 2em;
+		// .text {
+		// 	position: absolute;
+		// 	bottom: 0;
+		// 	color: $colour__black--70;
+		// 	font-size: 0.7rem;
+		// 	margin: 0 0.5em 0.5em;
+		// 	display: inline-block;
+		// 	background: none;
+		// }
+		// .icon {
+		// 	position: absolute;
+		// 	top: 0em;
+		// 	left: 0em;
+		// 	z-index: 10;
+		// 	width: 100%;
+		// 	height: 100%;
+		// }
+
+		&:hover {
+			cursor: pointer;
+			text-decoration: none;
+		}				
+
+	}
+}
+
+
+@media #{$xlarge-only} {
+
+	.content .social-share {
+		ul.social-buttons {
+			li {
+
+				width: 6.75em;
+				margin: 0 0.75em 0 0;
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+	}	
+}
+
+@media #{$medium-only} {
+	#breadcrumb-bar .share-this .social-buttons li.bookmark span.text {
+		font-size: 0.8rem;
+		padding-left: 2.5em;
+	}
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+	.content .social-share {
+		ul.social-buttons {
+			li {
+				height: 5em;
+				margin: 0 2% 0 0;
+			}
+		}
+	}
+	#breadcrumb-bar .share-this {
+		display: none;
+	}
+}

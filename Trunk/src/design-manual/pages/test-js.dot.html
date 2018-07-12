@@ -1,0 +1,110 @@
+{
+  "template": "high-level-prototype"
+}
+
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	<div class="placeholder"> elements and their decendents will be replaced by content blocks (toolkit blocks)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+	<main class="design-manual">
+
+		<div class="row">
+			<div class="large-2 medium-10 medium columns nav-col">
+				<div id="logo" class="test"><a href="#"></a>
+				</div>
+				{{= it.include("../partials/side-menu.html") }}
+			</div>
+
+			<div class="large-9 medium-10 medium columns content-area">
+
+				<!-- Begin Generic section -->
+
+				<h1>Digital Design Manual</h1>
+
+				<script type="text/javascript">
+
+
+				var container = document.querySelector('.container-slide')
+				var button = document.querySelector('.slide')
+
+				button.addEventListener('click', () => {
+				  /** Slide down. */
+				  if (!container.classList.contains('active')) {
+				    /** Show the container. */
+				    container.classList.add('active')
+				    container.style.height = "auto"
+
+				    /** Get the computed height of the container. */
+				    var height = container.clientHeight + "px"
+
+				    /** Set the height of the content as 0px, */
+				    /** so we can trigger the slide down animation. */
+				    container.style.height = "0px"
+
+				    /** Do this after the 0px has applied. */
+				    /** It's like a delay or something. MAGIC! */
+				    setTimeout(() => {
+				      container.style.height = height
+				    }, 0)
+
+				    /** Slide up. */
+				  } else {
+				    /** Set the height as 0px to trigger the slide up animation. */
+				    container.style.height = "0px"
+
+				    /** Remove the `active` class when the animation ends. */
+				    container.addEventListener('transitionend', () => {
+				      container.classList.remove('active')
+				    }, {
+				      once: true
+				    })
+				  }
+				})
+
+
+				</script>
+
+
+				<!-- Update profile section -->
+		        <section class="signpost teal-dark dark-wallpaper">
+		            <article>
+		                <div class="row">
+		                    <div class="large-7 medium-10 medium columns">
+		                        <h2>Update your Student Profile</h2>
+		                        <p>Ut enim ad minim veniam Social Mobility, quis nostrud exercitation ullamco laboris please update your profile now.</p>
+		                    </div>
+		                     <div class="large-5 medium-10 medium columns">
+		                         <button class="cta-link slide right">Slide Toggle</button>
+		                     </div>
+		                </div>
+		            </article>
+		            <article class="container-slide">
+		                <div class="row">
+		                    <div class="large-7 medium-10 medium columns">
+		                        <h2>Update your Student Profile</h2>
+		                    </div>
+		                     <div class="large-5 medium-10 medium columns">
+		                         <button class="cta-link slide right">Slide Toggle</button>
+		                     </div>
+		                </div>  
+		            </article>     
+		           
+		        </section>
+		        <!-- End Update profile section -->
+
+
+			
+				<h3>A guide to designing and building digital services for ICAEW</h3>
+				
+				<p>The styles and resources within this manual are designed to help you apply the visual identity effectively and consistently across ICAEW digital services. </p>
+
+				<p>Like all manual’s ours is served as an approacgh, rather than a fixed set of guidelines or rules. It is not here to stiffle design, but to supplement it and allow it to develop with a considered and practical approach. </p>
+
+
+			</div>
+		</div>
+	</main>
+		

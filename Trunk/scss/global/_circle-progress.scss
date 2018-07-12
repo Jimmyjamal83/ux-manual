@@ -1,0 +1,92 @@
+
+////////////////////////////////////// CIRCLE PROGRESS //////////////////////////////////////
+.status-circle {
+	width: 6.4rem;
+	height: 6.4rem;
+	position: relative;
+	border: 4px solid $colour__cool-grey--50;
+	border-radius: 50%;
+
+	// REMOVE CSS progress bar styles are handled by JS percentage api
+	&.progressbar {
+		border: 0;
+		@include settings-border-radius--circle;
+		.circle-inside {
+			display: none;
+		}
+	}
+
+	// states of progress discs when handled by css
+	span.icon {
+		width: 1.5rem;
+		height: 1.5rem;
+		display: inline-block;
+		// top: 28%;
+		opacity: 0.6;
+	}
+	span.status, small {
+		@include text-style__annotation;
+		font-size: 0.7rem;
+		bottom: 28%;
+		margin-bottom: 0;
+	}
+	&.complete {
+		border-color: $colour__green;
+		span.icon {
+			background: url(#{$path__image}/global/library__themify--black/check.svg) no-repeat 50% 50%;
+			background-size: contain;
+		}
+		span.status:before {
+			content: "Complete"
+		}
+	}
+	&.pending {
+		border-color: $colour__orange;
+		span.icon {
+			background: url(#{$path__image}/global/library__themify--black/dashboard.svg) no-repeat 50% 50%;
+			background-size: contain;
+		}
+		span.status:before {
+			content: "Pending"
+		}
+	}
+	&.incomplete {
+		border-color: $colour__cool-grey;
+		span.icon {
+			background: url(#{$path__image}/global/library__themify--black/help.svg) no-repeat 50% 50%;
+			background-size: contain;
+		}
+		span.status:before {
+			content: "Unknown"
+		}
+	}
+	&.error {
+		border-color: $colour__red--80;
+	}
+
+
+
+	.circle {
+		.circle-progress-display {
+			font-size: 1.6rem;
+			position: absolute;
+			top: 23%;
+			width: 100%;
+			text-align: center;
+		}
+		.circle-inside {
+			position: absolute;
+			width: 100%;
+			bottom: 25%;
+			text-align: center;
+			em {
+				font-size: 1.6rem;
+				font-style: normal;
+				color: $colour__black;
+				top: 28%;
+			}
+
+		}
+	}
+		
+}

@@ -1,0 +1,2 @@
+/*! ICAEW Corporate 2015-05-20 */
+alert("I'm working, yay!");var hiddenContent=$("div.extra-content");$("a.readMore").click(function(a){a.preventDefault(),hiddenContent.is(":visible")?hiddenContent.slideUp(3e3):hiddenContent.slideDown(3e3)});

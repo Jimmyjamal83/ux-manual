@@ -1,0 +1,299 @@
+//////////////////////////// 01 Table ////////////////////////////
+
+//  FOR ALL
+
+table a.cta-link {
+	margin-right: 0;
+}
+
+caption {
+	font-size: 0.9rem;
+	line-height: 1.2em;
+	color: $colour__black--40;
+	margin: 0.6em 0;
+	border-left: 3px solid $colour__cool-grey;
+	padding: 0 0 0 1em;
+	text-align: left;
+}
+
+%table-cell {
+	display: table-cell;
+	padding: 1rem 0.8em;
+	font-size: 0.9rem;
+	border: none;
+	// @include settings__border-radius;
+}
+
+table > thead a.cta-text {
+	color: $colour__white;
+	opacity: 0.7;
+	font-weight: normal;
+	border-bottom: 1px dotted $colour__white;
+	&:hover {
+		color: $colour__white;
+		text-decoration: none;
+		border-bottom: 1px solid $colour__white;
+	}
+}
+
+.content {
+	table {
+		background: $colour__white;
+		margin: 0 0 1em;
+		border: none;
+		border-bottom: 3px solid $colour__black--80;
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 1px;
+		thead, tfoot {
+			tr {
+				th, td, td {
+					@extend %table-cell;
+					color: $colour__white;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 1.5em;
+					font-weight: normal;
+					@include font__sans-serif--demi--uppercase;
+					// text-align: left;
+				}
+				th h3, th label {
+					@include font__sans-serif--demi--uppercase;
+				}
+				// th {
+				// 	border-radius: 0;
+				// }
+			}
+		}
+		thead {
+			tr {
+				th, td, td {
+					background: $colour__black--80;
+				}
+			}
+		}
+		tfoot {
+			tr {
+				th, td, td {
+					background: $colour__cool-grey--50;
+					color: $colour__black--80;
+				}
+			}
+		}
+		tr {
+			background: $colour__orange--10;
+			th, td {
+				@extend %table-cell;
+				text-align: left;
+				vertical-align: top;
+				color: $colour__black--70;
+			}
+			&.even, &.alt, &:nth-of-type(even) {
+				background: $colour__orange--15;
+			}	
+		}
+		// Row hover highlighting
+		tr, tr.even, tr.alt, tr:nth-of-type(even) {
+			&:hover, &:active, &:focus {
+				background-color: transparent;
+			}
+		}
+		// added for separated table content
+		.bg-override {
+			// @include background-opacity($color, 0);
+			td {
+				padding-bottom: 2.6em;
+				small {
+					margin: 0 0 1.3em 0;
+				}
+			}
+		}
+		thead {
+			tr {
+				&.even, &.alt, &:nth-of-type(even) {
+					background: $colour__black--70/* was teal-dark-highlight */;
+					padding: 0.4em 1em;
+					// @include settings__border-radius;
+					aside & {
+						background: $colour__black--60;
+					}
+				}
+			}
+		}
+
+		a, p > a, ul > li > a {
+			border-bottom: 1px dotted $link-colour__inline;
+			line-height: inherit;
+			&:hover {
+				color: $link-colour__inline--hover;
+				text-decoration: none;
+				border-bottom: 1px solid currentColor;
+			}
+		}
+		a.cta-link, p > a.cta-link, ul > li > a.cta-link {
+			border-bottom: none;
+			min-width: 100%;
+			&:hover {
+				border-bottom: none;
+			}
+		}
+		&.secondary {
+			thead tr th {
+				background: $colour__black--50;
+			}
+		}
+	}
+}
+
+//  Responsive tables across all breakpoints - http://www.456bereastreet.com/archive/201309/responsive_scrollable_tables/
+.scrollable {
+	overflow-x:auto;
+	& .has-scroll:after {
+		position:absolute;
+		top: 0;
+		left: 100%;
+		width: 50px;
+		height: 100%;
+		border-radius: 10px 0 0 10px / 50% 0 0 50%;
+		box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+		content: '';
+	}
+	/* This is the element whose content will be scrolled if necessary */
+	&.has-scroll {
+		> div {
+			overflow-x: auto;
+			margin-bottom: 2em;
+			table {
+				margin-bottom: 0;
+			}
+
+		}	}
+	> div {
+		&::-webkit-scrollbar {
+			width: 0.75rem;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: 0 0 2px rgba(0,0,0,0.15) inset;
+			background: $colour__cool-grey--30;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 6px;
+			background: $colour__cool-grey;
+		}
+	}
+}
+
+.scrollable > div::-webkit-scrollbar {
+	width: 12px;
+}
+
+.scrollable > div::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+.scrollable > div::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+// aside.tertiary table thead tr th {
+// 	background: $colour__black--50;
+// }
+
+.table-wrapper {
+	position: relative;
+}
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	table tr, table tr td {
+		line-height: 1.6;
+	}
+
+	.content {
+		table {
+			thead, tfoot {
+				tr {
+					th h3, th label {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}			
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	table tr, table tr td {
+		line-height: 1.6;
+	}
+
+	main table:last-of-type {
+		margin-bottom: 2em;
+	}
+
+
+	.content {
+		table {
+			thead, tfoot {
+				tr {
+					th h3, th label {
+						font-size: 0.8rem;
+						// line-height: 1.6;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	table tr, table tr td {
+		line-height: 1.4em;
+	}
+
+	.content table {
+		thead, tbody, tfoot {
+			tr {
+				th, td {
+					font-size: 0.8rem;
+					padding: 0.5em;
+				}
+			}
+		}
+		tr {
+			th, td {
+				font-size: 0.8rem;
+			}
+		}
+		p, ul, ul li, ol, ol li, label, a, a.cta-text {
+			font-size: 0.8rem;
+		}
+	}
+
+}

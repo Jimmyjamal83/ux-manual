@@ -1,0 +1,53 @@
+//////////////////////////// 03 Flex Video ////////////////////////////
+
+//  FOR ALL
+
+.flex-video {
+	border: 1px solid $colour__white;
+	@include effect__box-shadow;
+	@include effect__transition;
+	&:hover, &:focus {
+		@include effect__box-shadow;
+	}
+	&.widescreen {
+		padding-bottom: 56%;
+	}
+	& iframe, & object, & embed, & video {
+		border: 0;
+	}
+}
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+}
+
+
+

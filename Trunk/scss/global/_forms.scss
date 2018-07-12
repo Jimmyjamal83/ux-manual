@@ -1,0 +1,792 @@
+//////////////////////////// 05a Form ////////////////////////////
+
+//  FOR ALL
+
+
+.component form {
+	margin: 0 0 0 0;
+}
+
+.content form table tr td {
+	vertical-align: middle;
+}
+
+fieldset {
+	@include fieldset-panel;
+	margin: 0;
+	> *:first-child {
+		margin-top: 0;
+	}
+	> *:last-child,
+	p + p:last-of-type {
+		margin-bottom: 0;
+	}
+	h2 {
+		padding-top: 0;
+	}
+}
+
+form {
+	margin: 0 0 1.5em 0;
+	h1, h2, h3, h4 {
+		margin-top: 0;
+		border-top: none;
+		padding-top: 0;
+	}
+	&.unpadded {
+		padding: 0;
+	}
+	.cta-link {
+		margin-bottom: 0.5em;
+		.primary & {
+			font-size: 1rem;
+			clear: left;
+			float: left;
+		}
+		// min-width: 60%;
+		// .primary & {
+		// 	font-size: 1.15rem;
+		// }
+	}
+	// .secondary &, .tertiary & {
+	// 	background: $colour__cool-grey--20;
+	// }
+	.email {
+		display: block;
+		span {
+			margin: 0.3em 0.8em 0 0;
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			float: left;
+			background: url(#{$path__image}/global/contact/content-email-blue.svg) no-repeat 0% 0%;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/contact/content-email-blue.png);
+			}
+		}
+	}
+	.phone {
+		span {
+			margin: 0.3em 0.8em 0 0;
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			float: left;
+			background: url(#{$path__image}/global/contact/content-phone-blue.svg) no-repeat 0% 50%;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/contact/content-phone-blue.png);
+			}
+		}
+	}
+	.fax {
+		span {
+			margin: 0.3em 0.8em 0 0;
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			float: left;
+			background: url(#{$path__image}/global/contact/content-fax-black.svg) no-repeat 0% 0%;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/contact/content-fax-black.png);
+			}
+		}
+	}
+	&.search-library {
+		input {
+			margin-top: 1em;
+		}
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	button.cta-link.alpha.over-ride {
+		margin-top: 1em;
+	}
+}
+.radio-group {
+	margin-bottom: 1.5em;
+}
+
+.button-row {
+	margin-bottom: 1.5em;
+	float: left;
+	.cta-link {
+		.primary.content & {
+			clear: none;
+			// font-size: 1rem;
+		}
+	}
+	form {
+		display: inline-block;
+		.cta-link {
+			.primary & {
+				font-size: 1rem;
+			}
+		}
+	} 
+	.cta-text {
+		float: right;
+		margin-top: 0.815em;
+	}
+}
+
+// .secure-log-in {
+// 	@include flexbox;
+// 	@include flex-wrap(wrap);
+// 	> div {
+// 		@include flex(1 48%);
+// 		// @include fieldset-panel;
+// 	}
+// }
+
+button.cta-text {
+	// color: $colour__black--60/* was teal-dark */;
+	@include text-style__inline-link;
+	background-color: transparent;
+	line-height: 1.1em;
+	.button-row & {
+		line-height: 1.5rem;
+	}
+	padding: 0;
+	// &:hover {
+	// 	color: $colour__black--50;
+	// 	border-bottom: 1px solid $colour__black--60/* was teal-dark */;
+	// }
+}
+
+label {
+	
+color: $colour__black--70;;
+	vertical-align: top;
+	margin: 0 0 0.2em 0;
+	color: $colour__black;
+	// font-style: italic;
+	// line-height: 2.8em;
+	span {
+		color: $colour__red;
+		// font-size: 2rem;
+		height: 1em;
+		line-height: 0.5em;
+	}
+	// input.error {
+	// 	color: $colour__red;
+	// }
+	a.prompt {
+		display: inline-block;
+		float: right;
+		font-size: 0.8rem;
+	}
+}
+
+.label-info > :last-child {
+	margin-bottom: 0;
+}
+
+form small {
+	float: left;
+	margin: -1em 0 1.3em 0;
+	display: inline-block;
+	&.error-text {
+		color: $colour__red;
+	}
+	&.right {
+		display: none;
+	}	
+}
+
+// .tertiary form .cta-link {
+// 	width: 100%;
+// }
+
+%input-standard {
+	@include settings__border-radius;	
+	// box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset 0px 0px 1px rgba(0, 0, 0, 0.4);
+	margin: 0 0 1.2em;
+	background-color: $colour__white;
+	display: inline-block;
+	height: auto;
+	// color: $colour__cool-grey;
+	border: 2px solid $colour__black--70;
+	padding: 1em;
+	&.error, &.input-validation-error {
+		border: 1px solid $colour__red;
+	}
+	&::-webkit-input-placeholder {
+		color: $colour__cool-grey;
+	} 
+	&:-moz-placeholder {
+		color: $colour__cool-grey;
+	}
+	&::-moz-placeholder {
+		color: $colour__cool-grey;
+	}
+	&:-ms-input-placeholder {
+	   color: $colour__cool-grey;
+	}
+}
+// input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], 
+// input[type="week"], input[type="email"], input[type="tel"], input[type="time"], input[type="url"] {
+// 	-webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset 0px 0px 1px rgba(0, 0, 0, 0.4);
+// }
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
+input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"],
+input[type="url"] {
+	@extend %input-standard;
+}
+
+.error label, .error label.error, label.error, .field-validation-error {
+	color: $colour__red;
+}
+
+.error input, .error textarea, .error select, .error #search-panel .search-filter .selector, #search-panel .search-filter .error .selector {
+  margin-bottom: 1.3em;
+}
+
+.content {
+	ul.error, ul.warning, div.error > ul {
+		padding-left: 0;
+		margin-bottom: 0.6rem;
+		li {
+			list-style: none;
+			padding-left: 1.6rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	ul.error, div.error > ul {
+		li {
+			background: url(#{$path__image}/global/icon__error--inner-white.svg) no-repeat 0.15em 0.375em;
+			.no-svg & {
+				background: url(#{$path__image}/global/icon__error-small--inner-white.png) no-repeat 0.15em 0.375em;
+				list-style: none;
+				padding-left: 1.6em;
+			}
+		}
+	}
+	ul.warning {
+		li {
+			background: url(#{$path__image}/global/icon__warning--inner-white.svg) no-repeat 0.15em 0.225em;
+			.no-svg & {
+				background: url(#{$path__image}/global/icon__warning-small--inner-black.png) no-repeat 0.15em 0.225em;
+			}
+			background-size: 1em;
+		}
+	}
+}
+
+[data-abide] .error {
+	display: block;
+	padding: 0;
+	margin:  -0.7em 0 1.3em 0;
+	font-weight: normal;
+	font-style: italic;
+	background: none;
+	color: $colour__red;
+	width: 100%;
+	line-height: 1.4em;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button {
+	border-style: none;  
+}
+
+input[type="number"] {
+// 	padding: 0 1rem;
+	-moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="search"], input[type='search'], input.input-search {
+	background: url(#{$path__image}/global/navigation/search-black.svg) $colour__white 0.75rem 50% no-repeat;
+	background-size: 1.5em;
+	&:focus {
+		background: url(#{$path__image}/global/navigation/search-black.svg) $colour__cool-grey--10 0.75rem 50% no-repeat;
+		background-size: 1.5em;
+		border-color: $colour__black--40;
+		outline: none;
+	}
+	.no-svg & {
+		background: url(#{$path__image}/global/navigation/search-black.png) no-repeat inherit 0.75em 50%;
+	}
+}
+
+// input[type="search"]:focus {
+// 	@extend input[type="text"];
+// 	padding: 0 0.8rem 0 2.8rem;
+// 	background: url(#{$path__image}/global/navigation/search-black.svg) 1rem 1rem no-repeat $colour__cool-grey--10;
+// 	.no-svg & {
+// 		background-image: url(#{$path__image}/global/navigation/search-black.png);
+// 	}
+// 	border-color: #999999;
+// 	outline: none;
+// }
+
+input[type="checkbox"], input[type="radio"] {
+	vertical-align: top;
+	margin: -0.1em 0.5em 0 0;
+	float: left;
+	> label {
+		display: inline-block;
+		margin: 0 1em 0 0;
+		vertical-align: baseline;
+		// color: $colour__black--70;
+	}
+	table & {
+		margin: 0;
+	}
+	&.inline + label {
+		display: inline-block;
+		padding-bottom: 1em;
+	}
+}
+
+select {
+  	@extend %input-standard;
+  	padding-right: 1.4em;
+  	background: url(#{$path__image}/global/arrows/down-black.svg) no-repeat $colour__white right 1em center;
+	.no-svg & {
+		background-image: url(#{$path__image}/global/arrows/down-black.png);
+	}
+	background-size: 1em;
+	margin: 0 0 1.3em 0;
+	padding: 1em;
+	&:hover, &:visited, &:active {
+		background: url(#{$path__image}/global/arrows/down-black.svg) no-repeat $colour__cool-grey--30 right 1em center;
+		.no-svg & {
+			background-image: url(#{$path__image}/global/arrows/down-black.png);
+		}
+		background-size: 1em;
+	}
+	&:focus {		
+		background: url(#{$path__image}/global/arrows/up-black.svg) no-repeat $colour__cool-grey--30 right 1em center;
+		.no-svg & {
+			background-image: url(#{$path__image}/global/arrows/up-black.png);
+		}
+		background-size: 1em;
+	} 	
+	option {
+		width: 90%;
+	}
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	&::-ms-expand {
+	    display: none;
+	}
+}
+
+textarea {
+	@extend %input-standard;
+	min-height: 9em;
+	max-width: 100%;
+	min-width: 100%;
+	padding: 1em;
+}
+
+span.postfix, label.postfix {
+	-webkit-box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.4);
+	box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.4);
+	border-left: none;
+	padding-top: 0.5em;
+	background: $colour__cool-grey--30;
+	color: $colour__black--50;
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	input[type="checkbox"], input[type="radio"] {
+		width: 1.25em;
+		height: 1.75em;
+	}
+
+	[data-abide] .error small.error, [data-abide] span.error, [data-abide] small.error {
+		font-size: 0.8rem;
+	}
+
+	input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+	input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"],
+	input[type="time"], input[type="url"] {
+		font-size: 1rem;
+	}
+
+	input[type="search"], input[type='search'], input.input-search {
+		font-size: 1rem;
+		padding-left: 3em;
+	}
+
+	input, select, textarea {
+		font-size: 1rem;
+	}
+
+	label {
+		font-size: 1rem;
+	}
+
+	span.postfix, label.postfix {
+		font-size: 1.1rem;
+		height: 2.85em;
+		line-height: inherit;
+		margin-top: 0.07em;	
+	}
+	
+	select {
+		font-size: 1rem;
+	}
+	
+	form {
+		margin: 0 0 1.2em 0;
+		// h1, h2, h3, h4 {
+		// 	font-size: 1.3rem;
+		// }
+		a.cta-text {
+			font-size: 1rem;
+		}
+		.email, .phone, .fax {
+			margin: 0 0 0.4em 0;
+		}		
+		&.required-fields {
+			margin: 2em 0 1em 0;
+			padding-top: 2em;
+		}
+	}
+
+	.large-2, .large-3, .large-4 {
+		fieldset.component div[class~="columns"] {
+			width:100%;
+		}
+	}
+
+	label {
+		span {
+			font-size: 2rem;
+		}
+	}
+
+	.button-row {
+		.cta-link {
+			.primary.content & {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+		}
+		form {
+			width: auto;
+			margin: auto;
+		}
+	}
+
+	.content {
+		ul.error, ul.warning, div.error ul {
+			li {
+				background-size: 0.75em;
+			}
+		}
+	}
+
+}
+
+.inline-form {
+	@include flexbox;
+	> input,
+	> button {
+		border-radius: 0;
+		margin: 0;
+	}
+	> :first-child {
+		border-top-left-radius: $settings__border-radius;
+		border-bottom-left-radius: $settings__border-radius;
+	}
+	> :last-child {
+		border-top-right-radius: $settings__border-radius;
+		border-bottom-right-radius: $settings__border-radius;
+	}
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+	.medium-2, .medium-3, .medium-4, .medium-5 {
+		fieldset.component div[class~="columns"] {
+			width:100%;
+		}
+	}
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	input[type="checkbox"], input[type="radio"] {
+		width: 1.25em;
+		height: 1.5em;
+
+	}
+
+	[data-abide] .error small.error, [data-abide] span.error, [data-abide] small.error {
+		font-size: 0.8rem;
+	}
+
+	span.postfix, label.postfix {
+		font-size: 1rem;
+		height: 3.15em;
+		line-height: 2em;
+		margin-top: 0.07em;	
+	}
+
+	input, select, textarea {
+		font-size: 1rem;
+	}
+
+	label {
+		font-size: 1rem;
+		span {
+			font-size: 2rem;
+		}
+	}
+
+
+	form {
+		margin: 1em 0 1em 0;
+		// h1, h2, h3, h4 {
+		// 	font-size: 1.5rem;
+		// }
+		a.cta-text {
+			font-size: 1rem;
+		}
+		.email, .phone, .fax {
+			margin: 0 0 0.4em 0;
+		}		
+		&.required-fields {
+			margin: 1em 0 0 0;
+			padding-top: 0;
+		}
+	}
+
+	select {
+		font-size: 1rem;
+	}
+	
+	input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+	input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"],
+	input[type="time"], input[type="url"] {
+		font-size: 1rem;
+		padding: 1em;
+	}
+
+	input[type="search"], input[type='search'], input.input-search {
+		font-size: 1rem;
+		padding-left: 3em;
+	}
+
+	// input[type="search"] {
+	// 	padding-left: 3em;
+	// }
+
+	.large-6 form, .large-4 form, .medium-12 form {
+		& .large-6, & .large-5, & .large-4, & .large-3, & .large-2 {
+			width: 100%;
+		}
+	}
+
+	// .large-12 form {
+	// 	& .large-6, & .large-5, & .large-4, & .large-3, & .large-2 {
+	// 		width: initial;
+	// 	}
+	// }
+
+	.button-row {
+		.cta-link {
+			.primary.content & {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+		}
+		form {
+			width: auto;
+			margin: auto;
+		}
+	}
+
+	.content {
+		ul.error, ul.warning, div.error ul {
+			li {
+				background-size: 1em;
+				background-position-y: 0.25em; 
+			}
+		}
+	}
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	input[type="checkbox"], input[type="radio"] {
+		width: 1.25em;
+		height: 1.5em;
+		margin: -0.1em 0.5em 0 0;
+	}
+
+	[data-abide] .error small.error, [data-abide] span.error, [data-abide] small.error {
+		font-size: 0.6rem;
+	}
+
+	span.postfix, label.postfix {
+		font-size: 0.8rem;
+		height: 2.85em;
+		line-height: 1.7em;
+		margin-top: 0.05em;	
+	}
+
+	.content ul.error, .content div.error > ul {
+		li {
+			background-position: 2px 4px;
+		}
+	}
+
+	input, select, textarea {
+		font-size: 0.8rem;
+	}
+
+	label {
+		font-size: 0.8rem;
+		span {
+			font-size: 1rem;
+		}
+	}
+
+	form {
+		margin: 0 0 2em;
+		// h1, h2, h3, h4 {
+		// 	font-size: 1rem;
+		// }
+		& .cta-link {
+			.primary & {
+				font-size: 0.8rem;
+				clear: left;
+			}
+		}
+		a.cta-text {
+			font-size: 0.8rem;
+		}
+		.email, .phone, .fax {
+			margin: 0 0 0.3em 0;
+		}
+		&.required-fields {
+			margin: 1em 0 0 0;
+			padding-top: 0;
+		}		
+	}
+
+	select {
+		// font-size: 0.6rem;
+		padding: 0.5em;
+	}
+
+	input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"],
+	input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"],
+	input[type="time"], input[type="url"], textarea, select {
+		font-size: 1.2rem; // To prevent unwanted zoom on iPhone
+		padding: 0.4em;
+	}
+
+	input[type="search"], input[type='search'], input.input-search {
+		font-size: 0.8rem;
+		padding-left: 3em;
+	}
+
+	.button-row {
+		.cta-link, .cta-link.beta.over-ride, .cta-link.gamma.over-ride {
+			margin-right: 0; 
+			.primary.content & {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+		}
+
+		button, a {
+			&.cta-text {
+				.primary.content & {
+					float: left;
+				}
+			}
+		}
+
+		form {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	.content .button-row-flex {
+		@include flexbox;
+		@include flex(1, 100%); // In case already inside a flex component
+		float: none;
+		.cta-link,
+		.cta-link.over-ride {
+			font-size: 0.85rem;
+			margin-right: 1rem;
+			padding: 1em;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+}
+
+
+
+/*  /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Workaround to allow use of grid system on input elements  input.input-size.[large/medium/small]-[1-12]
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+@mixin grid-input-classes($size) {
+	@for $i from 1 through $total-columns {
+    	input.input-size.#{$size}#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+    	select.input-size.#{$size}#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+	}
+}
+
+
+@media #{$small-up} {
+  @include grid-input-classes($size:small);
+}
+@media #{$medium-up} {
+  @include grid-input-classes($size:medium);
+}
+@media #{$large-up} {
+  @include grid-input-classes($size:large);
+}
+@media #{$xlarge-up} {
+  @include grid-input-classes($size:xlarge);
+}
+

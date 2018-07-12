@@ -1,0 +1,572 @@
+//////////////////////////////////////////// Font Deck CSS ///////////////////////////////////////////
+
+/*------------------ Font Deck Fix - Start ------------------*/
+// .wf-loading {
+// 	h1 {
+// 		@include font__serif--italic;
+// 	}
+// 	h2, h3, h4, h5, p, a, body {
+// 		@include font__sans-serif--bold;
+// 	}
+// }
+
+// .hide-fonts {
+// 	opacity: 0;
+// 	&.wf-active {
+// 		opacity: 1;
+// 	}
+// }
+/*------------------ Font Deck Fix - End ------------------*/
+
+h1, h2, h3, h4, h5 {
+	&.secure {
+		line-height: 1.6;
+		span {
+			display: inline-block;
+			width: 1.65em;
+			height: 1.65em;
+			float: left;
+			margin-right: 0.5em;
+			background-image: url(#{$path__image}/global/file-extensions/url-secure.svg);
+			background-size: cover;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/file-extensions/url-secure.png);
+			}
+		}
+		a.cta-link {
+			float: right;
+			clear: none;
+			margin: 0;
+			padding: 0.75em 2em;
+		}
+	}
+}
+
+// Roman Type Face
+// div {
+// 	font-family: $font__sans-serif;
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+/* Bold Type Face
+div {
+	font-family:"Lucida Sans Demi", "Lucida Grande", "Lucida Sans Unicode",  Verdana, Tahoma, sans-serif;
+	font-weight:600;
+	font-style:italic;
+}
+
+// Italic Type Face
+div {
+	font-family:"Lucida Sans Italic", "Lucida Grande", "Lucida Sans Unicode",  Verdana, Tahoma, sans-serif;
+	font-weight:normal;
+	font-style:italic;
+}*/
+
+// #{headings(1,5)} {
+// 	color: $colour__black;
+// 	@include font__sans-serif--bold;
+// 	// text-transform: uppercase;
+// }
+body {
+	@include font__sans-serif;
+}
+
+
+h1 {
+	margin: 0.5em 0;
+	@include text-style__h1;
+	.component &,fieldset &, form & {
+		padding: 0;
+		margin-top: 0;
+	}
+
+	&:nth-child(1n) {
+		margin-top: 0.6em;
+	}
+	.secondary &,
+	.tertiary &,
+	.component &,
+	fieldset &,
+	section &,
+	article &{
+		@include text-style__h2;
+	}
+
+	.article-summary-header & {
+		@include text-style__h1--sub;
+	}
+}
+
+
+h2 {
+	@include text-style__h2;
+	margin: 0.5em 0;
+	padding: 0.5em 0 0;
+	.component & {
+		padding: 0;
+	}
+	.secondary &,
+	.tertiary &,
+	.component &,
+	fieldset & {
+		@include text-style__h2;
+	}
+	.secondary .component &,
+	.secondary fieldset &,
+	.tertiary .component &,
+	.tertiary fieldset & {
+		@include text-style__h2;
+	}
+}
+
+h3 {
+	@include text-style__h3;
+}
+h4, h5 {
+	@include text-style__h4;
+}
+
+h3, h4, h5 {
+	margin: 1.5rem 0 1rem 0;
+	padding: 1rem 0 0 0;
+	.component & {
+		padding: 0;
+		margin: 0 0 1rem 0;
+	}
+}
+
+h1, h2, h3, h4, h5, sub, small {
+	span {
+		color: $colour__red;
+	}
+	a.cta-text {
+		font-size: 1rem;
+		float: right;
+		border-bottom: 1px dotted $colour__black--60/* was teal-dark */;
+		margin-top: 0.75em;
+		&:hover, &:focus {
+			border-bottom: 1px solid $colour__black--60/* was teal-dark */;
+			text-decoration: none;
+		}
+	}
+	form & {
+		a.cta-text {
+			margin-top: 0.25em;
+		}
+	}
+}
+
+h1 {
+	font-size: $settings__font-size--h1;
+	.secondary &, .tertiary & {
+		font-size: $settings__font-size--h2;
+	}
+	.component &, fieldset & {
+		font-size: $settings__font-size--h2;
+	}
+	.secondary .component &, .secondary fieldset &, .tertiary .component &, .tertiary fieldset & {
+		font-size: $settings__font-size--h2;
+	}
+}
+
+h2 {
+	font-size: $settings__font-size--h2;
+	.secondary &, .tertiary & {
+		font-size: $settings__font-size--h2;
+	}
+	.component &, fieldset &, .secondary .component &, .secondary fieldset &, .tertiary .component &, .tertiary fieldset & {
+		font-size: $settings__font-size--h2;
+	}
+}
+
+h3 {
+	font-size: $settings__font-size--h3;
+}
+
+h4, h5 {
+	font-size: $settings__font-size--h4;
+}
+
+main, #main {
+	h2, h3, h4, h5 {
+		padding-top: 0.5em;
+		margin-top: 0;
+	}
+	.component {
+		h2, h3, h4, h5 {
+			border-top: none;
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+}
+
+aside.secondary, aside.tertiary {
+	h1, h2, h3, h4, h5 {
+		border-top: none;
+		margin-top: 0;
+		padding-top: 0;
+	}
+	.component {
+		h1, h2, h3, h4, h5 {
+			border-top: none;
+			padding: 0;
+		}
+	}
+}
+
+
+ul.unstyled {
+	@extend %unstyled-list;
+}
+
+main,
+#content {
+	*::selection {
+		background-color: $colour__yellow--50;
+	}
+}
+
+p {
+	color: $colour__black--70;;
+	margin: 0 0 1.6em 0;
+	&.text-intro {
+		font-weight: bold;
+	}
+	&.text-t-and-c {
+		padding-left: 2.5em;
+		font-size: 0.75em;
+		border-left: 0.3em solid $colour__cool-grey--50;
+		font-style: italic;
+		color: $colour__black--40;
+		span {
+			font-weight: bold;
+			color: $colour__black;
+		}
+	}
+	> a {
+		@include text-style__inline-link;
+	}
+	table & {
+		margin-bottom: 1em;
+	}
+}
+
+sub {
+	line-height: 1;
+}
+
+article p:last-child { margin-bottom: 0; }
+
+.pseudo-p {
+	color: $colour__black--70;
+	> a {
+		border-bottom: 1px dotted $link-colour__inline;
+		&:hover {
+			color: $link-colour__inline--hover;
+			text-decoration: none;
+			border-bottom: 1px solid currentColor;
+		}
+	}
+}
+
+a {
+	color: $link-colour__inline;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	&:hover {
+		color: $link-colour__inline--hover;
+		text-decoration: underline;
+	}
+}
+
+.annotation-header {
+	@include text-style__annotation--header;
+}
+.annotation {
+	@include text-style__annotation;
+}
+
+
+small {
+	line-height: 1.5;
+	font-style: italic;
+	color: $colour__black--40;
+	display: inline-block;
+	span {
+		color: $colour__red;
+	}
+	> a {
+		border-bottom: 1px dotted $colour__black--60;
+		&:hover {
+			color: $colour__black--50;
+			text-decoration: none;
+			border-bottom: 1px solid $colour__black--50;
+		}
+	}
+
+	&.meta {
+		@include text-style__annotation;
+		line-height: 1.9;
+		color: $colour__black--50;
+		vertical-align: middle;
+		display: block;
+		margin: 0.3rem 0 0.3rem;
+		float: none;
+
+		&:last-child {
+			margin: 0.3rem 0 0;
+		}
+
+		span {
+			display: block;
+			float: left;
+			width: 1rem;
+			height: 1rem;
+			margin: 0.17em 0.7em 0 0;
+			opacity: 0.6;
+			&.time {
+				background: url(#{$path__image}/global/library__themify--black/time.svg) no-repeat;
+				background-size: contain;
+			}
+			&.date {
+				background: url(#{$path__image}/global/library__simple-line-icons--black/calendar.svg) no-repeat;
+				background-size: contain;
+			}
+			&.author {
+				background: url(#{$path__image}/global/library__themify--black/book.svg) no-repeat;
+				background-size: contain;
+			}
+			&.tag {
+				background: url(#{$path__image}/global/library__simple-line-icons--black/tag.svg) no-repeat;
+				background-size: contain;
+			}
+			&.category {
+				background: url(#{$path__image}/global/library__simple-line-icons--black/folder-alt.svg) no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+}
+
+.header-promo {
+	margin-top: 3rem;
+	margin-bottom: 4rem;
+	> h1 {
+		font-size: $settings__font-size--h1;
+		position: relative;
+		+ p {
+			@include text-style__stand-first;
+		}
+	}
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+aside.footnote {
+	dd,
+	dt,
+	p {
+		font-size: 0.8rem;
+		color: $colour__black--40;
+	}
+	dl {
+		position: relative;
+	}
+	dt {
+		position: absolute;
+		left: 0;
+	}
+	dd {
+		padding-left: 2em;
+	}
+}
+
+.stand-first {
+	@include text-style__stand-first;
+}
+
+.footnote-ref {
+	font-size: 0.8rem;
+	position: relative;
+	padding: 0 0.2em 0.4em 0.2em;
+	margin: 0 0.2em;
+	top: -0.6em;
+}
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	small {
+		font-size: 0.8rem;
+		margin-bottom: 1.8em;
+		p {
+			font-size: 0.8rem;
+		}
+	}
+
+	code {
+		font-size: 1rem;
+	}
+
+	.component h1:nth-child(1n) {
+		margin-top: 0em;
+	}
+
+	.columns, p {
+		line-height: 1.6;
+		font-size: 1rem;
+	}
+
+	.pseudo-p {
+		line-height: 1.6;
+		margin: 0 0 1.6em 0;
+	}
+
+	h1, h2, h3, h4, h5 {
+		&.secure {
+			span {
+			}
+			a.cta-link {
+				margin: 0;
+				font-size: 1rem;
+			}
+		}
+		a {
+			color: $link-colour__heading;
+			&:hover {
+				color: $link-colour__heading--hover;
+			}
+		}
+	}
+
+}
+
+// TABLET AND UP (641 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (641 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	small {
+		font-size: 0.8rem;
+		margin-bottom: 1.8em;
+		p {
+			font-size: 0.8rem;
+		}
+	}
+
+	code {
+		font-size: 1rem;
+	}
+
+	.component h1:nth-child(1n) {
+		margin-top: 0em;
+	}
+
+	h1 {
+		&:nth-child(1n) {
+			margin-top: 0.75em;
+		}
+
+	}
+
+
+	.component {
+		h2, h3, h4, h5 {
+			border-top: none;
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	.columns, p {
+		line-height: 1.6;
+		font-size: 1rem;
+	}
+
+	.pseudo-p {
+		line-height: 1.6;
+		margin: 0 0 1.6em 0;
+	}
+
+	h1, h2, h3, h4, h5 {
+		&.secure {
+			span {
+			}
+			a.cta-link {
+				margin: 0;
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+}
+
+// SMARTPHONE ONLY (Up to 640)
+@media #{$small-only} {
+
+	small {
+		font-size: 0.6rem;
+		margin-bottom: 1em;
+		p {
+			font-size: 0.6rem;
+		}
+	}
+
+	code {
+		font-size: 0.8rem;
+	}
+
+	.component h1:nth-child(1n) {
+		margin-top: 0em;
+	}
+
+	h1 {
+		&:nth-child(1n) {
+			margin: 0.5em 0;
+		}
+	}
+
+	h2 {
+		padding-top: 0.5em;
+	}
+
+	.columns, p {
+		line-height: 1.4;
+		font-size: 0.8rem;
+	}
+
+	.pseudo-p {
+		font-size: 0.8rem;
+		line-height: 1.6;
+		margin: 0 0 1.6em 0;
+	}
+
+	h1, h2, h3, h4, h5 {
+		&.secure {
+			span {
+			}
+			a.cta-link {
+				margin: 1em 0;
+				font-size: 0.8rem;
+			}
+		}
+	}
+}

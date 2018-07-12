@@ -1,0 +1,196 @@
+<div id="logo" class="test"><a href="home.html"></a></div>
+
+<!-- <script>
+	$(document).ready(function () {
+		alert("hi im here");
+		if (Modernizr.mq('only screen and (max-width: 960px)') && $('#footer').length ) {
+			$(window).scroll(function (event) {
+				var scroll = $(window).scrollTop();
+				$('.side-menu').toggleClass('stop',
+					scroll >= $('#footer').offset().top - window.innerHeight
+				);
+			});
+			$(window).scroll();
+		}
+	});
+</script> -->	
+
+
+<section class="side-menu component">
+	<!-- <input id="test" name="refine" type="checkbox"> -->
+	<div class="modal-medium-down modal-large-disabled">
+		<h2 class="title"><a class="trigger fill" href="#openModal"></a></h2>
+
+		<!-- Modal container -->  
+		<div id="openModal" href="#" class="modal-surround">
+			<a href="#" title="surround-close"></a>
+			<article class="modal-content">
+			    <a href="#" title="close" class="close-icon"></a>
+			    
+					
+					<ul class="accordion group-lvl0">
+						<li>
+							<input id="sidemenu_principles" name="level0" type="radio">
+							<label for="sidemenu_principles">01. Principles</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="principles.html">UX Principles</a>
+									<a href="principles.html#design-principles">Design Principles</a>
+									<!-- <a href="principles.html#design-rules-of-play">Design Rules of Play</a> -->
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input id="sidemenu_design-system" name="level0" type="radio">
+							<label for="sidemenu_design-system">02. Design System</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<input id="sidemenu_layout&grid" name="level1" type="radio" disabled>
+									<label for="sidemenu_layout&grid">Layout &amp; Grid</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="tbc.html#columns">Columns</a>
+											<a href="tbc.html#baseline-grid">Baseline Grid</a>
+											<a href="tbc.html#gutters">Gutters</a>
+											<a href="tbc.html#spacing">Spacing</a>
+											<a href="tbc.html#scaling">Scaling</a>
+										</li>
+									</ul>	
+								</li>
+								<!-- <li>
+									<a href="tbc.html">Logo</a>	
+								</li> -->
+								<li class="reveal-content">
+									<input id="sidemenu_typography&links" name="level1" type="radio">
+									<label for="sidemenu_typography&links">Typography &amp; Links</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="typography.html">Fonts</a>
+											<a href="typography.html#sudo-styles">Sudo Styles</a>
+											<a href="typography.html#links">Links</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2d" name="level1" type="radio" disabled>
+									<label for="c-ac-2d">Iconography</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="tbc.html#icons">Icons</a>
+											<a href="tbc.html#roundel-icons">Roundel Icons</a>
+											<a href="tbc.html#icon-sizes">Icon Sizes</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2e" name="level1" type="radio">
+									<label for="c-ac-2e">Colours</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="colour.html">Accessibility</a>
+											<a href="colour.html#background-colours">Background Colours</a>
+											<a href="colour.html#brand-red">Brand Red</a>
+											<a href="colour.html#text-colour">Text Colour</a>
+											<a href="colour.html#feedback-colours">Feedback Colours</a>
+										</li>
+									</ul>	
+								</li>
+								<li class="reveal-content">
+									<input id="c-ac-2f" name="level1" type="radio" disabled>
+									<label for="c-ac-2f">Images</label>
+									<ul class="reveal group-lvl2">
+										<li class="reveal-content">
+											<a href="colour.html#sizes">Sizes</a>
+											<a href="tbc.html#file-types">File types</a>
+										</li>
+									</ul>	
+								</li>
+								<!-- <li>
+									<a href="tbc.html">Tables</a>	
+								</li> -->
+							</ul>
+						</li>
+
+						
+						<li>
+							<input id="c-ac-3" name="level0" type="radio" disabled>
+							<label for="c-ac-3">03. Content</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="c-ac-4" name="level0" type="radio" disabled>
+							<label for="c-ac-4">04. Assets</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li>
+						<li>
+							<input id="browser_support" name="level0" type="radio">
+							<label for="browser_support">05. Browser Support</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="https://www.icaew.com/icaew-policies/website-accessibility" target="blank">Website accessibility</a>
+								</li>
+							</ul>
+						</li>
+						<!-- <li>
+							<input id="c-ac-6" name="level0" type="radio" disabled>
+							<label for="c-ac-6">06. Strategy</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li> -->
+						<!-- <li>
+							<input id="c-ac-7" name="level0" type="radio" disabled>
+							<label for="c-ac-7">07. Resources</label>
+							<article class="reveal">
+								<section class="reveal-content">
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+									<a href="tbc.html">Ipsum</a>
+								</section>	
+							</article>
+						</li> -->
+						<li>
+							<input id="support" name="level0" type="radio">
+							<label for="support">06. Support</label>
+							<ul class="reveal group-lvl1">
+								<li class="reveal-content">
+									<a href="support.html">Contact</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+						
+					
+				
+			</article>
+		</div>
+	</div> 
+</section>

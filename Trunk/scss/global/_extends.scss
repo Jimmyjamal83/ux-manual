@@ -1,0 +1,70 @@
+
+/////// GLOBAL EXTENDS ///////
+
+/*
+	Extends should be based on placeholder selectors e.g. %my-selector and should not generate any direct CSS on compilation
+*/
+
+%unstyled-list {
+	margin-left: 0;
+	margin-bottom: 1.25em;
+	padding-left: 0;
+	li {
+		list-style: none;
+		list-style-image: none;
+		margin-top: 1.2em; /* Should match default site line-height */
+		padding-left: 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+%unstyled-list-reset {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style: none;
+		list-style-image: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+%expand-icon {
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	right: 1em;
+	top: -0.25em;
+	border: 1px solid $colour__white;
+	-webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.1);	
+	@include settings__border-radius;
+	@include effect__transition;
+	background: url(#{$path__image}/corporate/actions/accordion-plus.svg) center no-repeat $colour__black--60/* was teal-dark */;
+	
+	.no-svg & {
+		background-image: url(#{$path__image}/corporate/actions/accordion-plus.png);
+	}
+	background-size: 50%;
+	&:hover, &:active {
+		background-color: $colour__black--70;
+	}
+}
+
+
+%expand-chevron {
+	display: block;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	right: 1em;
+	top: -0.25em;
+	@include settings__border-radius;
+	@include effect__transition;
+	background: url(#{$path__image}/global/link__chevron--utility-blue--70.svg) center no-repeat transparent;
+	transform: rotate(90deg);	// When the image is changed to a down arrow, this line can be removed
+	background-size: 2em;
+}
+

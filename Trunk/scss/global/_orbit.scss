@@ -1,0 +1,401 @@
+//////////////////////////// 10d Orbit ////////////////////////////
+
+//  FOR ALL
+
+// .primary .large-6 .orbit-carousel .orbit-container .orbit-slide-number, .primary .large-6 .orbit-carousel .orbit-container .orbit-bullets-container,
+// .primary .large-6 .orbit-carousel .orbit-container .orbit-prev, .primary .large-6 .orbit-carousel .orbit-container .orbit-next {
+// 	display: none;
+// }
+
+.solo-orbit {
+	.orbit-bullets-container, .orbit-prev, .orbit-next {
+		display: none;
+	}
+}
+
+.no-js .orbit-carousel UL.example-orbit {
+	padding-left: 0;
+	LI {
+		position: relative;
+		margin-bottom: 1.2em;
+		padding-left: 0;
+		list-style-image: none;
+		list-style-type: none;
+		.orbit-caption {
+			position: absolute;
+			display: block;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 0.65em;
+			background-color: $colour__black;
+			a {
+				color: $colour__white;
+			}			
+		}
+	}
+}
+
+.orbit-bullets li {
+	background-color: $colour__black--50;
+}
+
+.orbit-container {
+	.orbit-timer {
+		display: none;
+	}
+}
+
+
+.orbit-carousel .orbit-container {
+	width: 100%;
+	height: 0;
+	margin: 0 1.14em 0 0;
+	border: 1px solid $colour__white;
+	position: relative;
+	padding-bottom: 38.6%;
+	@include effect__box-shadow;
+	@include effect__transition;
+	&:hover, &:focus {
+		@include effect__box-shadow;
+	}
+	ul li {
+		margin: 0 0 0 100%;
+		list-style: none;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	& .orbit-slides-container {
+		height: auto;
+	}
+	img {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top:0;
+	}
+	& .orbit-slides-container > * .orbit-caption {
+		top: 0;
+		left: 0;
+		width: 100%;
+		bottom: inherit;
+		padding: 5px 14px;
+		background: rgba(0, 0, 0, 0.7);
+		a {
+			color: $colour__white;
+			&:hover {
+				color: $colour__warm-grey--70;
+			}
+		}
+	}
+	.orbit-slide-number {
+		display: none;
+	}
+	.orbit-prev, .orbit-next {
+		position: absolute;
+		bottom: 0.9em;
+		left: 1em;
+		width: 2.25em;
+		height: 2.25em;
+		top: inherit;
+		margin-top: auto;
+		text-indent: -9999px !important;
+		z-index: 200;
+		span {
+			border: none;
+			width: 2.25em;
+			height: 2.25em;
+			margin-top: 0;
+			top: 0;
+			@extend %svg-carousel-icon-left;
+			// background: url(#{$path__image}/corporate/actions/carousel-icon-left.svg) no-repeat;
+			// background-size: contain;
+			// .no-svg & {
+			// 	background-image: url(#{$path__image}/corporate/actions/carousel-icon-left.png);
+			// }
+			// &:hover {
+			// 	background: url(#{$path__image}/corporate/actions/carousel-icon-left-hover.svg) no-repeat;
+			// 	background-size: contain;
+			// 	.no-svg & {
+			// 		background-image: url(#{$path__image}/corporate/actions/carousel-icon-left-hover.png);
+			// 	}
+			// }
+		}
+		&:hover {
+			background: none;
+		}
+	}
+	.orbit-next {
+		// @extend .orbit-prev; 
+		left: 3.5em;
+		span {
+			@extend %svg-carousel-icon-right;
+			left: 0;
+			margin-left: 0;
+			// background: url(#{$path__image}/corporate/actions/carousel-icon-right.svg) no-repeat;
+			// background-size: contain;
+			// .no-svg & {
+			// 	background-image: url(#{$path__image}/corporate/actions/carousel-icon-right.png);
+			// }
+			// &:hover {
+			// 	background: url(#{$path__image}/corporate/actions/carousel-icon-right-hover.svg) no-repeat;
+			// 	background-size: contain;
+			// 	.no-svg & {
+			// 		background-image: url(#{$path__image}/corporate/actions/carousel-icon-right-hover.png);
+			// 	}
+			// }
+		}
+	}
+	.orbit-bullets-container {
+		background: rgba(0, 0, 0, 0.7);
+		height: 4rem;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		z-index: 100;
+		& .orbit-bullets {
+			margin: 0;
+			position: absolute;
+			bottom: 1.33em;
+			right: 0.2em;
+			top: inherit;
+			z-index: 1000;
+			li {
+				width: 0.6em;
+				height: 0.6em;
+				min-width: 0.6em;
+				min-height: 0.6em;
+				max-height: 0.6em;
+				max-width: 0.6em;
+				background: $colour__black--50;
+				float: left;
+				-webkit-border-radius: 1em;
+				border-radius: 1em;
+				margin: 0.3em 1em 0 0;
+				padding: 0;
+				&.active {
+					width: 1.25em;
+					height: 1.25em;
+					min-width: 1.25em;
+					min-height: 1.25em;
+					max-height: 1.25em;
+					max-width: 1.25em;
+					background: $colour__black--60/* was teal-dark */;
+					margin: 0 1em 0 0;
+				}
+				&:before {
+					display: none;
+				}			
+			}
+		}
+	}
+}
+
+.orbit-carousel.evo {
+	.orbit-container {
+		box-shadow: none;
+		.colour-row & {
+			border: none;
+		}
+		.orbit-prev {
+			left: 2rem;
+			bottom: 2rem;
+			span {
+				background: url(#{$path__image}/global/navigation__scroll-left--black.svg) no-repeat 50% 50%;
+				background-size: contain;
+			}
+		}
+		.orbit-next {
+			right: 2rem;
+			left: auto;
+			bottom: 2rem;
+			span {
+				background: url(#{$path__image}/global/navigation__scroll-right--black.svg) no-repeat 50% 50%;
+				background-size: contain;
+			}
+		}
+		.orbit-bullets-container {
+			background-color: transparent;
+			height: 6em;
+			border-top: 1px solid $colour__black;
+			@include flexbox;
+			@include justify-content(center);
+			@include align-items(center);
+			.orbit-bullets {
+				position: relative;
+				top: auto;
+				left: auto;
+				right: auto;
+				bottom: auto;
+				li {
+					
+						background: $colour__cool-grey;
+						border: 1px solid $colour__black--40;
+					
+
+				}
+			}
+		}
+
+		.orbit-slides-container {
+			> li {
+				padding-left: 0;
+			}
+			&.padded {
+				> li {
+					padding: 2rem;
+				}
+			}
+			> li {
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+.clearing-container {
+	.clearing-close {
+		text-indent: -1000em;
+		background-size: 100%;
+		display: block;
+		width: 0.75em;
+		height: 0.75em;
+		top: 20px;
+		right: 40px;
+		position: absolute;
+		z-index: 2000;
+		background: url(#{$path__image}/global/cta/close-white.svg) no-repeat;
+		.no-svg & {
+			background-image: url(#{$path__image}/global/cta/close-white.png);
+		}
+	}
+	.visible-img {
+		.clearing-main-prev > span {
+			border: none;
+			width: 3em;
+			height: 3em;
+			left: 30%;
+			@extend %svg-carousel-icon-left;
+			// background: url(#{$path__image}/corporate/actions/carousel-icon-left-hover.svg) no-repeat;
+			// .no-svg & {
+			// 	background-image: url(#{$path__image}/corporate/actions/carousel-icon-left-hover.png);
+			// }
+		}
+		.clearing-main-next > span {
+			border: none;
+			width: 3em;
+			height: 3em;
+			right: 30%;
+			@extend %svg-carousel-icon-right;
+			// background: url(#{$path__image}/corporate/actions/carousel-icon-right-hover.svg) no-repeat;
+			// .no-svg & {
+			// 	background-image: url(#{$path__image}/corporate/actions/carousel-icon-right-hover.png);
+			// }
+		}
+	}	
+}
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	.orbit-carousel .orbit-container {
+		& .orbit-slides-container > * .orbit-caption {
+			font-size: 1rem;
+		}
+	}
+
+	.clearing-container {
+		.clearing-close {
+		}
+		.visible-img {
+			.clearing-main-prev > span {
+				display: block;
+			}
+			.clearing-main-next > span {
+				display: block;
+			}
+		}	
+	}
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	.orbit-carousel .orbit-container {
+		& .orbit-slides-container > * .orbit-caption {
+			font-size: 1rem;
+		}
+	}
+
+	.clearing-container {
+		.clearing-close {
+		}
+		.visible-img {
+			.clearing-main-prev > span {
+				display: block;
+			}
+			.clearing-main-next > span {
+				display: block;
+			}
+		}	
+	}
+
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	.orbit-carousel .orbit-container {
+		ul.example-orbit {
+			li {
+				.orbit-caption a {
+					font-size: 0.8rem;
+					line-height: 1.6em;
+				}
+			}
+		}
+		.orbit-timer {
+			display: none;
+		}
+		.orbit-bullets-container {
+			display: none;
+		}
+		a.orbit-prev, a.orbit-next {
+			display: none;
+		}
+	}
+
+	.clearing-container {
+		.clearing-close {
+		}
+		.visible-img {
+			.clearing-main-prev > span {
+				display: none;
+			}
+			.clearing-main-next > span {
+				display: none;
+			}
+		}	
+	}
+
+}
+

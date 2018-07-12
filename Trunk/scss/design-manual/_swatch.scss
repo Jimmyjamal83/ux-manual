@@ -1,0 +1,40 @@
+.swatch {
+  height: 15rem;
+  background: colour__cool-grey;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(stretch);
+  @include flex-wrap(wrap);
+  // @include flex-direction(column);
+  // background: red;
+  // &:hover {
+  //   background: pink;
+  // }
+  margin-bottom: 1rem;
+  
+  .tint {
+    // background: $colour__cool-grey--20;
+    // @include flex;
+    // width: 100%;
+    height: 5rem;
+    @include flex(1,50%);
+    // @include flex(1, 50%);
+      // &.info {
+      //   width: 50%;
+      //   @include flex(1,50%);
+      //   // height: 100%;
+      // }
+      &:first-child, &:last-child, {
+        @include flex(1,100%);
+      }
+  }
+  .info {
+    background: $colour__cool-grey--10;
+    min-height: 5rem;
+    @include padding-standard;
+    p {
+      font-size: $settings__font-size--annotation;
+      margin: 0;
+    }
+  }
+}

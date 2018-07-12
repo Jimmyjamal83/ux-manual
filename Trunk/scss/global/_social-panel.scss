@@ -1,0 +1,89 @@
+
+
+////////////////////////////////////////// SOCIAL PANEL //////////////////////////////////////////
+
+.social-icon-list {
+	@include flexbox;
+	@include justify-content(space-around);
+	a {
+		display: block;
+		width: 3.6rem;
+		height: 3.6rem;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		border-radius: 50%;
+		background: $colour__cool-grey none 50% 50% no-repeat;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		&.twitter {
+			background-image: url(#{$path__image}/global/social/twitter--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__twitter;
+			}
+		}
+		&.linkedin {
+			background-image: url(#{$path__image}/global/social/linkedin--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__linked-in;
+			}
+		}
+		&.facebook {
+			background-image: url(#{$path__image}/global/social/facebook--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__facebook;
+			}
+		}
+		&.email {
+			background-image: url(#{$path__image}/global/social/email--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__email;
+			}
+		}
+		&.rss {
+			background-image: url(#{$path__image}/global/social/rss--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__rss;
+			}
+		}
+		&.vimeo {
+			background-image: url(#{$path__image}/global/social/vimeo--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__vimeo;
+			}
+		}
+		&.youtube {
+			background-image: url(#{$path__image}/global/social/youtube--white.svg);
+			background-size: 3em;
+			&:hover {
+				background-color: $colour__youtube;
+			}
+		}
+	}
+}
+
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+	.social-icon-list a {	
+		width: 2.8rem;
+		height: 2.8rem;
+	}	 
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {	
+	.social-icon-list a {	
+		width: 2.2rem;
+		height: 2.2rem;
+	}	 
+}

@@ -1,0 +1,246 @@
+//////////////////////////// Print styles ////////////////////////////
+
+@media print {
+	body {
+		line-height: 1.5rem;
+		font-size: 10pt;
+		&:before {
+			display: table;
+			content: url(#{$path__image}/global/logo__icaew--large.svg);
+			position: absolute;
+			width: 12rem;
+			left: 0.6rem;
+			top: -4.5rem;
+			margin: 0 12px;
+			font-size: 0rem;
+			.no-svg & {
+				@include font__sans-serif--bold;
+				content: "ICAEW ";
+				font-size: 24px;
+				color: $colour__black;
+				margin:  16px 0 12px;
+				width: 98%;
+				text-align: left;
+			}
+		}
+		border-top: 1px solid $colour__black--70;
+		margin-top: 5.2rem;
+	}
+	main > .row:last-child {
+		margin-bottom: 0;
+	}
+	main.content, aside.content, footer {
+		p, ul, ul li, ol, ol li {
+			font-size: 12px;
+		}
+	}
+	ol li {
+		min-height: 0!important;
+		padding-left: 1.5em;
+	}
+	th, td {
+		border: none;
+	}
+
+	.default-menu, #mega-menu {
+		margin: 0;
+		padding: 0.5rem 1rem;
+		height: auto;
+	}
+	footer a,
+	a.definitionLink,
+	a.definition-link {
+		&:after {
+			display: none;
+		}
+	}
+	footer.site-footer, 
+	#footer {
+		.topline {
+			margin: 1em 0 0;
+			.contacts ul {
+				@include flexbox;
+				justify-content: space-between;
+				li {
+					margin: 0 0 1.5em;					
+				}
+				a:before {
+					color: $colour__black--50;
+				}
+				.phone:before {
+					content: "Telephone: ";
+				}
+				.email:before {
+					content: "Email: ";
+				}
+				.skype:before {
+					content: "Skype: ";
+				}
+			}
+		}
+		.baseline {
+			border: none;
+			margin: 0 0 1.5em;
+			padding: 0;
+			.columns {
+				margin-bottom: 0;
+				@include flexbox;
+				@include flex-direction(row);
+				align-items: center;
+				// &:before {
+				// 	content: url(#{$path__image}/global/logos/icaew-horizontal.svg);
+				// 	margin-right: 1em;
+				// 	.no-svg & {
+				// 		content: url(#{$path__image}/global/logos/icaew-horizontal.png);
+				// 	}
+				// }
+			}		
+			a {
+				@include flex(1 30%);
+				color: $colour__black;
+				&:after {
+					display: none;
+				}
+				&.strapline {
+					text-align: right;
+				}
+			}
+		}
+		#doorstop .con-soc .contacts li a {
+			padding-left: 2em;
+			&:before {
+				width: 1.5em;
+				height: 1.5em;
+			}
+			&.live-chat {
+				display: none;
+			}
+		}
+	} 
+
+
+	footer.site-footer {
+		.topline {
+			li, a {
+				display: block;
+				float: left;
+				clear: left;
+			}
+			li {
+				margin: 0.5em;
+			}
+		}
+		.baseline {
+			background-color: $colour__warm-grey--70!important;
+			margin: 0;
+			padding: 1rem 0;
+			.columns {
+				margin-bottom: 0;
+				@include flexbox;
+				@include flex-direction(row);
+				align-items: center;
+				// &:before {
+				// 	content: url(#{$path__image}/global/logo__icaew--large.svg);
+				// 	margin-right: 1em;
+				// }
+			}		
+			a {
+				@include flex(1 30%);
+				color: $colour__black--70!important;
+				&:after {
+					display: none;
+				}
+				&.strapline {
+					text-align: right;
+				}
+			}
+		}
+		a.logo, a.c-a-w {
+			display:none!important;
+		}
+	}
+	.inline-list {
+		margin: 0 auto 1em;
+	}
+	.columns {
+		margin-bottom: 1rem;
+		padding: 0 16px;
+	}
+	a {
+		text-decoration: none;
+		&:after {
+			color: $colour__black--50;
+		}
+	}
+
+	#mega-menu li,
+	.advert,
+	.share-this.component,
+	section.top-menu-section,
+	#breadcrumb-bar .large-1,
+	footer .social,
+	footer .links,
+	footer.site-footer #doorstop .link-blocks,
+	nav.side-nav,
+	div.accordion-plus,
+	.content .accordion .accordion-useful,
+	.content .social-share,
+	.columns:empty
+	{
+		display: none;
+	}
+	#breadcrumb-bar {
+		.columns {
+			margin-bottom: 0;
+		}
+		.penfold {
+			margin: 1em 0;
+			li {
+				display: inline;
+				&:before {
+					content: "> ";
+				}
+				a {
+					font-size: 10px;
+					text-decoration: none;
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	} 
+	main.primary {
+		margin-bottom: 0;
+	}
+
+	footer.site-footer {
+		.topline {
+			li, a {
+				display: block;
+				float: left;
+				clear: left;
+			}
+			li {
+				margin: 0.5em;
+			}
+		}
+		a.logo, a.c-a-w {
+			display:none!important;
+		}
+	}
+	.inline-list {
+		margin: 0 auto 1em;
+	}
+	.columns {
+		margin-bottom: 1rem;
+		padding: 0 16px;
+	}
+	a {
+		text-decoration: none;
+		&:after {
+			color: $colour__black--50;
+			font-size: 10pt;
+		}
+	}
+}

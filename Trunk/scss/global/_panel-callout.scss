@@ -1,0 +1,276 @@
+//////////////////////////// 12 Panel Callout ////////////////////////////
+
+//  FOR ALL
+
+.panel.callout {
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(center);
+	width: 100%;
+	min-height: 12rem;
+	// display: block;
+	position: relative;
+	border: none;
+	border-top: 1px solid $colour__black--50;
+	border-bottom: 1px solid $colour__black--50;
+	border-spacing: 2rem 2rem; 
+	padding: 2em 0;
+	background: $colour__white;
+
+
+	// events specific
+	.panel-callout-icon {
+		display: block;		
+		float: left;
+		background: url(#{$path__image}/global/icon__info--inner-white.svg) no-repeat;
+		background-size: contain;
+	}
+
+	h3 {
+		@include text-style__h2;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	> span {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		width: 8rem;
+		height: 8rem;
+	    display: block;
+	    padding-left: 0 !important;
+		background: url(#{$path__image}/global/icon__info--inner-white.svg) no-repeat;
+		background-size: contain;
+	}
+	&.warning {
+		border-top: 1px solid $colour__orange;
+		border-bottom: 1px solid $colour__orange;
+		> span {
+			background: url(#{$path__image}/global/icon__warning--inner-white.svg) no-repeat;
+			background-size: contain;
+		}
+	}
+	&.error {
+		border-top: 1px solid $colour__red;
+		border-bottom: 1px solid $colour__red;
+		> span {
+			background: url(#{$path__image}/global/icon__error--inner-white.svg) no-repeat;
+			background-size: contain;
+		}
+	}
+	&.confirmation {
+		border-top: 1px solid $colour__green;
+		border-bottom: 1px solid $colour__green;
+		> span {
+			background: url(#{$path__image}/global/icon__confirm--inner-white.svg) no-repeat;
+			background-size: contain;
+		}
+	}
+	&.transfer {
+		> span {
+			background: url(#{$path__image}/global/labels/callout-bank-transfer.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/labels/callout-bank-transfer.png);
+			}
+			background-size: contain;
+		}
+	}
+	&.cheque {
+		> span {
+			background: url(#{$path__image}/global/labels/callout-cheque.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/labels/callout-cheque.png);
+			}
+			background-size: contain;
+		}
+	}
+	&.telephone {
+		> span {
+			background: url(#{$path__image}/global/labels/callout-phone.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/labels/callout-phone.png);
+			}
+			background-size: contain;
+		}
+	}
+	&.direct-debit {
+		> span {
+			background: url(#{$path__image}/global/labels/callout-direct-debit.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/labels/callout-direct-debit.png);
+			}
+			background-size: contain;
+		}
+	}
+	&.credit-card {
+		> span {
+			background: url(#{$path__image}/global/labels/callout-debit-credit-card.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/labels/callout-debit-credit-card.png);
+			}
+			background-size: contain;
+		}
+	}
+	&.western-union {
+		> span {
+			background: url(#{$path__image}/global/logos-external/wu-business-solutions.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/logos-external/wu-business-solutions.png);
+			}
+			background-size: contain;
+		}		
+	}
+	&.alipay {
+		> span {
+			background: url(#{$path__image}/global/logos-external/alipay.svg) no-repeat;
+			.no-svg & {
+				background-image: url(#{$path__image}/global/logos-external/alipay.png);
+			}
+			background-size: contain;
+		}			
+	}
+	> * {
+		padding-left: 12rem !important;  // Layout feature needed to override any content placed inside
+	}
+	.row:before, .row:after {
+		display: none; // Hack to work around this instance adding empty 4rem squares
+	}
+}
+
+.large-6 .panel.callout, .large-4 .panel.callout {
+	& .large-3, & .large-9 {
+		width: 100%;
+	}
+}
+
+.unsupported-browser-panel {
+	.browser {
+		text-align: center;
+		padding: 1em;
+		span {
+			display: block;
+			width: 8em;
+			height: 8em;
+			background: none transparent no-repeat 50% 50%;
+			margin: 0 auto;
+		}
+		&.chrome span {
+			background-image: url(#{$path__image}/global/icons/browser-chrome.png);
+			background-size: contain;
+		}
+		&.firefox span {
+			background-image: url(#{$path__image}/global/icons/browser-firefox.png);
+			background-size: contain;
+		}
+		&.opera span {
+			background-image: url(#{$path__image}/global/icons/browser-opera.png);
+			background-size: contain;
+		}
+		&.safari span {
+			background-image: url(#{$path__image}/global/icons/browser-safari.png);
+			background-size: contain;
+		}
+		&.edge span {
+			background-image: url(#{$path__image}/global/icons/browser-edge.png);
+			background-size: contain;
+		}
+		&:hover {
+			background-color: $colour__cool-grey--50;
+			@include settings__border-radius;
+			@include effect__box-shadow;
+		}
+	}
+}
+
+
+// IE10 & IE11 HACK FOR FLEX DIRECTION
+@media all and (-ms-high-contrast:none) {
+	.panel.callout { display: block } /* IE10 */
+	*::-ms-backdrop, .panel.callout { display: block } /* IE11 */
+}
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	.panel.callout {
+		> span {
+			width: 8rem;
+		    max-width: 10em;
+		    height: 8rem;
+		    min-height: 8rem;
+		}	
+		.panel-callout-icon {
+			width: 9em;
+			height: 9em;
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+
+	.panel.callout {
+		h3 {
+			@include text-style__h2;
+		}
+		> span {
+			width: 8rem;
+		    max-width: 10em;
+		    min-height: 8rem;
+		}	
+		.panel-callout-icon {
+			width: 7.6em;
+			height: 7.6em;
+			margin-bottom: 1.6em;
+		}
+	}
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+
+	.panel.callout {
+		border-spacing: 1rem 2rem; 
+		h3 {
+			@include text-style__h2;
+		}
+		> span {
+			width: 3rem;
+			left: 1rem;
+		}	
+		> * {
+			padding-left: 5rem !important;  // Layout feature needed to override any content placed inside
+		}
+		.panel-callout-icon {
+			width: 5.6em;
+			height: 5.6em;
+			margin-bottom: 1.2em;
+		}
+	}
+
+}
+
+
+

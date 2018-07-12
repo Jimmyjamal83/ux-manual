@@ -1,0 +1,31 @@
+//  FOR ALL
+
+
+.mobile-leaderboard {
+	height: 3.125rem;
+	width: 320px;
+	margin: 0.5rem auto;
+}
+
+.mpu {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	iframe, iframe img {
+		max-width: 100% !important;
+	}
+}
+
+//  LARGE BANNER ADVERT TWEAKPOINT
+@media only screen and (min-width: 728px) {
+	.show-small-ad {
+		display: none;
+	}
+}
+
+//  SMALL BANNER ADVERT TWEAKPOINT
+@media only screen and (max-width: 727px) {
+	.show-large-ad {
+		display: none;
+	}
+}

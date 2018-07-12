@@ -1,0 +1,763 @@
+//  FOR ALL
+
+footer.site-footer, #footer {
+	&.adjoin {
+		margin-top: 0;
+	}
+	#doorstop {
+		.logo {
+			display: none;
+		}
+		.top-line, .link-blocks {
+			@include flexbox;
+			@include justify-content(space-between);
+		}
+		.con-soc {
+			position: relative;
+			.contacts {
+				ul {
+					border-top: none;
+				}
+				li {
+					margin-top: 0;
+					position: relative;
+					a {
+						&:before {
+							content: " ";
+							display: block;
+							width: 2.5em;
+							height: 2.5em;
+							border-radius: 50%;
+							background-color: $colour__black--50;
+							position: absolute;
+							left: 0;
+						}
+						&:hover {
+							&.phone::before {
+								background-color: $colour__phone;
+							}
+							&.email::before {
+								background-color: $colour__email;
+							}
+							&.skype::before {
+								background-color: $colour__skype;
+							}
+							&.live-chat::before {
+								background-color: $colour__live-chat;
+							}
+						}
+					}
+				}
+			}
+			.social {
+				position: inherit;
+				clear: both;
+				float: left;
+				width: 80%;
+				@include flexbox;
+				@include justify-content(flex-start);
+
+				li a {
+					margin: 0;
+					border-radius: 50%;
+					background-color: $colour__black--50;
+				}
+			}
+		}
+		.link-blocks {
+			margin-bottom: 1.6em;
+			section {
+				h1 {
+					@include font__sans-serif--bold--uppercase;
+					font-size: 0.8rem;
+					color: $colour__black--50;
+					margin-top: 0;
+				}
+				ul {
+					list-style: none;
+					padding-left: 0;
+					margin-left: 0;
+					li {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		// .c-a-w-block {
+		// 	position: absolute;
+		// 	right: 0;
+		// 	top: 0;
+		// }
+		.c-a-w {
+			background: url(#{$path__image}/global/logo__c-a-w--black.svg) 100% 50% no-repeat transparent;
+			display: inline-block;
+			width: 9.4em;
+			height: 7.2em;
+			background-size: contain;
+		}
+	}
+
+	background: $colour__warm-grey--70;
+	color: $colour__black;
+	a {
+		color: $colour__black;
+		font-size: 0.8rem;
+		&:hover {
+			text-decoration: underline;
+			color: $colour__black;
+		}
+	}
+
+	.inline-list {
+		display: inline-block;
+		margin-bottom: inherit;
+	}
+	.baseline {
+		background: $colour__warm-grey--50;
+		padding: 1em 0;
+		.row {
+			padding: 0;
+		}
+		a {
+			color: $colour__black--50;
+			font-size: 0.8rem;
+			@include font__sans-serif--bold--uppercase;
+			&.copyright {
+				float: left;
+			}
+			&.strapline {
+				float: right;
+			}
+		}
+	}
+	.row {
+		.contacts {
+			position: relative;
+			a {
+				color: $colour__black--70;
+				@include font__sans-serif--demi;
+				&.phone, &.email, &.skype {
+					background-size: contain;
+				}
+			}
+			.c-a-w {
+				position: absolute;
+				right: 0;
+				top: 0.6em;
+				padding: 0;
+				background: url(#{$path__image}/global/logos/chartered-accountants.svg) 100% 50% no-repeat transparent;
+				background-size: contain;
+				.no-svg & {
+					background-image: url(#{$path__image}/global/logos/chartered-accountants.png);
+				}
+			}
+		}
+	}
+	.social {
+		padding-left: 0;
+		display: block;
+		margin: 0;
+		li {
+			display: inline-block;
+			a {
+				display: inline-block;
+			}
+		}
+	}
+	.twitter-banner {
+		@extend %svg-twitter-white;
+	}
+	.linkedin-banner {
+		@extend %svg-linkedin-white;
+	}
+	.facebook-banner {
+		@extend %svg-facebook-white;
+	}
+	.email-banner {
+		@extend %svg-email-white;
+	}
+	.rss-banner {
+		@extend %svg-rss-white;
+	}
+	.phone::before {
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-phone.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.skype::before {
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-skype.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.email::before {
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-email.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.youtube {
+		@extend %svg-youtube-white;
+	}
+	.live-chat::before, #eptica-footer-live-chat::before {
+		background-image: inline-image("#{$global-inline-image-path}/global/contact/footer-live-chat.svg")!important; 	// Override inline injected Vivocha CSS
+		background-size: contain;
+		background-repeat: no-repeat;
+	    float: left!important;  // Override inline injected Vivocha CSS
+	}
+
+	// Hide placeholder text for footer live chat
+	span[id^="vvc_placeholder"] {
+		color: transparent;
+		font-size: 0rem;
+	}
+}
+
+footer > #footer {
+	border-top: none;
+	margin-top: 0;
+}
+
+#menu-level-one {
+	background: $colour__warm-grey--70;
+	&.show {
+		.js & {
+			display: block!important; // Override the JS hide if the show class is also added
+		}
+	}
+	ul {
+		padding: 0;
+	}
+	li {
+		padding: 0.5em 0;
+		a {
+			padding: 1em 2em;
+			color: $colour__black--70;
+		}
+	}
+	.js & {
+		display: none!important; // Override Foundation default for show-for-medium-down
+	}
+}
+
+
+
+// ONLY FOR LARGE DESKTOP (1281 up)
+@media #{$xlarge-up} {
+
+}
+
+
+// ONLY FOR DESKTOP (961)
+@media #{$large-only} {
+
+}
+
+// ONLY FOR DESKTOP (961 up)
+@media #{$large-up} {
+
+	footer.site-footer, #footer {
+
+		a {
+			font-size: 0.825rem !important;  // Needed to overwrite Epitica styles on Live chat link.
+			
+			&#eptica-footer-live-chat {
+				font-size: 0.825rem!important;  // Needed to overwrite Eptica styles on Live chat link.
+			}
+		}
+		.logo {
+			height: 8.5em;
+			width: 3.5em;
+			float: left;
+			margin-right: 1.2em;
+		}
+		.inline-list {
+			li {
+				// border-left: 1px solid $colour__black--90;
+				// font-size: 0.825rem;
+				// &:first-of-type {
+				// 	border-left: 0;
+				// }
+			}
+		}
+		.contacts {
+			ul {
+				display: block;
+				border-top: 1px solid $colour__black--90;
+				// li {
+				// 	border-left: none;
+				// }
+			}
+			.phone {
+				left: inherit;
+			}
+		}
+		.row {
+			padding: 2.5em 0 1em 0;
+			.topline {
+				> div {
+					padding: 0;
+				}
+			}
+			.links {
+				height: auto;
+				display: block;
+				position: relative;
+			}
+			.contacts {
+				a {
+					padding: 0 0 0 2.8em!important;  // Needed to overwrite Epitica styles on Live chat link.
+					line-height: 2.5em;
+				}
+				li {
+					margin-top: 0.7em;
+					margin-right: 1rem;
+					position: relative;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				.c-a-w {
+					display: inline-block;
+					width: 6.4em;
+					height: 4.2em;
+					background-size: contain;
+				}
+			}
+		}
+		.social {
+			position: absolute;
+			top: 0;
+			right: 0;
+			li {
+				width: auto;
+				margin: 2em 2em 1em 0;
+				a {
+					width: 2.5em;
+					height: 2.5em;
+					margin-top: auto;
+				}
+			}
+		}
+		.twitter-banner, .linkedin-banner, .facebook-banner, .email-banner, .rss-banner, .skype, .email .phone, .youtube {
+			background-size: contain;
+			&:hover {
+				background-size: contain;
+			}
+		}
+		.baseline {
+			a {
+				font-size: 0.6rem;
+			}
+		}
+	}
+	#footer, footer.site-footer {
+		#doorstop {
+			.con-soc {
+				.contacts {
+					width: 80%;
+					float: left;
+					clear: both;
+					height: 3rem;
+					> ul {
+						@include flexbox;
+						@include flex-wrap(wrap);
+						@include justify-content(flex-start);
+					}
+				}
+			}
+		}
+	}
+}
+
+// TABLET AND UP (461 up)
+@media #{$medium-up} {
+
+}
+
+// MEDIUM ONLY (461 - 960)
+@media #{$medium-only} {
+	#footer, footer.site-footer {
+		#doorstop {
+			.logo {
+				margin: 0 0 0 2.5em;
+			}
+			.link-blocks {
+				@include flex-wrap(wrap);
+				section {
+					margin-left: 5%;
+					@include flex(1 1 40%);
+				}
+			}
+			.con-soc {
+				margin: 5em 1em 2em;
+				@include flexbox;
+				@include flex-wrap(wrap);
+				@include justify-content(space-between);
+				.contacts {
+					padding-bottom: 2em;
+					margin-left: 0.2em;
+					@include flex(1 1 100%);
+					ul {
+						margin: 0;
+						@include flexbox;
+						@include justify-content(space-between);
+						@include flex-wrap(wrap);
+						li {
+							margin-left: 0;
+						}
+						a {
+							// padding: 0.25em 1em 0 2.25em;
+							padding-left: 3em;
+							line-height: 2.8
+							// margin: 0;
+							// height: 2em;
+							// background-size: 2em;
+							// background-position: 0 50%;
+						}
+					}
+				}
+
+				.social {
+					float: none;
+					margin: 0;
+					border: none;
+					li a {
+						width: 2.5em;
+						height: 2.5em;
+					}
+				}
+				.c-a-w {
+					float: right;
+				}
+				.c-a-w-block {
+					top: initial;
+					bottom: -1.5rem;
+				}
+			}
+		}
+	}
+}
+
+// ONLY FOR MOBILE (960 and down)
+@media #{$medium-down} {
+	footer, #footer {
+		// margin-top: 4em;
+		.logo {
+			float: left;
+			height: 7em;
+			width: 3.5em;
+			margin-right: 1.4em;
+		}
+		.links {
+			width: 100%;
+			height: 14em;
+			.inline-list {
+				-webkit-column-count: 2;
+				-moz-column-count: 2;
+				column-count: 2;
+				-webkit-column-rule: 1px solid $colour__black--90;
+				-moz-column-rule: 1px solid $colour__black--90;
+				column-rule: 1px solid $colour__black--90;
+				border-left: 1px solid $colour__black--90;
+				margin-left: 1em;
+			}
+			.social {
+				float:left;
+				clear: both;
+				width: 100%;
+				margin-top: 0.6em;
+				padding: 0.6em 0;
+				border-top: 1px solid $colour__black--90;
+			}
+		}
+		.topline {
+			.contacts {
+				position: relative;
+				clear: inherit;
+				height: 9em;
+				.phone {
+					position: absolute;
+					bottom: -1em;
+					left: 0;
+					padding: 0;
+					display: table-cell;
+					text-align: center;
+					margin: 0 auto;
+					width: auto;
+					left: 0;
+					background: none;
+					font-size: 2rem;
+					padding-top: 0;
+					border-top: none;
+					width: inherit;
+					text-align: inherit;
+				}
+				.inline-list {
+					width: 100%;
+				}
+			}
+		}
+		.inline-list {
+			margin-bottom: 1em;
+			display: block;
+			> li {
+				float: none;
+				margin-left: inherit;
+				a {
+					margin-bottom: 0.8em;
+				}
+			}
+		}
+		.row {
+			padding: 2em 0;
+			.contacts {
+				// a {
+				// 	padding: 0.25em 0 0 4.35em;
+				// 	background-size: 2em;
+				// 	margin-left: 2%;
+				// 	width: 100%;
+				// 	height: 2em;
+				// 	margin-bottom: 0;
+				// 	&.skype {
+				// 		background-position: 1.8em 50%;
+				// 	}
+				// 	&.email {
+				// 		background-position: 1.8em 50%;
+				// 	}
+				// }
+				li {
+					margin-top: 1.2em;
+				}
+				.c-a-w {
+					display: inline-block;
+					width: 10em;
+					height: 8em;
+					background-size: 100%;
+					top: 1.5em;
+				}
+			}
+		}
+		#doorstop {
+			margin-top: 1.2em;
+			.link-blocks {
+				@include flex-wrap(wrap);
+			}
+		}
+		.social {
+			float: right;
+			margin-left: inherit;
+			border-bottom: 1px solid $colour__black--90;
+			li {
+				width: auto;
+				margin-right: 1em;
+				// a {
+				// 	width: 2em;
+				// 	height: 2.0em;
+				// 	margin-top: 0.3em;
+				// }
+			}
+		}
+		.skype, .email {
+			background-position: 5% 50%;
+		}
+		.twitter-banner, .linkedin-banner, .facebook-banner, .email-banner, .rss-banner, .skype, .email .phone, .youtube {
+			background-size: 100%;
+		}
+		.baseline {
+			a {
+				font-size: 0.8rem;
+			}
+		}
+		.ie9 & {
+			ul.inline-list {
+				li {
+					float: left;
+					width: 45%;
+				}
+			}
+			.contacts {
+				.c-a-w {
+					top: 2em;
+				}
+				ul.inline-list {
+					li {
+						width: 80%;
+						.phone {
+							bottom: -1.5em;
+							font-size: 1.75rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+// SMARTPHONE ONLY (Up to 460)
+@media #{$small-only} {
+	footer.site-footer, #footer {
+		// margin-top: 3em;
+		a {
+			font-size: 0.8rem;
+		}
+		.logo {
+			height: 8em;
+			width: 3.5em;
+			float: right;
+			margin-right: 0;
+		}
+		.links {
+			.inline-list {
+				-webkit-column-count: 1;
+				-moz-column-count: 1;
+				column-count: 1;
+				margin-left: 0;
+				border-left: 0;
+				> li {
+					margin-left: 0;
+				}
+			}
+			.social {
+				margin-top: 0em;
+			}
+		}
+		.topline {
+			.contacts {
+				height: 12em;
+				clear: both;
+				.phone {
+					font-size: 1.5rem;
+					padding-top: 0.9em;
+					border-top: 1px solid $colour__black--90;
+					left: inherit;
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+		.row {
+			padding: 1.6em 0;
+			.contacts {
+				a {
+					display: inline-block;
+					width: auto;
+					padding: 1em 1em 0.5em 3.5em;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+					background-size: 3em;
+					height: 3em;
+					&.email, &.skype {
+						background-position: 0em 50%;
+					}
+				}
+				ul.inline-list {
+					li {
+						margin-top: 0.7em;
+						.vivocha_widget_button {
+							text-align: left !important // Override inline CSS delivered by Vivocha JS
+						}
+					}
+				}
+				.c-a-w {
+					background-size: auto;
+					top: -0.25em;
+				}
+			}
+		}
+		.inline-list {
+			margin-bottom: 0.6em;
+			margin-left: 0;
+			> li {
+				margin-left: 0em;
+				a {
+					margin-bottom: 1em;
+					line-height: 1em;
+				}
+			}
+		}
+		.social {
+			float: right;
+			border-bottom: 1px solid $colour__black--90;
+			li {
+				width: auto;
+				// min-width: 3em;
+				margin-left: 0;
+				a {
+					width: 2.5rem;
+					height: 2.5rem;
+					margin: 0;
+					&.twitter-banner, &.linkedin-banner, &.facebook-banner, &.email-banner, &.rss-banner, &.youtube {
+						background-position: 50% 50%;
+						background-size: contain;
+					}
+				}
+			}
+		}
+		.skype, .email {
+			background-position: 0% 50%;
+			background-size: 50%;
+		}
+		.baseline {
+			a {
+				font-size: 0.6rem;
+			}
+		}
+		#doorstop {
+			.logo {
+				margin-right: 0;
+				background-size: contain;
+				height: 9em;
+				width: 4.5em;
+			}
+			margin-top: 0;
+			.link-blocks section {
+				@include flex(1 1 100%);
+			}
+			.con-soc {
+				// padding-top: 1em;
+				// border-top: 1px solid $colour__black--40;
+				.social {
+					@include flexbox;
+					@include justify-content(space-between);
+					float: none;
+					width: 100%;
+					// border-top: 1px solid $colour__black--40;
+					// border-bottom: 1px solid $colour__black--90;
+					border-bottom: none;
+					// margin: 1em 0;
+					li {
+						a {
+							margin: 2em 0 0;
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+			.contacts {
+				li {
+					width: 100%;
+				}
+				a {
+					font-size: 1rem;
+					&::before {
+						top: 25%;
+					}
+				}
+				#eptica-footer-live-chat {
+					padding: 1em 1em 1em 3.5em;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+					margin-left: 2%;
+				}
+			}
+			.c-a-w-block {
+				top: 1rem;
+			}
+			.c-a-w {
+				float: right;
+				width: 7rem;
+				height: 5rem;
+			}
+		}
+	}
+}

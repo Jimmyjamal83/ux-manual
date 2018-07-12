@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 8 ]> <html dir="ltr" lang="en" class="no-js oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html dir="ltr" lang="en" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html dir="ltr" lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en" class="no-js"><!--<![endif]-->
+	{{= it.include('headelement.html') }}
+	<body id="body-design-manual" data-require="global/megamenu|global/foundation">
+		{{= it.include('topbar.html') }}
+
+		<!-- // MEGA MENU START - HIGH-LEVEL.DOT.HTML // -->
+		<!-- There are two and a half versions of the main menu.  The medium menu is rendered to the page by default.  This caters for small and medium behaviour with JS enabled and large and up without JS.  A JS enabled mega menu can be loaded in using data-interchange. -->
+
+		<div id="menu" data-interchange="[../../src/design-manual/partials/mega-menu-medium.html, (default)], [../../src/design-manual/partials/mega-menu-medium.html, (small)], [../../src/design-manual/partials/mega-menu-medium.html, (medium)], [../../src/design-manual/partials/mega-menu-large.html, (large)]">
+		<!-- <div id="menu"> -->
+			{{= it.include("mega-menu-medium.html") }}
+		</div>
+		<!-- // MEGA MENU END // -->
+		<div id="menu-spacer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		{{= it.document }}
+
+	  	{{= it.include('footer-doorstop.html') }}
+		{{= it.include('mega-menu-level-one.html') }}
+		{{= it.include('jsbodyend.html') }}
+	</body>
+</html>
